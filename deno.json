@@ -1,0 +1,28 @@
+{
+	"tasks": {
+		"run-solution": "deno run -A ./scripts/run-solution.js"
+	},
+	"imports": {
+		"@std/path": "jsr:@std/path@^1.0.8"
+	},
+	"nodeModulesDir": "none",
+	"compilerOptions": {
+		"allowUnreachableCode": false,
+		"allowUnusedLabels": false,
+		"checkJs": true,
+		"exactOptionalPropertyTypes": true,
+		"jsx": "react-jsx",
+		"jsxImportSource": "preact",
+		"noErrorTruncation": true,
+		"noFallthroughCasesInSwitch": false,
+		"noImplicitAny": true,
+		"noImplicitOverride": true,
+		"noImplicitReturns": true,
+		"noImplicitThis": true,
+		"noPropertyAccessFromIndexSignature": false,
+		"noUncheckedIndexedAccess": false,
+		"noUnusedLocals": false,
+		"noUnusedParameters": false,
+		"strict": true
+	}
+}
