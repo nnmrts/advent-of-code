@@ -1,7 +1,2 @@
-*.esm
-*.esp
-*.esl
-
 .env
-
 /node_modules
