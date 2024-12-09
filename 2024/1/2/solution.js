@@ -6,4 +6,4 @@ const solution = calculateSum(
 		.map((location) => location * locationColumns[1].filter((otherLocation) => otherLocation === location).length)
 );
 
-console.log(solution);
+console.info(solution);

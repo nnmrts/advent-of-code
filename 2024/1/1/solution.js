@@ -12,4 +12,4 @@ const distances = sortedLocationColumns[0]
 
 const solution = calculateSum(distances);
 
-console.log(solution);
+console.info(solution);
