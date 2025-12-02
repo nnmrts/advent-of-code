@@ -4,6 +4,8 @@ const eslintConfig = [
 	...pumpnEslintConfig,
 	{
 		rules: {
+			"jsdoc/require-description": "off",
+			"jsdoc/require-returns": "off",
 			"tailwindcss/classnames-order": "off",
 			"tailwindcss/enforces-negative-arbitrary-values": "off",
 			"tailwindcss/enforces-shorthand": "off",
