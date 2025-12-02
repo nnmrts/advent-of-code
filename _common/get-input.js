@@ -1,5 +1,7 @@
 import {
-	dirname, fromFileUrl, relative
+	dirname,
+	fromFileUrl,
+	relative
 } from "@std/path";
 
 const {

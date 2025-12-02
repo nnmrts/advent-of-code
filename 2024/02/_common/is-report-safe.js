@@ -1,12 +1,29 @@
 /**
  *
  * @param report
+ * @param allowedNumberOfErrors
  * @example
  */
-const isReportSafe = (report) => {
+const isReportSafe = (report, allowedNumberOfErrors = 0) => {
 	let direction;
 
-	let result = false;
+	let result = true;
+
+	let numberOfErrors = 0;
+
+	// cluster
+	const reportVariants = report.flatMap((value, index) => [
+		[value],
+		[value, report[index + 1]],
+		[value, report[index + 1], report[index + 2]],
+		[
+			value,
+			report[index + 1],
+			report[index + 2],
+			report[index + 3]
+		],
+		[value, report[index + 2]]
+	]);
 
 	for (const [levelIndex, level] of report.entries()) {
 		if (levelIndex === report.length - 1) {
@@ -32,9 +49,12 @@ const isReportSafe = (report) => {
 				)
 			)
 		) {
-			result = false;
+			numberOfErrors += 1;
 
-			break;
+			if (numberOfErrors > allowedNumberOfErrors) {
+				result = false;
+				break;
+			}
 		}
 
 		if (direction === undefined) {

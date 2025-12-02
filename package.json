@@ -1,13 +1,10 @@
 {
-	"scripts": {
-		"test": "echo \"Error: no test specified\" && exit 1"
-	},
 	"author": "",
 	"license": "0BSD",
 	"description": "",
 	"devDependencies": {
-		"@pumpn/eslint-config": "^15.5.3",
-		"eslint": "9.14.0"
+		"@pumpn/eslint-config": "^16.1.2",
+		"eslint": "^9.39.1"
 	},
 	"type": "module"
 }
