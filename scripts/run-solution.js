@@ -1,8 +1,8 @@
 import { join } from "@std/path";
 
 const {
+	args: [path, watch],
 	Command,
-	args: [path],
 	cwd
 } = Deno;
 
@@ -19,6 +19,11 @@ const runSolutionCommand = new Command(
 			"--allow-read=./",
 			"--allow-env=SESSION_ID",
 			"--env-file=.env",
+			...(
+				watch === "--watch"
+					? ["--watch"]
+					: []
+			),
 			solutionFilePath
 		],
 		stderr: "inherit",

@@ -1,15 +1,9 @@
+import sum from "../../_common/sum.js";
 import divisor from "../_common/divisor.js";
 import maximum from "../_common/maximum.js";
 import rotations from "../_common/rotations.js";
 
 let currentPosition = 50;
-
-/**
- *
- * @param {readonly number[]} array - The array of numbers to sum.
- */
-const sum = (array) => array
-	.reduce((previousValue, currentValue) => previousValue + currentValue, 0);
 
 // TODO[2025-12-12]: This is horrible code, fix it
 const zeroesDuringRotations = sum(

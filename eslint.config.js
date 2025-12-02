@@ -6,6 +6,12 @@ const eslintConfig = [
 		rules: {
 			"jsdoc/require-description": "off",
 			"jsdoc/require-returns": "off",
+			"regexp/optimal-quantifier-concatenation": [
+				"error",
+				{
+					capturingGroups: "ignore"
+				}
+			],
 			"tailwindcss/classnames-order": "off",
 			"tailwindcss/enforces-negative-arbitrary-values": "off",
 			"tailwindcss/enforces-shorthand": "off",
