@@ -4,7 +4,10 @@ const eslintConfig = [
 	...pumpnEslintConfig,
 	{
 		rules: {
+			"jsdoc/convert-to-jsdoc-comments": "off",
 			"jsdoc/require-description": "off",
+			"jsdoc/require-param-description": "off",
+			"jsdoc/require-property-description": "off",
 			"jsdoc/require-returns": "off",
 			"regexp/optimal-quantifier-concatenation": [
 				"error",
