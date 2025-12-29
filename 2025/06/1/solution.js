@@ -1,6 +1,6 @@
+import product from "../../_common/product.js";
 import sum from "../../_common/sum.js";
 import input from "../_common/input.js";
-import product from "../_common/product.js";
 
 /**
  * @typedef {"+"|"*"} Operation
