@@ -1,12 +1,12 @@
-import product from "../../_common/product.js";
 import distances from "../_common/distances.js";
+import junctionBoxes from "../_common/junction-boxes.js";
 
 /**
  * @type {Set<number>[]}
  */
 let circuits = [];
 
-for (const [indexA, indexB] of distances) {
+for (const [distanceIndex, [indexA, indexB]] of distances.entries()) {
 	const relevantCircuits = circuits
 		.filter((circuit) => [indexA, indexB]
 			.some((index) => circuit.has(index)));
@@ -38,16 +38,12 @@ for (const [indexA, indexB] of distances) {
 			// no default
 	}
 
-	if (circuits.length === 1) {
+	if (circuits.length === 1 && distanceIndex !== 0) {
+		const [xA] = junctionBoxes[indexA];
+		const [xB] = junctionBoxes[indexB];
+
+		console.info(xA * xB);
+
 		break;
 	}
 }
-
-console.info(
-	product(
-		circuits
-			.toSorted((circuitA, circuitB) => circuitB.size - circuitA.size)
-			.slice(0, circuitsLimit)
-			.map((circuit) => circuit.size)
-	)
-);
