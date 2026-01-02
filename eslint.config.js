@@ -9,6 +9,7 @@ const eslintConfig = [
 			"jsdoc/require-param-description": "off",
 			"jsdoc/require-property-description": "off",
 			"jsdoc/require-returns": "off",
+			"jsdoc/require-returns-description": "off",
 			"regexp/optimal-quantifier-concatenation": [
 				"error",
 				{
@@ -31,6 +32,13 @@ const eslintConfig = [
 			"import-x/unambiguous": "off",
 			"unicorn/no-empty-file": "off",
 			"unicorn/prevent-abbreviations": "off"
+		}
+	},
+	{
+		files: ["**/*.d.ts"],
+		rules: {
+			"no-unused-vars": "off",
+			"unicorn/require-module-specifiers": "off"
 		}
 	},
 	{

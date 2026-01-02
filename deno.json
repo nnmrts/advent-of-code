@@ -1,6 +1,7 @@
 {
 	"tasks": {
-		"run-solution": "deno run -A ./scripts/run-solution.js"
+		"run-solution": "deno run -A ./scripts/run-solution.js",
+		"lint": "deno run -A eslint"
 	},
 	"imports": {
 		"@std/path": "jsr:@std/path@^1.1.3"
