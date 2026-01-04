@@ -6,7 +6,7 @@ const {
 	cwd
 } = Deno;
 
-const solutionFolderPath = join(cwd(), path);
+const solutionFolderPath = join(cwd(), "years", path);
 
 const solutionFilePath = join(solutionFolderPath, "solution.js");
 

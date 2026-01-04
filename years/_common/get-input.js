@@ -11,7 +11,10 @@ const {
 	openKv
 } = Deno;
 
-const [year, day] = dirname(relative(cwd(), fromFileUrl(mainModule))).split("/").map(Number);
+const [year, day] = dirname(relative(cwd(), fromFileUrl(mainModule)))
+	.split("/")
+	.slice(1)
+	.map(Number);
 
 const baseUrl = "https://adventofcode.com";
 

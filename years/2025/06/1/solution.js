@@ -6,6 +6,17 @@ import input from "../_common/input.js";
  * @typedef {"+"|"*"} Operation
  */
 
+/**
+ * @template {readonly (readonly unknown[])[]} MatrixTemplate
+ * @param {MatrixTemplate} matrix
+ * @example
+ */
+const rotateMatrix = (matrix) => matrix[0]
+	.map((value, index) => (
+		matrix
+			.map((row) => row[index]).toReversed()
+	));
+
 const rows = /** @type {readonly [...readonly (readonly number[])[], readonly Operation[]]} */ (
 	/** @type {unknown} */ (
 		input
@@ -23,8 +34,7 @@ const rows = /** @type {readonly [...readonly (readonly number[])[], readonly Op
 
 const columns = /** @type {readonly (readonly [Operation, ...readonly number[]])[]} */ (
 	/** @type {unknown} */ (
-		rows[0]
-			.map((column, columnIndex) => rows.map((row) => row[columnIndex]).toReversed())
+		rotateMatrix(rows)
 	)
 );
 

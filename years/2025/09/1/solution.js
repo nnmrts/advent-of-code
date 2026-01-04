@@ -4,15 +4,11 @@ import tiles from "../_common/tiles.js";
 const areas = tiles
 	.flatMap((tileA, tileAIndex) => tiles
 		.slice(tileAIndex + 1)
-		.map((tileB) => /** @type {const} */ ([
+		.map((tileB) => getArea(
 			tileA,
-			tileB,
-			getArea(
-				tileA,
-				tileB
-			)
-		])))
-	.toSorted(([tileAA, tileBA, areaA], [tileAB, tileBB, areaB]) => areaB - areaA);
+			tileB
+		)))
+	.toSorted((areaA, areaB) => areaB - areaA);
 
 console.info(
 	areas[0]
