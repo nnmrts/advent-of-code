@@ -7,19 +7,30 @@ import {
 const {
 	cwd,
 	env,
-	mainModule
+	mainModule,
+	openKv
 } = Deno;
 
 const [year, day] = dirname(relative(cwd(), fromFileUrl(mainModule))).split("/").map(Number);
 
 const baseUrl = "https://adventofcode.com";
 
+const kv = await openKv();
+const key = [year, day];
+
 /**
  *
  * @example
  */
 const getInput = async () => {
+	const { value } = await kv.get(key);
+
+	if (value !== null) {
+		return value;
+	}
+
 	const url = `${baseUrl}/${year}/day/${day}/input`;
+
 	const response = await fetch(
 		url,
 		{
@@ -29,7 +40,11 @@ const getInput = async () => {
 		}
 	);
 
-	return response.text();
+	const responseText = await response.text();
+
+	await kv.set(key, responseText);
+
+	return responseText;
 };
 
 export default getInput;
