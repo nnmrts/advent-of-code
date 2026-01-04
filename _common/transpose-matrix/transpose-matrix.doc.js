@@ -7,5 +7,5 @@
  * 		[Y in keyof MatrixTemplate]: MatrixTemplate[Y][X & keyof MatrixTemplate[Y]]
  * 	}
  * }
- * )} Transpose
+ * )} TransposeMatrix
  */

@@ -1,4 +1,5 @@
 import calculateSum from "../../../_common/calculate-sum.js";
+import transposeMatrix from "../../../_common/transpose-matrix.js";
 import calculateProduct from "../../_common/calculate-product.js";
 import input from "../_common/input.js";
 
@@ -17,8 +18,7 @@ const rows = /** @type {readonly [...readonly (readonly number[])[], readonly Op
 
 const columns = /** @type {readonly (readonly [Operation, ...readonly number[]])[]} */ (
 	/** @type {unknown} */ (
-		rows[0]
-			.map((column, columnIndex) => rows.map((row) => row[columnIndex]).join(""))
+		transposeMatrix(rows).map((row) => row.join(""))
 			.join("\n")
 			.split(/\n\s*\n/v)
 			.map((column) => {
