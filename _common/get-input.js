@@ -23,6 +23,9 @@ const key = [year, day];
  * @example
  */
 const getInput = async () => {
+	/**
+	 * @type {Deno.KvEntryMaybe<string>}
+	 */
 	const { value } = await kv.get(key);
 
 	if (value !== null) {
