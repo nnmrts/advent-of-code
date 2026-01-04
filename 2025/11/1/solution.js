@@ -1,4 +1,4 @@
-import sum from "../../_common/sum.js";
+import calculateSum from "../../../_common/calculate-sum.js";
 import devices from "../_common/devices.js";
 
 /**
@@ -10,7 +10,7 @@ import devices from "../_common/devices.js";
  * @param {IterableElement<devices>[1]} outputs
  * @returns {number}
  */
-const countPathsToOut = (outputs) => sum(
+const countPathsToOut = (outputs) => calculateSum(
 	[
 		outputs
 			.filter((output) => output === "out").length,

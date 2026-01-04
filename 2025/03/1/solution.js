@@ -1,8 +1,8 @@
-import sum from "../../_common/sum.js";
+import calculateSum from "../../../_common/calculate-sum.js";
 import banks from "../_common/banks.js";
 
 console.info(
-	sum(
+	calculateSum(
 		banks
 			.map((bank) => {
 				const bankWithoutLastBattery = bank.slice(0, -1);

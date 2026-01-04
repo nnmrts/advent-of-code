@@ -1,5 +1,5 @@
-import product from "../../_common/product.js";
-import sum from "../../_common/sum.js";
+import calculateSum from "../../../_common/calculate-sum.js";
+import calculateProduct from "../../_common/calculate-product.js";
 import input from "../_common/input.js";
 
 /**
@@ -33,11 +33,11 @@ const columns = /** @type {readonly (readonly [Operation, ...readonly number[]])
 );
 
 console.info(
-	sum(
+	calculateSum(
 		columns.map(([operation, ...numbers]) => (
 			operation === "+"
-				? sum(numbers)
-				: product(numbers)
+				? calculateSum(numbers)
+				: calculateProduct(numbers)
 		))
 	)
 );

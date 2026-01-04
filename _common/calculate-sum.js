@@ -1,7 +1,5 @@
 /**
- *
- * @param array
- * @example
+ * @param {readonly number[]} array - The array of numbers to sum.
  */
 const calculateSum = (array) => array.reduce(
 	(previousValue, currentValue) => previousValue + currentValue,

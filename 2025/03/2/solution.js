@@ -1,10 +1,10 @@
-import sum from "../../_common/sum.js";
+import calculateSum from "../../../_common/calculate-sum.js";
 import banks from "../_common/banks.js";
 
 const numberOfBatteries = 12;
 
 console.info(
-	sum(
+	calculateSum(
 		banks
 			.map((bank) => {
 				let start = 0;

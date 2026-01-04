@@ -1,4 +1,4 @@
-import sum from "../../_common/sum.js";
+import calculateSum from "../../../_common/calculate-sum.js";
 import machines from "../_common/machines.js";
 
 import {
@@ -6,7 +6,7 @@ import {
 	solveRestrictedSystem
 } from "./solution/_exports.js";
 
-const result = sum(
+const result = calculateSum(
 	machines.map(({ buttonWiringSchematics, joltageRequirements }) => {
 		const {
 			matrix,

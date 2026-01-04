@@ -1,4 +1,4 @@
-import sum from "../../_common/sum.js";
+import calculateSum from "../../../_common/calculate-sum.js";
 import machines from "../_common/machines.js";
 
 import {
@@ -31,7 +31,7 @@ const pressButtons = ({
 	});
 };
 
-const result = sum(
+const result = calculateSum(
 	machines
 		.map(({
 			buttonWiringSchematics,

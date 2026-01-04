@@ -1,5 +1,6 @@
 /* eslint-disable regexp/no-super-linear-backtracking -- don't care */
-import sum from "../../_common/sum.js";
+
+import calculateSum from "../../../_common/calculate-sum.js";
 import idRanges from "../_common/id-ranges.js";
 
 const ids = idRanges
@@ -14,5 +15,5 @@ const invalidIds = ids
 	));
 
 console.info(
-	sum(invalidIds)
+	calculateSum(invalidIds)
 );

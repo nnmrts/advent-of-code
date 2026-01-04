@@ -1,4 +1,4 @@
-import sum from "../../_common/sum.js";
+import calculateSum from "../../../_common/calculate-sum.js";
 
 import { summary } from "./solution/_exports.js";
 
@@ -15,7 +15,7 @@ const definitelyTooSmallTrees = trees
 	}) => {
 		const treeArea = height * width;
 
-		const exactPresentArea = sum(
+		const exactPresentArea = calculateSum(
 			quantities
 				.map((quantity, index) => (
 					(presents[index].flat().filter(Boolean).length) *
@@ -46,7 +46,7 @@ const definitelyLargeEnoughTrees = trees
 			)
 		);
 
-		return (roundedDownTreeArea / (maximumPresentLength ** 2)) >= sum(quantities);
+		return (roundedDownTreeArea / (maximumPresentLength ** 2)) >= calculateSum(quantities);
 	});
 
 if (definitelyTooSmallTrees.length + definitelyLargeEnoughTrees.length === trees.length) {

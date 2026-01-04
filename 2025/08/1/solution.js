@@ -1,4 +1,4 @@
-import product from "../../_common/product.js";
+import calculateProduct from "../../_common/calculate-product.js";
 import distances from "../_common/distances.js";
 
 const junctionBoxesLimit = 1_000;
@@ -43,7 +43,7 @@ for (const [indexA, indexB] of distances.slice(0, junctionBoxesLimit)) {
 }
 
 console.info(
-	product(
+	calculateProduct(
 		circuits
 			.toSorted((circuitA, circuitB) => circuitB.size - circuitA.size)
 			.slice(0, circuitsLimit)

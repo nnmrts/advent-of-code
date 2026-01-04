@@ -1,4 +1,4 @@
-import sum from "../../_common/sum.js";
+import calculateSum from "../../../_common/calculate-sum.js";
 import divisor from "../_common/divisor.js";
 import maximum from "../_common/maximum.js";
 import rotations from "../_common/rotations.js";
@@ -6,7 +6,7 @@ import rotations from "../_common/rotations.js";
 let currentPosition = 50;
 
 // TODO[2025-12-12]: This is horrible code, fix it
-const zeroesDuringRotations = sum(
+const zeroesDuringRotations = calculateSum(
 	rotations
 		.map(({ amount, sign }) => {
 			let zeroCount = 0;

@@ -1,4 +1,4 @@
-import sum from "../../_common/sum.js";
+import calculateSum from "../../../_common/calculate-sum.js";
 import database from "../_common/database.js";
 
 /**
@@ -100,7 +100,7 @@ while (!finished) {
 }
 
 console.info(
-	sum(
+	calculateSum(
 		currentRanges
 			.map(([rangeStart, rangeEnd]) => (rangeEnd - rangeStart) + 1)
 	)

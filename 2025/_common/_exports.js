@@ -1,2 +1,1 @@
-export { default as product } from "./product.js";
-export { default as sum } from "./sum.js";
+export { default as calculateProduct } from "./calculate-product.js";

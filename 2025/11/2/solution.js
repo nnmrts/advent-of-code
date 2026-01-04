@@ -1,4 +1,4 @@
-import sum from "../../_common/sum.js";
+import calculateSum from "../../../_common/calculate-sum.js";
 import devices from "../_common/devices.js";
 
 /**
@@ -16,7 +16,7 @@ const cache = new Map();
 const countPathsToOut = (
 	outputs,
 	requiredDevices = []
-) => sum(
+) => calculateSum(
 	[
 		requiredDevices.length === 0
 			? outputs
