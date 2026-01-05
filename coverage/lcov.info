@@ -1,4 +1,4 @@
-SF:/Users/nnmrts/projects/advent-of-code/years/2024/01/1/solution.js
+SF:years/2024/01/1/solution.js
 FNF:0
 FNH:0
 BRF:0
@@ -22,7 +22,7 @@ DA:16,1
 LH:16
 LF:16
 end_of_record
-SF:/Users/nnmrts/projects/advent-of-code/years/2024/01/2/solution.js
+SF:years/2024/01/2/solution.js
 FNF:0
 FNH:0
 BRF:0
@@ -43,7 +43,7 @@ DA:13,1
 LH:13
 LF:13
 end_of_record
-SF:/Users/nnmrts/projects/advent-of-code/years/2024/01/_common/location-columns.js
+SF:years/2024/01/_common/location-columns.js
 FNF:0
 FNH:0
 BRF:0
@@ -65,7 +65,7 @@ DA:14,1
 LH:14
 LF:14
 end_of_record
-SF:/Users/nnmrts/projects/advent-of-code/years/2024/02/1/solution.js
+SF:years/2024/02/1/solution.js
 FNF:0
 FNH:0
 BRF:0
@@ -81,7 +81,7 @@ DA:8,1
 LH:8
 LF:8
 end_of_record
-SF:/Users/nnmrts/projects/advent-of-code/years/2024/02/2/solution.js
+SF:years/2024/02/2/solution.js
 FNF:0
 FNH:0
 BRF:0
@@ -97,7 +97,7 @@ DA:8,1
 LH:8
 LF:8
 end_of_record
-SF:/Users/nnmrts/projects/advent-of-code/years/2024/02/_common/is-report-safe.js
+SF:years/2024/02/_common/is-report-safe.js
 FN:8,isReportSafe
 FNDA:2000,isReportSafe
 FNF:1
@@ -178,7 +178,7 @@ DA:56,1
 LH:56
 LF:56
 end_of_record
-SF:/Users/nnmrts/projects/advent-of-code/years/2024/02/_common/reports.js
+SF:years/2024/02/_common/reports.js
 FNF:0
 FNH:0
 BRF:0
@@ -197,7 +197,7 @@ DA:11,1
 LH:11
 LF:11
 end_of_record
-SF:/Users/nnmrts/projects/advent-of-code/years/2025/01/1/solution.js
+SF:years/2025/01/1/solution.js
 FNF:0
 FNH:0
 BRF:0
@@ -221,7 +221,7 @@ DA:16,1
 LH:16
 LF:16
 end_of_record
-SF:/Users/nnmrts/projects/advent-of-code/years/2025/01/2/solution.js
+SF:years/2025/01/2/solution.js
 FNF:0
 FNH:0
 BRDA:10,1,0,2414
@@ -252,7 +252,7 @@ DA:20,1
 LH:20
 LF:20
 end_of_record
-SF:/Users/nnmrts/projects/advent-of-code/years/2025/01/_common/divisor.js
+SF:years/2025/01/_common/divisor.js
 FNF:0
 FNH:0
 BRF:0
@@ -266,7 +266,7 @@ DA:6,1
 LH:6
 LF:6
 end_of_record
-SF:/Users/nnmrts/projects/advent-of-code/years/2025/01/_common/divisor/_exports.js
+SF:years/2025/01/_common/divisor/_exports.js
 FNF:0
 FNH:0
 BRF:0
@@ -276,7 +276,7 @@ DA:2,1
 LH:2
 LF:2
 end_of_record
-SF:/Users/nnmrts/projects/advent-of-code/years/2025/01/_common/divisor/maximum.js
+SF:years/2025/01/_common/divisor/maximum.js
 FNF:0
 FNH:0
 BRF:0
@@ -288,7 +288,7 @@ DA:4,1
 LH:4
 LF:4
 end_of_record
-SF:/Users/nnmrts/projects/advent-of-code/years/2025/01/_common/rotations.js
+SF:years/2025/01/_common/rotations.js
 FNF:0
 FNH:0
 BRF:0
@@ -333,7 +333,7 @@ DA:37,1
 LH:37
 LF:37
 end_of_record
-SF:/Users/nnmrts/projects/advent-of-code/years/2025/02/1/solution.js
+SF:years/2025/02/1/solution.js
 FNF:0
 FNH:0
 BRDA:12,3,0,1742457
@@ -361,7 +361,7 @@ DA:19,1
 LH:19
 LF:19
 end_of_record
-SF:/Users/nnmrts/projects/advent-of-code/years/2025/02/2/solution.js
+SF:years/2025/02/2/solution.js
 FNF:0
 FNH:0
 BRF:0
@@ -389,7 +389,7 @@ DA:20,1
 LH:20
 LF:20
 end_of_record
-SF:/Users/nnmrts/projects/advent-of-code/years/2025/02/_common/id-ranges.js
+SF:years/2025/02/_common/id-ranges.js
 FNF:0
 FNH:0
 BRF:0
@@ -405,7 +405,7 @@ DA:8,1
 LH:8
 LF:8
 end_of_record
-SF:/Users/nnmrts/projects/advent-of-code/years/2025/03/1/solution.js
+SF:years/2025/03/1/solution.js
 FNF:0
 FNH:0
 BRF:0
@@ -435,7 +435,7 @@ DA:22,1
 LH:22
 LF:22
 end_of_record
-SF:/Users/nnmrts/projects/advent-of-code/years/2025/03/2/solution.js
+SF:years/2025/03/2/solution.js
 FNF:0
 FNH:0
 BRDA:15,1,0,2400
@@ -481,7 +481,7 @@ DA:35,1
 LH:35
 LF:35
 end_of_record
-SF:/Users/nnmrts/projects/advent-of-code/years/2025/03/_common/banks.js
+SF:years/2025/03/_common/banks.js
 FNF:0
 FNH:0
 BRF:0
@@ -497,7 +497,7 @@ DA:8,1
 LH:8
 LF:8
 end_of_record
-SF:/Users/nnmrts/projects/advent-of-code/years/2025/04/1/solution.js
+SF:years/2025/04/1/solution.js
 FNF:0
 FNH:0
 BRDA:10,2,0,18090
@@ -539,7 +539,7 @@ DA:27,1
 LH:27
 LF:27
 end_of_record
-SF:/Users/nnmrts/projects/advent-of-code/years/2025/04/2/solution.js
+SF:years/2025/04/2/solution.js
 FNF:0
 FNH:0
 BRDA:20,2,0,1302480
@@ -605,7 +605,7 @@ DA:49,1
 LH:49
 LF:49
 end_of_record
-SF:/Users/nnmrts/projects/advent-of-code/years/2025/04/_common/rolls.js
+SF:years/2025/04/_common/rolls.js
 FNF:0
 FNH:0
 BRF:0
@@ -621,7 +621,7 @@ DA:8,1
 LH:8
 LF:8
 end_of_record
-SF:/Users/nnmrts/projects/advent-of-code/years/2025/05/1/solution.js
+SF:years/2025/05/1/solution.js
 FNF:0
 FNH:0
 BRDA:12,2,0,46299
@@ -647,7 +647,7 @@ DA:17,1
 LH:17
 LF:17
 end_of_record
-SF:/Users/nnmrts/projects/advent-of-code/years/2025/05/2/solution.js
+SF:years/2025/05/2/solution.js
 FN:17,fork
 FN:37,areRangesOverlapping
 FNDA:520,fork
@@ -777,7 +777,7 @@ DA:108,1
 LH:108
 LF:108
 end_of_record
-SF:/Users/nnmrts/projects/advent-of-code/years/2025/05/_common/database.js
+SF:years/2025/05/_common/database.js
 FNF:0
 FNH:0
 BRF:0
@@ -810,7 +810,7 @@ DA:25,1
 LH:25
 LF:25
 end_of_record
-SF:/Users/nnmrts/projects/advent-of-code/years/2025/06/1/solution.js
+SF:years/2025/06/1/solution.js
 FN:14,rotateMatrix
 FNDA:1,rotateMatrix
 FNF:1
@@ -874,7 +874,7 @@ DA:50,1
 LH:50
 LF:50
 end_of_record
-SF:/Users/nnmrts/projects/advent-of-code/years/2025/06/2/solution.js
+SF:years/2025/06/2/solution.js
 FNF:0
 FNH:0
 BRDA:39,6,0,474
@@ -928,7 +928,7 @@ DA:44,1
 LH:44
 LF:44
 end_of_record
-SF:/Users/nnmrts/projects/advent-of-code/years/2025/06/_common/input.js
+SF:years/2025/06/_common/input.js
 FNF:0
 FNH:0
 BRF:0
@@ -942,7 +942,7 @@ DA:6,1
 LH:6
 LF:6
 end_of_record
-SF:/Users/nnmrts/projects/advent-of-code/years/2025/07/1/solution.js
+SF:years/2025/07/1/solution.js
 FNF:0
 FNH:0
 BRF:0
@@ -1005,7 +1005,7 @@ DA:55,1
 LH:55
 LF:55
 end_of_record
-SF:/Users/nnmrts/projects/advent-of-code/years/2025/07/2/solution.js
+SF:years/2025/07/2/solution.js
 FN:10,handleEmpty
 FN:34,handleSplitter
 FN:83,getOrInsertComputed
@@ -1207,7 +1207,7 @@ DA:171,1
 LH:171
 LF:171
 end_of_record
-SF:/Users/nnmrts/projects/advent-of-code/years/2025/07/_common/manifold.js
+SF:years/2025/07/_common/manifold.js
 FNF:0
 FNH:0
 BRF:0
@@ -1229,7 +1229,7 @@ DA:14,1
 LH:14
 LF:14
 end_of_record
-SF:/Users/nnmrts/projects/advent-of-code/years/2025/08/1/solution.js
+SF:years/2025/08/1/solution.js
 FNF:0
 FNH:0
 BRF:0
@@ -1290,7 +1290,7 @@ DA:53,1
 LH:53
 LF:53
 end_of_record
-SF:/Users/nnmrts/projects/advent-of-code/years/2025/08/2/solution.js
+SF:years/2025/08/2/solution.js
 FNF:0
 FNH:0
 BRF:0
@@ -1348,7 +1348,7 @@ DA:50,1
 LH:50
 LF:50
 end_of_record
-SF:/Users/nnmrts/projects/advent-of-code/years/2025/08/_common/distances.js
+SF:years/2025/08/_common/distances.js
 FN:9,compareDistances
 FNDA:17556264,compareDistances
 FNF:1
@@ -1386,7 +1386,7 @@ DA:28,1
 LH:28
 LF:28
 end_of_record
-SF:/Users/nnmrts/projects/advent-of-code/years/2025/08/_common/distances/_exports.js
+SF:years/2025/08/_common/distances/_exports.js
 FNF:0
 FNH:0
 BRF:0
@@ -1396,7 +1396,7 @@ DA:2,1
 LH:2
 LF:2
 end_of_record
-SF:/Users/nnmrts/projects/advent-of-code/years/2025/08/_common/distances/get-distance.js
+SF:years/2025/08/_common/distances/get-distance.js
 FN:12,getDistance
 FNDA:999000,getDistance
 FNF:1
@@ -1423,7 +1423,7 @@ DA:17,1
 LH:17
 LF:17
 end_of_record
-SF:/Users/nnmrts/projects/advent-of-code/years/2025/08/_common/junction-boxes.js
+SF:years/2025/08/_common/junction-boxes.js
 FNF:0
 FNH:0
 BRF:0
@@ -1447,7 +1447,7 @@ DA:16,1
 LH:16
 LF:16
 end_of_record
-SF:/Users/nnmrts/projects/advent-of-code/years/2025/09/1/solution.js
+SF:years/2025/09/1/solution.js
 FNF:0
 FNH:0
 BRF:0
@@ -1471,7 +1471,7 @@ DA:16,1
 LH:16
 LF:16
 end_of_record
-SF:/Users/nnmrts/projects/advent-of-code/years/2025/09/2/solution.js
+SF:years/2025/09/2/solution.js
 FNF:0
 FNH:0
 BRDA:51,6,0,581611
@@ -1554,7 +1554,7 @@ DA:73,1
 LH:73
 LF:73
 end_of_record
-SF:/Users/nnmrts/projects/advent-of-code/years/2025/09/2/solution/_exports.js
+SF:years/2025/09/2/solution/_exports.js
 FNF:0
 FNH:0
 BRF:0
@@ -1565,7 +1565,7 @@ DA:3,1
 LH:3
 LF:3
 end_of_record
-SF:/Users/nnmrts/projects/advent-of-code/years/2025/09/2/solution/intersect.js
+SF:years/2025/09/2/solution/intersect.js
 FN:8,intersect
 FNDA:2675744,intersect
 FNF:1
@@ -1622,7 +1622,7 @@ DA:36,1
 LH:33
 LF:36
 end_of_record
-SF:/Users/nnmrts/projects/advent-of-code/years/2025/09/2/solution/intersect/_exports.js
+SF:years/2025/09/2/solution/intersect/_exports.js
 FNF:0
 FNH:0
 BRF:0
@@ -1632,7 +1632,7 @@ DA:2,1
 LH:2
 LF:2
 end_of_record
-SF:/Users/nnmrts/projects/advent-of-code/years/2025/09/2/solution/intersect/is-strictly-between.js
+SF:years/2025/09/2/solution/intersect/is-strictly-between.js
 FN:7,isStrictlyBetween
 FNDA:1918583,isStrictlyBetween
 FNF:1
@@ -1656,7 +1656,7 @@ DA:13,1
 LH:13
 LF:13
 end_of_record
-SF:/Users/nnmrts/projects/advent-of-code/years/2025/09/2/solution/point-in-or-on-polygon.js
+SF:years/2025/09/2/solution/point-in-or-on-polygon.js
 FN:11,pointInOrOnPolygon
 FNDA:369764,pointInOrOnPolygon
 FNF:1
@@ -1684,7 +1684,7 @@ DA:17,1
 LH:17
 LF:17
 end_of_record
-SF:/Users/nnmrts/projects/advent-of-code/years/2025/09/2/solution/point-in-or-on-polygon/_exports.js
+SF:years/2025/09/2/solution/point-in-or-on-polygon/_exports.js
 FNF:0
 FNH:0
 BRF:0
@@ -1695,7 +1695,7 @@ DA:3,1
 LH:3
 LF:3
 end_of_record
-SF:/Users/nnmrts/projects/advent-of-code/years/2025/09/2/solution/point-in-or-on-polygon/point-in-polygon.js
+SF:years/2025/09/2/solution/point-in-or-on-polygon/point-in-polygon.js
 FN:6,pointInPolygon
 FNDA:180309,pointInPolygon
 FNF:1
@@ -1745,18 +1745,18 @@ DA:34,1
 LH:34
 LF:34
 end_of_record
-SF:/Users/nnmrts/projects/advent-of-code/years/2025/09/2/solution/point-in-or-on-polygon/point-on-segment.js
+SF:years/2025/09/2/solution/point-in-or-on-polygon/point-on-segment.js
 FN:6,pointOnSegment
 FNDA:132363240,pointOnSegment
 FNF:1
 FNH:1
-BRDA:14,1,0,66229030
-BRDA:15,1,1,276653
-BRDA:16,1,2,170292
-BRDA:18,1,3,132268420
-BRDA:20,1,4,66134210
-BRDA:21,1,5,275402
-BRDA:22,1,6,185258
+BRDA:12,1,0,66229030
+BRDA:13,1,1,276653
+BRDA:14,1,2,170292
+BRDA:16,1,3,132268420
+BRDA:18,1,4,66134210
+BRDA:19,1,5,275402
+BRDA:20,1,6,185258
 BRF:7
 BRH:7
 DA:1,1
@@ -1764,34 +1764,32 @@ DA:2,1
 DA:3,1
 DA:4,1
 DA:5,1
-DA:6,1
-DA:7,132363241
-DA:8,132363241
+DA:6,2
+DA:7,132363242
+DA:8,132363242
 DA:9,1
-DA:10,132363241
-DA:11,1
-DA:12,132363241
-DA:13,132363241
-DA:14,132363241
-DA:15,132363241
-DA:16,132363241
-DA:17,132533533
-DA:18,132363241
-DA:19,264631661
-DA:20,264631661
-DA:21,264631661
-DA:22,264631661
-DA:23,264816919
-DA:24,264631661
-DA:25,132363241
-DA:26,1
+DA:10,132363242
+DA:11,132363242
+DA:12,132363242
+DA:13,132363242
+DA:14,132363242
+DA:15,132533534
+DA:16,132363242
+DA:17,264631662
+DA:18,264631662
+DA:19,264631662
+DA:20,264631662
+DA:21,264816920
+DA:22,264631662
+DA:23,132363242
+DA:24,2
+DA:25,1
+DA:26,2
 DA:27,1
-DA:28,1
-DA:29,1
-LH:29
-LF:29
+LH:27
+LF:27
 end_of_record
-SF:/Users/nnmrts/projects/advent-of-code/years/2025/09/_common/get-area.js
+SF:years/2025/09/_common/get-area.js
 FN:10,getArea
 FNDA:124337,getArea
 FNF:1
@@ -1814,7 +1812,7 @@ DA:13,1
 LH:13
 LF:13
 end_of_record
-SF:/Users/nnmrts/projects/advent-of-code/years/2025/09/_common/tiles.js
+SF:years/2025/09/_common/tiles.js
 FNF:0
 FNH:0
 BRF:0
@@ -1838,7 +1836,7 @@ DA:16,1
 LH:16
 LF:16
 end_of_record
-SF:/Users/nnmrts/projects/advent-of-code/years/2025/10/1/solution.js
+SF:years/2025/10/1/solution.js
 FN:16,pressButtons
 FNDA:582874,pressButtons
 FNF:1
@@ -1930,7 +1928,7 @@ DA:73,1
 LH:71
 LF:73
 end_of_record
-SF:/Users/nnmrts/projects/advent-of-code/years/2025/10/1/solution/_exports.js
+SF:years/2025/10/1/solution/_exports.js
 FNF:0
 FNH:0
 BRF:0
@@ -1941,7 +1939,7 @@ DA:3,1
 LH:3
 LF:3
 end_of_record
-SF:/Users/nnmrts/projects/advent-of-code/years/2025/10/1/solution/are-arrays-equal.js
+SF:years/2025/10/1/solution/are-arrays-equal.js
 FN:6,areArraysEqual
 FNDA:97435,areArraysEqual
 FNF:1
@@ -1977,7 +1975,7 @@ DA:22,1
 LH:19
 LF:22
 end_of_record
-SF:/Users/nnmrts/projects/advent-of-code/years/2025/10/1/solution/get-combinations.js
+SF:years/2025/10/1/solution/get-combinations.js
 FN:10,getCombinations
 FNDA:242266,getCombinations
 FNF:1
@@ -2028,7 +2026,7 @@ DA:37,1
 LH:37
 LF:37
 end_of_record
-SF:/Users/nnmrts/projects/advent-of-code/years/2025/10/2/solution.js
+SF:years/2025/10/2/solution.js
 FNF:0
 FNH:0
 BRF:0
@@ -2065,7 +2063,7 @@ DA:29,1
 LH:29
 LF:29
 end_of_record
-SF:/Users/nnmrts/projects/advent-of-code/years/2025/10/2/solution/_exports.js
+SF:years/2025/10/2/solution/_exports.js
 FNF:0
 FNH:0
 BRF:0
@@ -2076,7 +2074,7 @@ DA:3,1
 LH:3
 LF:3
 end_of_record
-SF:/Users/nnmrts/projects/advent-of-code/years/2025/10/2/solution/build-matrix-and-bounds.js
+SF:years/2025/10/2/solution/build-matrix-and-bounds.js
 FN:9,buildMatrixAndBounds
 FNDA:171,buildMatrixAndBounds
 FNF:1
@@ -2130,7 +2128,7 @@ DA:42,1
 LH:41
 LF:42
 end_of_record
-SF:/Users/nnmrts/projects/advent-of-code/years/2025/10/2/solution/build-matrix-and-bounds/_exports.js
+SF:years/2025/10/2/solution/build-matrix-and-bounds/_exports.js
 FNF:0
 FNH:0
 BRF:0
@@ -2140,7 +2138,7 @@ DA:2,1
 LH:2
 LF:2
 end_of_record
-SF:/Users/nnmrts/projects/advent-of-code/years/2025/10/2/solution/build-matrix-and-bounds/process-wiring.js
+SF:years/2025/10/2/solution/build-matrix-and-bounds/process-wiring.js
 FN:11,processWiring
 FNDA:1226,processWiring
 FNF:1
@@ -2189,7 +2187,7 @@ DA:36,1
 LH:32
 LF:36
 end_of_record
-SF:/Users/nnmrts/projects/advent-of-code/years/2025/10/2/solution/solve-restricted-system.js
+SF:years/2025/10/2/solution/solve-restricted-system.js
 FN:16,solveRestrictedSystem
 FNDA:171,solveRestrictedSystem
 FNF:1
@@ -2253,7 +2251,7 @@ DA:52,1
 LH:48
 LF:52
 end_of_record
-SF:/Users/nnmrts/projects/advent-of-code/years/2025/10/2/solution/solve-restricted-system/_common/_exports.js
+SF:years/2025/10/2/solution/solve-restricted-system/_common/_exports.js
 FNF:0
 FNH:0
 BRF:0
@@ -2264,7 +2262,7 @@ DA:3,1
 LH:3
 LF:3
 end_of_record
-SF:/Users/nnmrts/projects/advent-of-code/years/2025/10/2/solution/solve-restricted-system/_common/almost-zero.js
+SF:years/2025/10/2/solution/solve-restricted-system/_common/almost-zero.js
 FNF:0
 FNH:0
 BRF:0
@@ -2276,7 +2274,7 @@ DA:4,1
 LH:4
 LF:4
 end_of_record
-SF:/Users/nnmrts/projects/advent-of-code/years/2025/10/2/solution/solve-restricted-system/_common/basically-zero.js
+SF:years/2025/10/2/solution/solve-restricted-system/_common/basically-zero.js
 FNF:0
 FNH:0
 BRF:0
@@ -2288,7 +2286,7 @@ DA:4,1
 LH:4
 LF:4
 end_of_record
-SF:/Users/nnmrts/projects/advent-of-code/years/2025/10/2/solution/solve-restricted-system/_exports.js
+SF:years/2025/10/2/solution/solve-restricted-system/_exports.js
 FNF:0
 FNH:0
 BRF:0
@@ -2301,7 +2299,7 @@ DA:5,1
 LH:5
 LF:5
 end_of_record
-SF:/Users/nnmrts/projects/advent-of-code/years/2025/10/2/solution/solve-restricted-system/gaussian-elimination.js
+SF:years/2025/10/2/solution/solve-restricted-system/gaussian-elimination.js
 FN:15,gaussianElimination
 FNDA:171,gaussianElimination
 FNF:1
@@ -2366,7 +2364,7 @@ DA:51,1
 LH:51
 LF:51
 end_of_record
-SF:/Users/nnmrts/projects/advent-of-code/years/2025/10/2/solution/solve-restricted-system/gaussian-elimination/_exports.js
+SF:years/2025/10/2/solution/solve-restricted-system/gaussian-elimination/_exports.js
 FNF:0
 FNH:0
 BRF:0
@@ -2378,7 +2376,7 @@ DA:4,1
 LH:4
 LF:4
 end_of_record
-SF:/Users/nnmrts/projects/advent-of-code/years/2025/10/2/solution/solve-restricted-system/gaussian-elimination/eliminate-column.js
+SF:years/2025/10/2/solution/solve-restricted-system/gaussian-elimination/eliminate-column.js
 FN:13,eliminateColumn
 FNDA:1089,eliminateColumn
 FNF:1
@@ -2426,7 +2424,7 @@ DA:31,1
 LH:31
 LF:31
 end_of_record
-SF:/Users/nnmrts/projects/advent-of-code/years/2025/10/2/solution/solve-restricted-system/gaussian-elimination/find-pivot-row.js
+SF:years/2025/10/2/solution/solve-restricted-system/gaussian-elimination/find-pivot-row.js
 FN:11,findPivotRow
 FNDA:1141,findPivotRow
 FNF:1
@@ -2463,7 +2461,7 @@ DA:25,1
 LH:25
 LF:25
 end_of_record
-SF:/Users/nnmrts/projects/advent-of-code/years/2025/10/2/solution/solve-restricted-system/gaussian-elimination/normalize-pivot-row.js
+SF:years/2025/10/2/solution/solve-restricted-system/gaussian-elimination/normalize-pivot-row.js
 FN:10,normalizePivotRow
 FNDA:1089,normalizePivotRow
 FNF:1
@@ -2494,7 +2492,7 @@ DA:20,1
 LH:20
 LF:20
 end_of_record
-SF:/Users/nnmrts/projects/advent-of-code/years/2025/10/2/solution/solve-restricted-system/identify-free-variables.js
+SF:years/2025/10/2/solution/solve-restricted-system/identify-free-variables.js
 FN:7,identifyFreeVariables
 FNDA:171,identifyFreeVariables
 FNF:1
@@ -2528,7 +2526,7 @@ DA:22,1
 LH:22
 LF:22
 end_of_record
-SF:/Users/nnmrts/projects/advent-of-code/years/2025/10/2/solution/solve-restricted-system/is-system-consistent.js
+SF:years/2025/10/2/solution/solve-restricted-system/is-system-consistent.js
 FN:10,isSystemConsistent
 FNDA:171,isSystemConsistent
 FNF:1
@@ -2561,7 +2559,7 @@ DA:21,1
 LH:18
 LF:21
 end_of_record
-SF:/Users/nnmrts/projects/advent-of-code/years/2025/10/2/solution/solve-restricted-system/search.js
+SF:years/2025/10/2/solution/solve-restricted-system/search.js
 FN:17,search
 FNDA:796653,search
 FNF:1
@@ -2664,7 +2662,7 @@ DA:85,1
 LH:85
 LF:85
 end_of_record
-SF:/Users/nnmrts/projects/advent-of-code/years/2025/10/2/solution/solve-restricted-system/search/_exports.js
+SF:years/2025/10/2/solution/solve-restricted-system/search/_exports.js
 FNF:0
 FNH:0
 BRF:0
@@ -2674,7 +2672,7 @@ DA:2,1
 LH:2
 LF:2
 end_of_record
-SF:/Users/nnmrts/projects/advent-of-code/years/2025/10/2/solution/solve-restricted-system/search/back-substitute.js
+SF:years/2025/10/2/solution/solve-restricted-system/search/back-substitute.js
 FN:19,backSubstitute
 FNDA:746486,backSubstitute
 FNF:1
@@ -2763,7 +2761,7 @@ DA:73,1
 LH:70
 LF:73
 end_of_record
-SF:/Users/nnmrts/projects/advent-of-code/years/2025/10/2/solution/solve-restricted-system/search/back-substitute/_exports.js
+SF:years/2025/10/2/solution/solve-restricted-system/search/back-substitute/_exports.js
 FNF:0
 FNH:0
 BRF:0
@@ -2774,7 +2772,7 @@ DA:3,1
 LH:3
 LF:3
 end_of_record
-SF:/Users/nnmrts/projects/advent-of-code/years/2025/10/2/solution/solve-restricted-system/search/back-substitute/compute-derived-value.js
+SF:years/2025/10/2/solution/solve-restricted-system/search/back-substitute/compute-derived-value.js
 FN:12,computeDerivedValue
 FNDA:1084976,computeDerivedValue
 FNF:1
@@ -2812,7 +2810,7 @@ DA:26,1
 LH:26
 LF:26
 end_of_record
-SF:/Users/nnmrts/projects/advent-of-code/years/2025/10/2/solution/solve-restricted-system/search/back-substitute/validate-derived-value.js
+SF:years/2025/10/2/solution/solve-restricted-system/search/back-substitute/validate-derived-value.js
 FN:9,validateDerivedValue
 FNDA:1084976,validateDerivedValue
 FNF:1
@@ -2860,7 +2858,7 @@ DA:33,1
 LH:33
 LF:33
 end_of_record
-SF:/Users/nnmrts/projects/advent-of-code/years/2025/10/_common/machines.js
+SF:years/2025/10/_common/machines.js
 FNF:0
 FNH:0
 BRF:0
@@ -2894,7 +2892,7 @@ DA:26,1
 LH:26
 LF:26
 end_of_record
-SF:/Users/nnmrts/projects/advent-of-code/years/2025/11/1/solution.js
+SF:years/2025/11/1/solution.js
 FN:13,countPathsToOut
 FNDA:1397,countPathsToOut
 FNF:1
@@ -2934,7 +2932,7 @@ DA:30,1
 LH:30
 LF:30
 end_of_record
-SF:/Users/nnmrts/projects/advent-of-code/years/2025/11/2/solution.js
+SF:years/2025/11/2/solution.js
 FN:16,countPathsToOut
 FNDA:1308,countPathsToOut
 FNF:1
@@ -2999,7 +2997,7 @@ DA:51,1
 LH:51
 LF:51
 end_of_record
-SF:/Users/nnmrts/projects/advent-of-code/years/2025/11/_common/devices.js
+SF:years/2025/11/_common/devices.js
 FNF:0
 FNH:0
 BRF:0
@@ -3056,7 +3054,7 @@ DA:49,1
 LH:49
 LF:49
 end_of_record
-SF:/Users/nnmrts/projects/advent-of-code/years/2025/11/_common/devices/_exports.js
+SF:years/2025/11/_common/devices/_exports.js
 FNF:0
 FNH:0
 BRF:0
@@ -3066,7 +3064,7 @@ DA:2,1
 LH:2
 LF:2
 end_of_record
-SF:/Users/nnmrts/projects/advent-of-code/years/2025/11/_common/devices/readonly-map.js
+SF:years/2025/11/_common/devices/readonly-map.js
 FNF:0
 FNH:0
 BRF:0
@@ -3082,7 +3080,7 @@ DA:8,1
 LH:8
 LF:8
 end_of_record
-SF:/Users/nnmrts/projects/advent-of-code/years/2025/12/1/solution.js
+SF:years/2025/12/1/solution.js
 FNF:0
 FNH:0
 BRF:0
@@ -3148,7 +3146,7 @@ DA:58,1
 LH:58
 LF:58
 end_of_record
-SF:/Users/nnmrts/projects/advent-of-code/years/2025/12/1/solution/_exports.js
+SF:years/2025/12/1/solution/_exports.js
 FNF:0
 FNH:0
 BRF:0
@@ -3158,7 +3156,7 @@ DA:2,1
 LH:2
 LF:2
 end_of_record
-SF:/Users/nnmrts/projects/advent-of-code/years/2025/12/1/solution/summary.js
+SF:years/2025/12/1/solution/summary.js
 FNF:0
 FNH:0
 BRF:0
@@ -3201,7 +3199,7 @@ DA:35,1
 LH:35
 LF:35
 end_of_record
-SF:/Users/nnmrts/projects/advent-of-code/years/2025/_common/calculate-product.js
+SF:years/2025/_common/calculate-product.js
 FN:5,calculateProduct
 FNDA:1053,calculateProduct
 FNF:1
@@ -3220,7 +3218,7 @@ DA:9,1
 LH:9
 LF:9
 end_of_record
-SF:/Users/nnmrts/projects/advent-of-code/years/_common/calculate-sum.js
+SF:years/_common/calculate-sum.js
 FN:4,calculateSum
 FNDA:1004665,calculateSum
 FNF:1
@@ -3240,7 +3238,7 @@ DA:10,1
 LH:10
 LF:10
 end_of_record
-SF:/Users/nnmrts/projects/advent-of-code/years/_common/get-input.js
+SF:years/_common/get-input.js
 FN:28,getInput
 FNDA:27,getInput
 FNF:1
@@ -3308,7 +3306,7 @@ DA:57,1
 LH:45
 LF:57
 end_of_record
-SF:/Users/nnmrts/projects/advent-of-code/years/_common/transpose-matrix.js
+SF:years/_common/transpose-matrix.js
 FN:11,transposeMatrix
 FNDA:3,transposeMatrix
 FNF:1

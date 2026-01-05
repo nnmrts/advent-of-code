@@ -2,6 +2,9 @@
 	"author": "",
 	"license": "0BSD",
 	"description": "",
+	"dependencies": {
+		"linkedom": "^0.18.12"
+	},
 	"devDependencies": {
 		"@pumpn/eslint-config": "^16.1.2",
 		"eslint": "^9.39.2"

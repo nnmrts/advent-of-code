@@ -6,5 +6,8 @@
 		"plaintext": false,
 		"markdown": false,
 		"scminput": false
+	},
+	"[html]": {
+		"editor.defaultFormatter": "denoland.vscode-deno"
 	}
 }
