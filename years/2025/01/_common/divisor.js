@@ -1,4 +1,4 @@
-import maximum from "./maximum.js";
+import { maximum } from "./divisor/_exports.js";
 
 const divisor = maximum + 1;
 

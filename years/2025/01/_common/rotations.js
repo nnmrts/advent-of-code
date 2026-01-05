@@ -1,8 +1,9 @@
+import ReadonlyMap from "../../11/_common/devices/readonly-map.js";
 import getInput from "../../../_common/get-input.js";
 
 const input = await getInput();
 
-const letterSigns = new Map(/** @type {const} */ ([["L", -1], ["R", 1]]));
+const letterSigns = new ReadonlyMap(/** @type {const} */ ([["L", -1], ["R", 1]]));
 
 const rotations = input
 	.split("\n")
@@ -24,7 +25,7 @@ const rotations = input
 
 		const amount = Number(amountString);
 
-		const sign = letterSigns.get(letter) ?? 1;
+		const sign = letterSigns.get(letter);
 
 		return {
 			amount,
