@@ -1,7 +1,7 @@
 {
 	"tasks": {
 		"run-solution": {
-			"command": "deno run -A ./scripts/run-solution.js",
+			"command": "deno run --allow-run=\"deno\" ./scripts/run-solution.js",
 			"description": "runs a solution by giving it a path like 2025/01/1"
 		},
 		"lint": {
