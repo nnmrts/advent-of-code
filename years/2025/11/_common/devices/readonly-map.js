@@ -1,14 +1,7 @@
 /**
- * @type {{
- * new (): ReadonlyMap<any, any>,
- * new <K, V>(entries?: readonly (readonly [K, V])[] | null): ReadonlyMap<K, V>,
- * readonly prototype: ReadonlyMap<any, any>,
- * groupBy<K, T>(
- * items: Iterable<T>,
- * keySelector: (item: T, index: number) => K,
- * ): ReadonlyMap<K, T[]>
- * }}
+ * @import { ReadonlyMapConstructor } from "./readonly-map/_exports.js";
  */
-const ReadonlyMap = Map;
+
+const ReadonlyMap = /** @type {ReadonlyMapConstructor} */ (Map);
 
 export default ReadonlyMap;
