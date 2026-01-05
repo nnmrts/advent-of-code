@@ -1,8 +1,9 @@
+const maximumSafeDistance = 3;
+
 /**
  *
- * @param report
- * @param allowedNumberOfErrors
- * @example
+ * @param {readonly number[]} report
+ * @param {number} allowedNumberOfErrors
  */
 const isReportSafe = (report, allowedNumberOfErrors = 0) => {
 	let direction;
@@ -10,20 +11,6 @@ const isReportSafe = (report, allowedNumberOfErrors = 0) => {
 	let result = true;
 
 	let numberOfErrors = 0;
-
-	// cluster
-	const reportVariants = report.flatMap((value, index) => [
-		[value],
-		[value, report[index + 1]],
-		[value, report[index + 1], report[index + 2]],
-		[
-			value,
-			report[index + 1],
-			report[index + 2],
-			report[index + 3]
-		],
-		[value, report[index + 2]]
-	]);
 
 	for (const [levelIndex, level] of report.entries()) {
 		if (levelIndex === report.length - 1) {
@@ -40,7 +27,7 @@ const isReportSafe = (report, allowedNumberOfErrors = 0) => {
 
 		if (
 			absoluteDifference === 0 ||
-			absoluteDifference > 3 ||
+			absoluteDifference > maximumSafeDistance ||
 			(
 				direction !== undefined &&
 				(
