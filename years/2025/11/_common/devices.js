@@ -1,6 +1,5 @@
 import getInput from "../../../_common/get-input.js";
-
-import { ReadonlyMap } from "./devices/_exports.js";
+import ReadonlyMap from "../../_common/readonly-map.js";
 
 const input = await getInput();
 
