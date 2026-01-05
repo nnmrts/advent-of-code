@@ -1,8 +1,48 @@
 {
 	"tasks": {
-		"run-solution": "deno run -A ./scripts/run-solution.js",
-		"lint": "deno run -A eslint",
-		"test": "deno test --allow-run=\"deno\" --allow-read=\"tests,years\" --allow-write=\"tests\""
+		"run-solution": {
+			"command": "deno run -A ./scripts/run-solution.js",
+			"description": "runs a solution by giving it a path like 2025/01/1"
+		},
+		"lint": {
+			"command": "deno run -A eslint",
+			"description": "lints all code - add `--fix` to autofix autofixable problems"
+		},
+		"test": {
+			"command": "deno test --allow-run=\"deno\" --allow-read=\"tests,years\" --allow-write=\"tests\" --coverage --coverage-raw-data-only --clean",
+			"description": "runs all the tests - add `-- --update` to update solution snapshots"
+		},
+		"coverage:html": {
+			"command": "deno coverage --html --exclude=\"tests\"",
+			"description": "generates the html coverage report"
+		},
+		"coverage:lcov": {
+			"command": "deno coverage --lcov --output=\"coverage/lcov.info\" --exclude=\"tests\"",
+			"description": "generates the lcov coverage report"
+		},
+		"coverage": {
+			"description": "generates coverage reports",
+			"dependencies": [
+				"coverage:html",
+				"coverage:lcov"
+			]
+		},
+		"test:coverage": {
+			"command": "deno task test && deno task coverage",
+			"description": "test and then generate coverage reports"
+		},
+		"check": {
+			"command": "deno check",
+			"description": "type checks all code"
+		},
+		"ready": {
+			"description": "checks if everything is ready",
+			"dependencies": [
+				"test:coverage",
+				"lint",
+				"check"
+			]
+		}
 	},
 	"test": {
 		"include": [
