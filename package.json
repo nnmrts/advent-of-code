@@ -4,7 +4,7 @@
 	"description": "",
 	"devDependencies": {
 		"@pumpn/eslint-config": "^16.1.2",
-		"eslint": "^9.39.1"
+		"eslint": "^9.39.2"
 	},
 	"type": "module"
 }
