@@ -2,7 +2,7 @@
 <html lang="en-US">
 	<head>
 		<meta charset="utf-8">
-		<title>Coverage report for 2025/09/_common/get-area.js</title>
+		<title>Coverage report for 2025/_common/readonly-map.js</title>
 		<style>
 			/* Copyright 2015 the Istanbul contributors. All rights reserved. ISC license. */
 			/* Copyright 2018-2023 the Deno authors. All rights reserved. MIT license. */
@@ -453,11 +453,10 @@
 			<div class="pad1 flex-header">
 				<div>
 					<h1>
-						<a href="../../../index.html">All files</a> / <a
-							href="../../../2025/index.html"
-						>2025</a> / <a href="../../09/index.html">09</a> / <a
-							href="../_common/index.html"
-						>_common</a> / get-area.js
+						<a href="../../index.html">All files</a> / <a
+							href="../../2025/index.html"
+						>2025</a> / <a href="../_common/index.html">_common</a> /
+						readonly-map.js
 					</h1>
 					<div class="clearfix">
 						<div class="fl pad1y space-right2">
@@ -468,7 +467,7 @@
 						<div class="fl pad1y space-right2">
 							<span class="strong">100.00%</span>
 							<span class="quiet">Lines</span>
-							<span class="fraction">13/13</span>
+							<span class="fraction">8/8</span>
 						</div>
 					</div>
 				</div>
@@ -542,12 +541,7 @@
 <a href="#L4" id="L4">4</a>
 <a href="#L5" id="L5">5</a>
 <a href="#L6" id="L6">6</a>
-<a href="#L7" id="L7">7</a>
-<a href="#L8" id="L8">8</a>
-<a href="#L9" id="L9">9</a>
-<a href="#L10" id="L10">10</a>
-<a href="#L11" id="L11">11</a>
-<a href="#L12" id="L12">12</a></pre>
+<a href="#L7" id="L7">7</a></pre>
 						</td>
 						<td class="line-coverage quiet">
 							<pre>
@@ -555,21 +549,11 @@
 <span class="cline-any cline-yes" title="This line is covered 1 time">x1</span>
 <span class="cline-any cline-yes" title="This line is covered 1 time">x1</span>
 <span class="cline-any cline-yes" title="This line is covered 1 time">x1</span>
+<span class="cline-any cline-yes" title="This line is covered 8 times">x8</span>
 <span class="cline-any cline-yes" title="This line is covered 1 time">x1</span>
-<span class="cline-any cline-yes" title="This line is covered 1 time">x1</span>
-<span class="cline-any cline-yes" title="This line is covered 1 time">x1</span>
-<span class="cline-any cline-yes" title="This line is covered 1 time">x1</span>
-<span class="cline-any cline-yes" title="This line is covered 1 time">x1</span>
-<span class="cline-any cline-yes" title="This line is covered 4 times">x4</span>
-<span class="cline-any cline-yes" title="This line is covered 1 time">x1</span>
-<span class="cline-any cline-yes" title="This line is covered 4 times">x4</span></pre>
+<span class="cline-any cline-yes" title="This line is covered 8 times">x8</span></pre>
 						</td>
 						<td class="branch-coverage quiet"><pre>
-
-
-
-
-
 
 
 
@@ -581,17 +565,12 @@
 								class="prettyprint"
 							>
 /**
- * @import { Coordinates2D } from "../../../_types/coordinates-2-d.doc.js";
+ * @import { ReadonlyMapConstructor } from "./readonly-map/_exports.js";
  */
 
-/**
- *
- * @param {Coordinates2D} pointA
- * @param {Coordinates2D} pointB
- */
-const getArea = ([xA, yA], [xB, yB]) =&gt; (Math.abs(xA - xB) + 1) * (Math.abs(yA - yB) + 1);
+const ReadonlyMap = /** @type {ReadonlyMapConstructor} */ (Map);
 
-export default getArea;
+export default ReadonlyMap;
 </pre>
 						</td>
 					</tr>
