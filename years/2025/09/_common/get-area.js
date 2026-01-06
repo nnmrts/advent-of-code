@@ -1,5 +1,5 @@
 /**
- * @import { Coordinates2D } from "./coordinates-2-d.doc.js";
+ * @import { Coordinates2D } from "../../../_types/coordinates-2-d.doc.js";
  */
 
 /**

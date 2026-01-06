@@ -1,10 +1,10 @@
 import getInput from "../../../_common/get-input.js";
 
-const input = await getInput();
-
 /**
- * @import { Coordinates2D } from "./coordinates-2-d.doc.js";
+ * @import { Coordinates2D } from "../../../_types/coordinates-2-d.doc.js";
  */
+
+const input = await getInput();
 
 const tiles = /** @type {readonly Coordinates2D[]} */ (
 	/** @type {unknown} */ (
