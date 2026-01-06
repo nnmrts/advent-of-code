@@ -1,4 +1,4 @@
-import UnknownArray from "../../../../unknown-array.d.ts";
+import UnknownArray from "../../../../_common/unknown-array.d.ts";
 import ApplyDefaultOptions from "../../../_common/apply-default-options.d.ts";
 
 import { AllExtendOptions } from "./_common/_exports.ts";

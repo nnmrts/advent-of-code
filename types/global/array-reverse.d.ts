@@ -1,6 +1,6 @@
+import UnknownArray from "../_common/unknown-array.d.ts";
 import IfNotAnyOrNever from "../if-not-any-or-never.d.ts";
 import If from "../if.d.ts";
-import UnknownArray from "../unknown-array.d.ts";
 
 import {
 	IsExactOptionalPropertyTypesEnabled,

@@ -1,9 +1,8 @@
-import { JoinableItem } from "./_common/_exports.ts";
+import { JoinableItem, UnknownArray } from "./_common/_exports.ts";
 import {
 	ArrayReverse, Split, Trim
 } from "./global/_exports.ts";
 import Join from "./join.d.ts";
-import UnknownArray from "./unknown-array.d.ts";
 
 declare global {
 	interface String {
