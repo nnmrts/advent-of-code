@@ -48,6 +48,14 @@ const eslintConfig = [
 			"**/*.jsdoc-params",
 			"**/*.jsdoc-properties"
 		]
+	},
+	{
+		files: ["**/_exports.?(*.){js,ts}"],
+		rules: {
+			"@eslint-react/naming-convention/filename": "off",
+			"import-x/max-dependencies": "off",
+			"import-x/prefer-default-export": "off"
+		}
 	}
 ];
 
