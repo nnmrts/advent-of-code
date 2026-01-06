@@ -1,6 +1,8 @@
 import { JoinableItem, UnknownArray } from "./_common/_exports.ts";
 import {
-	ArrayReverse, Split, Trim
+	ArrayReverse,
+	Split,
+	Trim
 } from "./global/_exports.ts";
 import Join from "./join.d.ts";
 
@@ -65,9 +67,9 @@ declare global {
 			? {
 				[key in keyof ThisTemplate]: ThisTemplate[key] extends `${infer InferredNumberTemplate extends number}`
 					? InferredNumberTemplate
-					: never
+					: number
 			}
-			: never,
+			: number,
 
 		map<
 			U,
@@ -82,7 +84,7 @@ declare global {
 					[key in keyof ThisTemplate]: U
 				}
 			]
-			: never,
+			: U[],
 
 		/**
 		 * Calls a defined callback function on each element of an array, and returns an array that contains the results.
@@ -172,7 +174,7 @@ declare global {
 					[key in keyof ThisTemplate]: U
 				}
 			]
-			: never,
+			: U[],
 
 		/**
 		 * Calls a defined callback function on each element of an array, and returns an array that contains the results.
