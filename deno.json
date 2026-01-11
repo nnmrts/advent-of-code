@@ -51,6 +51,9 @@
 	},
 	"nodeModulesDir": "none",
 	"compilerOptions": {
+		"types": [
+			"types/global.d.ts"
+		],
 		"allowUnreachableCode": false,
 		"allowUnusedLabels": false,
 		"checkJs": true,
