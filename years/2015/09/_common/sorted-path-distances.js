@@ -1,8 +1,8 @@
 import calculateSum from "../../../_common/calculate-sum.js";
+import permute from "../../../_common/permute.js";
 
 import { pairsWithDistance } from "./_common/_exports.js";
 import {
-	permute,
 	uniqueLocations
 } from "./sorted-path-distances/_exports.js";
 
