@@ -1,11 +1,10 @@
 import UnknownArray from "../../../_common/unknown-array.d.ts";
 import IfNotAnyOrNever from "../../../if-not-any-or-never.d.ts";
 import If from "../../../if.d.ts";
+import And from "../../_common/and.d.ts";
 import IsAny from "../../_common/is-any.d.ts";
 import IsNever from "../../_common/is-never.d.ts";
-import Or from "../_common/or.d.ts";
-
-import And from "./and.d.ts";
+import Or from "../../_common/or.d.ts";
 
 /**
  * This version fails the `equalWrappedTupleIntersectionToBeNeverAndNeverExpanded` test in `test-d/is-equal.ts`.

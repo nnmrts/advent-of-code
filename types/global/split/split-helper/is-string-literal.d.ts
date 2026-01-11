@@ -1,6 +1,6 @@
+import TagContainer from "../../../_common/tag-container.d.ts";
 import IfNotAnyOrNever from "../../../if-not-any-or-never.d.ts";
 
-import { TagContainer } from "./_common/_exports.ts";
 import {
 	CollapseLiterals,
 	IsStringLiteralHelper,

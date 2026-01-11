@@ -1,4 +1,5 @@
-import { Tag } from "./_common/_exports.ts";
+import Tag from "../../../../_common/tag.d.ts";
+
 import { RemoveAllTags } from "./unwrap-tagged/_exports.ts";
 
 /**

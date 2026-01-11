@@ -4,6 +4,8 @@ import getInput from "../../../_common/get-input.js";
  * @import Join from "../../../../types/join.d.ts";
  */
 
+const input = await getInput();
+
 /**
  * @typedef {([
  * 	...(
@@ -20,11 +22,9 @@ import getInput from "../../../_common/get-input.js";
 
 /**
  * @typedef {(
- * Join<InputLineAfterSplit>
+ * Join<InputLineAfterSplit, " ">
  * )} InputLine
  */
-
-const input = await getInput();
 
 const inputLines = /** @type {readonly InputLine[]} */ (
 	input

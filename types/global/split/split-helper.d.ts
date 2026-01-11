@@ -1,11 +1,13 @@
+import And from "../_common/and.d.ts";
+import Not from "../_common/not.d.ts";
+import Or from "../_common/or.d.ts";
 import SplitOptions from "../_common/split-options.d.ts";
+import StringToArray from "../_common/string-to-array.d.ts";
+import StringLength from "../string-length.d.ts";
 
 import {
-	Not, Or, StringToArray
-} from "./_common/_exports.ts";
-import {
-	And, IsEqualToOrNotExtendingAll, IsStringLiteral,
-	StringLength
+	IsEqualToOrNotExtendingAll,
+	IsStringLiteral
 } from "./split-helper/_exports.ts";
 
 type SplitHelper<

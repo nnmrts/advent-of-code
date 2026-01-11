@@ -1,4 +1,4 @@
-import Tag from "../../_common/tag.d.ts";
+import Tag from "./_common/tag.d.ts";
 
 /**
  * Attach a "tag" to an arbitrary type. This allows you to create distinct types, that aren't assignable to one another, for distinct concepts in your program that should not be interchangeable, even if their runtime values have the same type. (See examples.)

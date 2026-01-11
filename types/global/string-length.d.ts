@@ -1,4 +1,4 @@
-import StringToArray from "../_common/string-to-array.d.ts";
+import StringToArray from "./_common/string-to-array.d.ts";
 
 /**
  * Returns the length of the given string.

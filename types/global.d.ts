@@ -1,7 +1,9 @@
 import { JoinableItem, UnknownArray } from "./_common/_exports.ts";
 import {
 	ArrayReverse,
+	GreaterThan,
 	Split,
+	StringLength,
 	Trim
 } from "./global/_exports.ts";
 import Join from "./join.d.ts";
@@ -30,7 +32,26 @@ declare global {
 		 * @param separator - A string that identifies character or characters to use in separating the string. If omitted, a single-element array containing the entire string is returned.
 		 * @param limit - A value used to limit the number of elements returned in the array.
 		 */
-		split(separator: RegExp | string, limit?: number): string[]
+		split(separator: RegExp | string, limit?: number): string[],
+
+		codePointAt<
+			ThisTemplate extends string,
+			PositionTemplate extends number
+		>(
+			this: ThisTemplate,
+			pos: PositionTemplate
+		): GreaterThan<StringLength<ThisTemplate>, PositionTemplate> extends true
+			? number
+			: undefined,
+
+		/**
+		 * Returns a nonnegative integer Number less than 1114112 (0x110000) that is the code point
+		 * value of the UTF-16 encoded code point starting at the string element at position pos in
+		 * the String resulting from converting this object to a String.
+		 * If there is no element at that position, the result is undefined.
+		 * If a valid UTF-16 surrogate pair does not begin at pos, the result is the code unit at pos.
+		 */
+		codePointAt(pos: number): number | undefined
 	}
 
 	interface Array<T> {
@@ -231,7 +252,17 @@ declare global {
 				? InferredNumberTemplate
 				: number
 		),
-		(value?: any): number
+		(value?: any): number,
+
+		/**
+		 * Converts A string to an integer.
+		 *
+		 * @param string - A string to convert into a number.
+		 * @param radix - A value between 2 and 36 that specifies the base of the number in `string`.
+		 * If this argument is not supplied, strings with a prefix of '0x' are considered hexadecimal.
+		 * All other strings are considered decimal.
+		 */
+		parseInt(string: string, radix?: number): number
 	}
 }
 

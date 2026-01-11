@@ -1,7 +1,7 @@
-import UnknownArray from "../../../../../../_common/unknown-array.d.ts";
-import If from "../../../../../../if.d.ts";
-import IsExactOptionalPropertyTypesEnabled from "../../../../../_common/is-exact-optional-property-types-enabled.d.ts";
-import OptionalKeysOf from "../../../../../_common/optional-keys-of.d.ts";
+import UnknownArray from "../../../../../_common/unknown-array.d.ts";
+import If from "../../../../../if.d.ts";
+import IsExactOptionalPropertyTypesEnabled from "../../../is-exact-optional-property-types-enabled.d.ts";
+import OptionalKeysOf from "../../../optional-keys-of.d.ts";
 
 type CollapseRestElementHelper<
 	TArray extends UnknownArray,

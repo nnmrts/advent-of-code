@@ -5,6 +5,8 @@ import getInput from "../../../_common/get-input.js";
  * @import { Coordinates2D } from "../../../_types/coordinates-2-d.doc.js";
  */
 
+const input = await getInput();
+
 /**
  * @typedef {(
  * Join<
@@ -18,8 +20,6 @@ import getInput from "../../../_common/get-input.js";
  * 	>
  * )} InputLine
  */
-
-const input = await getInput();
 
 const inputLines = /** @type {readonly InputLine[]} */ (
 	input

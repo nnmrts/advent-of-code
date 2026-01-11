@@ -1,17 +1,16 @@
-import tag from "../../_common/tag.d.ts";
-import Tag from "../_common/tag.d.ts";
-
-import { Tagged } from "./remove-all-tags/_exports.ts";
+import tagSymbol from "../../../../../_common/tag-symbol.d.ts";
+import Tag from "../../../../../_common/tag.d.ts";
+import Tagged from "../../../../../tagged.d.ts";
 
 type RemoveAllTags<T> = T extends Tag<PropertyKey, any>
 	? {
-		[ThisTag in keyof T[typeof tag]]: T extends Tagged<
+		[ThisTag in keyof T[typeof tagSymbol]]: T extends Tagged<
 			infer Type,
-			ThisTag, T[typeof tag][ThisTag]
+			ThisTag, T[typeof tagSymbol][ThisTag]
 		>
 			? RemoveAllTags<Type>
 			: never
-	}[keyof T[typeof tag]]
+	}[keyof T[typeof tagSymbol]]
 	: T;
 
 export default RemoveAllTags;

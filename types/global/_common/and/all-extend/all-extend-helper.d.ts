@@ -1,10 +1,10 @@
-import UnknownArray from "../../../../../_common/unknown-array.d.ts";
-import IfNotAnyOrNever from "../../../../../if-not-any-or-never.d.ts";
-import If from "../../../../../if.d.ts";
-import IsAny from "../../../../_common/is-any.d.ts";
-import IsNever from "../../../../_common/is-never.d.ts";
-import Not from "../../../_common/not.d.ts";
-import Or from "../../../_common/or.d.ts";
+import UnknownArray from "../../../../_common/unknown-array.d.ts";
+import IfNotAnyOrNever from "../../../../if-not-any-or-never.d.ts";
+import If from "../../../../if.d.ts";
+import IsAny from "../../is-any.d.ts";
+import IsNever from "../../is-never.d.ts";
+import Not from "../../not.d.ts";
+import Or from "../../or.d.ts";
 import AllExtendOptions from "../_common/all-extend-options.d.ts";
 
 type AllExtendHelper<
