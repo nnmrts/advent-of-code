@@ -3,14 +3,10 @@ import getInput from "../../../_common/get-input.js";
 import ReadonlyMap from "../../../_common/readonly-map.js";
 
 /**
- * @import Tagged from "../../../../types/tagged.d.ts";
+ * @import { StringWithoutWhitespace } from "../../_types/_exports.js";
  */
 
 const input = await getInput();
-
-/**
- * @typedef {Tagged<string, "StringWithoutWhitespace">} StringWithoutWhitespace
- */
 
 /**
  * @typedef {`${StringWithoutWhitespace} would ${"lose"|"gain"} ${number} happiness units by sitting next to ${StringWithoutWhitespace}.`} InputLine
