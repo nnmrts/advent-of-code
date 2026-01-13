@@ -4,6 +4,10 @@
 			"command": "deno run --allow-run=\"deno\" ./scripts/run-solution.js",
 			"description": "runs a solution by giving it a path like 2025/01/1"
 		},
+		"reload": {
+			"command": "deno run --allow-run=\"deno\" --allow-env=SESSION_ID --allow-net=adventofcode.com --env-file=.env ./scripts/reload.js",
+			"description": "reloads the input for a specific day"
+		},
 		"lint": {
 			"command": "deno run -A eslint",
 			"description": "lints all code - add `--fix` to autofix autofixable problems"

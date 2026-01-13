@@ -4,11 +4,13 @@ import {
 	relative
 } from "@std/path";
 
+import baseUrl from "../../common/base-url.js";
+import kv from "../../common/kv.js";
+
 const {
 	cwd,
 	env,
-	mainModule,
-	openKv
+	mainModule
 } = Deno;
 
 const [year, day] = dirname(relative(cwd(), fromFileUrl(mainModule)))
@@ -16,9 +18,6 @@ const [year, day] = dirname(relative(cwd(), fromFileUrl(mainModule)))
 	.slice(1)
 	.map(Number);
 
-const baseUrl = "https://adventofcode.com";
-
-const kv = await openKv();
 const key = [year, day];
 
 /**
