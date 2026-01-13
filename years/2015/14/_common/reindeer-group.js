@@ -1,7 +1,7 @@
 import getInput from "../../../_common/get-input.js";
 
 /**
- * @import { StringWithoutWhitespace } from "../../_types/_exports.js";
+ * @import { StringWithoutWhitespace } from "../../_types/string-without-whitespace.doc.js";
  */
 
 const input = await getInput();
