@@ -2,7 +2,7 @@
 <html lang="en-US">
 	<head>
 		<meta charset="utf-8">
-		<title>Coverage report for all files</title>
+		<title>Coverage report for years/2025/02/_common/id-ranges.js</title>
 		<style>
 			/* Copyright 2015 the Istanbul contributors. All rights reserved. ISC license. */
 			/* Copyright 2018-2023 the Deno authors. All rights reserved. MIT license. */
@@ -452,17 +452,23 @@
 		<div class="wrapper">
 			<div class="pad1 flex-header">
 				<div>
-					<h1>All files</h1>
+					<h1>
+						<a href="../../../../index.html">All files</a> / <a
+							href="../../../../years/index.html"
+						>years</a> / <a href="../../../2025/index.html">2025</a> / <a
+							href="../../02/index.html"
+						>02</a> / <a href="../_common/index.html">_common</a> / id-ranges.js
+					</h1>
 					<div class="clearfix">
 						<div class="fl pad1y space-right2">
-							<span class="strong">93.17%</span>
+							<span class="strong">100.00%</span>
 							<span class="quiet">Branches</span>
-							<span class="fraction">259/278</span>
+							<span class="fraction">0/0</span>
 						</div>
 						<div class="fl pad1y space-right2">
-							<span class="strong">98.61%</span>
+							<span class="strong">100.00%</span>
 							<span class="quiet">Lines</span>
-							<span class="fraction">4250/4310</span>
+							<span class="fraction">8/8</span>
 						</div>
 					</div>
 				</div>
@@ -526,48 +532,49 @@
 			</div>
 			<div class="status-line high"></div>
 			<div class="pad1 overflow-auto">
-				<table class="coverage-summary">
-					<thead>
-						<tr>
-							<th class="file">File</th>
-							<th class="pic"></th>
-							<th class="pct">Branches</th>
-							<th class="abs"></th>
-							<th class="pct">Lines</th>
-							<th class="abs"></th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr>
-							<td class="file high"><a href="common/index.html">common/</a></td>
-							<td class="pic high">
-								<div class="chart">
-									<div class="cover-fill" style="width: 100.0%"></div>
-									<div class="cover-empty" style="width: calc(100% - 100.0%)">
-									</div>
-								</div>
-							</td>
-							<td class="pct high">100.00%</td>
-							<td class="abs high">0/0</td>
-							<td class="pct high">100.00%</td>
-							<td class="abs high">10/10</td>
-						</tr>
+				<table class="coverage">
+					<tr>
+						<td class="line-count quiet">
+							<pre>
+<a href="#L1" id="L1">1</a>
+<a href="#L2" id="L2">2</a>
+<a href="#L3" id="L3">3</a>
+<a href="#L4" id="L4">4</a>
+<a href="#L5" id="L5">5</a>
+<a href="#L6" id="L6">6</a>
+<a href="#L7" id="L7">7</a></pre>
+						</td>
+						<td class="line-coverage quiet">
+							<pre>
+<span class="cline-any cline-yes" title="This line is covered 6 times">x6</span>
+<span class="cline-any cline-yes" title="This line is covered 1 time">x1</span>
+<span class="cline-any cline-yes" title="This line is covered 6 times">x6</span>
+<span class="cline-any cline-yes" title="This line is covered 1 time">x1</span>
+<span class="cline-any cline-yes" title="This line is covered 6 times">x6</span>
+<span class="cline-any cline-yes" title="This line is covered 1 time">x1</span>
+<span class="cline-any cline-yes" title="This line is covered 6 times">x6</span></pre>
+						</td>
+						<td class="branch-coverage quiet"><pre>
 
-						<tr>
-							<td class="file high"><a href="years/index.html">years/</a></td>
-							<td class="pic high">
-								<div class="chart">
-									<div class="cover-fill" style="width: 98.6%"></div>
-									<div class="cover-empty" style="width: calc(100% - 98.6%)">
-									</div>
-								</div>
-							</td>
-							<td class="pct high">93.17%</td>
-							<td class="abs high">259/278</td>
-							<td class="pct high">98.60%</td>
-							<td class="abs high">4240/4300</td>
-						</tr>
-					</tbody>
+
+
+
+
+</pre></td>
+						<td class="text">
+							<pre
+								class="prettyprint"
+							>
+import getInput from "../../../_common/get-input.js";
+
+const input = await getInput();
+
+const idRanges = input.trim().split(",").map((range) =&gt; range.split("-").map(Number));
+
+export default idRanges;
+</pre>
+						</td>
+					</tr>
 				</table>
 			</div>
 			<div class="push"></div>
