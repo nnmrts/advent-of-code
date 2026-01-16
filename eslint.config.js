@@ -1,9 +1,21 @@
 import pumpnEslintConfig from "@pumpn/eslint-config";
 
+const minIdentifierLength = 2;
+const maxIdentifierLength = 40;
+
 const eslintConfig = [
 	...pumpnEslintConfig,
 	{
 		rules: {
+			"id-length": [
+				"error",
+				{
+					min: minIdentifierLength,
+					max: maxIdentifierLength,
+					exceptions: ["x", "y", "z"],
+					properties: "never"
+				}
+			],
 			"jsdoc/convert-to-jsdoc-comments": "off",
 			"jsdoc/require-description": "off",
 			"jsdoc/require-param-description": "off",
