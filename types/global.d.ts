@@ -1,4 +1,8 @@
-import { JoinableItem, UnknownArray } from "./_common/_exports.ts";
+import {
+	JoinableItem,
+	RegExpExecArrayWithGroups,
+	UnknownArray
+} from "./_common/_exports.ts";
 import {
 	ArrayReverse,
 	GreaterThan,
@@ -7,6 +11,7 @@ import {
 	Trim
 } from "./global/_exports.ts";
 import Join from "./join.d.ts";
+import RegExpWithGroups from "./reg-exp-with-groups.d.ts";
 
 declare global {
 	interface String {
@@ -51,7 +56,21 @@ declare global {
 		 * If there is no element at that position, the result is undefined.
 		 * If a valid UTF-16 surrogate pair does not begin at pos, the result is the code unit at pos.
 		 */
-		codePointAt(pos: number): number | undefined
+		codePointAt(pos: number): number | undefined,
+
+		matchAll<
+			T extends string
+		>(
+			regexp: RegExpWithGroups<T>
+		): RegExpStringIterator<RegExpExecArrayWithGroups<T>>,
+
+		/**
+		 * Matches a string with a regular expression, and returns an iterable of matches
+		 * containing the results of that search.
+		 *
+		 * @param regexp - A variable name or string literal containing the regular expression pattern and flags.
+		 */
+		matchAll(regexp: RegExp): RegExpStringIterator<RegExpExecArray>
 	}
 
 	interface Array<T> {
