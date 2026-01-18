@@ -8,9 +8,6 @@ import { parseHTML } from "linkedom";
 const {
 	Command,
 	cwd,
-	errors: {
-		NotFound
-	},
 	readTextFile,
 	writeTextFile
 } = Deno;
