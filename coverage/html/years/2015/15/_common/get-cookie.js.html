@@ -469,7 +469,7 @@
 						<div class="fl pad1y space-right2">
 							<span class="strong">100.00%</span>
 							<span class="quiet">Lines</span>
-							<span class="fraction">48/48</span>
+							<span class="fraction">49/49</span>
 						</div>
 					</div>
 				</div>
@@ -583,7 +583,8 @@
 <a href="#L44" id="L44">44</a>
 <a href="#L45" id="L45">45</a>
 <a href="#L46" id="L46">46</a>
-<a href="#L47" id="L47">47</a></pre>
+<a href="#L47" id="L47">47</a>
+<a href="#L48" id="L48">48</a></pre>
 						</td>
 						<td class="line-coverage quiet">
 							<pre>
@@ -591,8 +592,10 @@
 <span class="cline-any cline-yes" title="This line is covered 4 times">x4</span>
 <span class="cline-any cline-yes" title="This line is covered 4 times">x4</span>
 <span class="cline-any cline-yes" title="This line is covered 4 times">x4</span>
-<span class="cline-any cline-yes" title="This line is covered 4 times">x4</span>
-<span class="cline-any cline-yes" title="This line is covered 4 times">x4</span>
+<span class="cline-any cline-yes" title="This line is covered 1 time">x1</span>
+<span class="cline-any cline-yes" title="This line is covered 1 time">x1</span>
+<span class="cline-any cline-yes" title="This line is covered 1 time">x1</span>
+<span class="cline-any cline-yes" title="This line is covered 1 time">x1</span>
 <span class="cline-any cline-yes" title="This line is covered 1 time">x1</span>
 <span class="cline-any cline-yes" title="This line is covered 1 time">x1</span>
 <span class="cline-any cline-yes" title="This line is covered 1 time">x1</span>
@@ -606,9 +609,8 @@
 <span class="cline-any cline-yes" title="This line is covered 1768514 times">x1768514</span>
 <span class="cline-any cline-yes" title="This line is covered 1768514 times">x1768514</span>
 <span class="cline-any cline-yes" title="This line is covered 1768514 times">x1768514</span>
-<span class="cline-any cline-yes" title="This line is covered 1768514 times">x1768514</span>
-<span class="cline-any cline-yes" title="This line is covered 1768514 times">x1768514</span>
-<span class="cline-any cline-yes" title="This line is covered 1768514 times">x1768514</span>
+<span class="cline-any cline-yes" title="This line is covered 353706 times">x353706</span>
+<span class="cline-any cline-yes" title="This line is covered 1 time">x1</span>
 <span class="cline-any cline-yes" title="This line is covered 353706 times">x353706</span>
 <span class="cline-any cline-yes" title="This line is covered 1 time">x1</span>
 <span class="cline-any cline-yes" title="This line is covered 353706 times">x353706</span>
@@ -681,34 +683,36 @@
 
 
 
+
 </pre></td>
 						<td class="text">
 							<pre
 								class="prettyprint"
 							>
-import {
-	mapEntries, mapValues, omit
-} from "./get-cookie/_exports.js";
+import { mapEntries, mapValues } from "./get-cookie/_exports.js";
 import ingredients from "./ingredients.js";
 import pick from "./pick.js";
 import scoreKeys from "./score-keys.js";
 
 /**
+ * @import TupleOf from "../../../../types/tuple-of.d.ts";
+ */
+
+/**
  * @param {number[]} permutation
- * @param {readonly Exclude&lt;(keyof ingredients[number]), "name"&gt;[]} relevantKeys
+ * @param {Readonly&lt;TupleOf&lt;4 | 5, Exclude&lt;keyof ingredients[number], "name"&gt;&gt;&gt;} [relevantKeys]
  */
 const getCookie = (permutation, relevantKeys = scoreKeys) =&gt; {
 	const multipliedIngredients = permutation.map((teaspoons, index) =&gt; {
 		const { [index]: ingredient } = ingredients;
 
-		return {
-			...mapEntries(
-				pick(ingredient, relevantKeys),
-				(key, value) =&gt; [key, value * teaspoons]
-			),
-			...omit(ingredient, relevantKeys)
-		};
+		return mapEntries(
+			pick(ingredient, relevantKeys),
+			(key, value) =&gt; [key, value * teaspoons]
+		);
 	});
+
+	const initialValueEntries = relevantKeys.map((key) =&gt; /** @type {const} */ ([key, 0]));
 
 	return mapValues(
 		multipliedIngredients
@@ -726,7 +730,7 @@ const getCookie = (permutation, relevantKeys = scoreKeys) =&gt; {
 						(value, key) =&gt; value + currentValue[key]
 					)
 				}),
-				Object.fromEntries(relevantKeys.map((key) =&gt; [key, 0]))
+				Object.fromEntries(initialValueEntries)
 			),
 		(value) =&gt; Math.max(0, value)
 	);

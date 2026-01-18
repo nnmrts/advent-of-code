@@ -468,7 +468,7 @@
 						<div class="fl pad1y space-right2">
 							<span class="strong">100.00%</span>
 							<span class="quiet">Lines</span>
-							<span class="fraction">28/28</span>
+							<span class="fraction">26/26</span>
 						</div>
 					</div>
 				</div>
@@ -560,22 +560,18 @@
 <a href="#L22" id="L22">22</a>
 <a href="#L23" id="L23">23</a>
 <a href="#L24" id="L24">24</a>
-<a href="#L25" id="L25">25</a>
-<a href="#L26" id="L26">26</a>
-<a href="#L27" id="L27">27</a></pre>
+<a href="#L25" id="L25">25</a></pre>
 						</td>
 						<td class="line-coverage quiet">
 							<pre>
 <span class="cline-any cline-yes" title="This line is covered 6 times">x6</span>
 <span class="cline-any cline-yes" title="This line is covered 6 times">x6</span>
 <span class="cline-any cline-yes" title="This line is covered 1 time">x1</span>
+<span class="cline-any cline-yes" title="This line is covered 1 time">x1</span>
+<span class="cline-any cline-yes" title="This line is covered 1 time">x1</span>
+<span class="cline-any cline-yes" title="This line is covered 1 time">x1</span>
+<span class="cline-any cline-yes" title="This line is covered 1 time">x1</span>
 <span class="cline-any cline-yes" title="This line is covered 6 times">x6</span>
-<span class="cline-any cline-yes" title="This line is covered 1 time">x1</span>
-<span class="cline-any cline-yes" title="This line is covered 1 time">x1</span>
-<span class="cline-any cline-yes" title="This line is covered 1 time">x1</span>
-<span class="cline-any cline-yes" title="This line is covered 1 time">x1</span>
-<span class="cline-any cline-yes" title="This line is covered 1 time">x1</span>
-<span class="cline-any cline-yes" title="This line is covered 1 time">x1</span>
 <span class="cline-any cline-yes" title="This line is covered 1 time">x1</span>
 <span class="cline-any cline-yes" title="This line is covered 6 times">x6</span>
 <span class="cline-any cline-yes" title="This line is covered 6 times">x6</span>
@@ -618,8 +614,6 @@
 
 
 
-
-
 </pre></td>
 						<td class="text">
 							<pre
@@ -628,13 +622,11 @@
 import getInput from "../../../_common/get-input.js";
 import ReadonlyMap from "../../../_common/readonly-map.js";
 
-const input = await getInput();
-
 /**
- * @typedef {"a"|"b"|"c"|"d"|"e"|"f"|"g"|"h"|"i"|"j"|"k"|"l"|"m"|"n"|"o"|"p"|"q"|"r"|"s"|"t"|"u"|"v"|"w"|"x"|"y"|"z"} LowerCaseLetter
- * @typedef {`${LowerCaseLetter}${LowerCaseLetter}${LowerCaseLetter}`} Device
- * @typedef {readonly [Exclude&lt;Device, "out"&gt;, readonly Device[]]} DeviceWithOutputs
+ * @import { DeviceWithOutputs } from "./devices/_exports.js";
  */
+
+const input = await getInput();
 
 const devices = new ReadonlyMap(
 	input

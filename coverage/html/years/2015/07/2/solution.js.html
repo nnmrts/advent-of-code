@@ -818,10 +818,10 @@ const firstVisitedWires = new Map();
 
 /**
  *
- * @param {string|number} wire
+ * @param {string | number} wire
  * @param {Map&lt;string, number&gt;} visitedWires
  * @returns {number}
- * @throws
+ * @throws {Error}
  */
 const resolve = (wire, visitedWires) =&gt; {
 	if (typeof wire === "number") {
