@@ -1,11 +1,16 @@
 import { walk } from "@std/fs";
-import { join } from "@std/path";
+import {
+	dirname, join, relative
+} from "@std/path";
 
 import { parseHTML } from "linkedom";
 
 const {
 	Command,
 	cwd,
+	errors: {
+		NotFound
+	},
 	readTextFile,
 	writeTextFile
 } = Deno;
@@ -25,6 +30,10 @@ await htmlCommand.output();
 
 const htmlFolderPath = join(coverageFolderPath, "html");
 
+const styleFilePath = join(htmlFolderPath, "style.css");
+
+const styleFileContentSet = new Set();
+
 for await (const { isFile, path } of walk(htmlFolderPath)) {
 	if (isFile && path.endsWith(".html")) {
 		const html = await readTextFile(path);
@@ -34,6 +43,22 @@ for await (const { isFile, path } of walk(htmlFolderPath)) {
 		const [footerElement] = parsedDocument?.getElementsByClassName("footer") ?? [];
 
 		footerElement.lastChild?.remove();
+
+		const styleElements = parsedDocument.querySelectorAll("style");
+
+		const relativePath = relative(dirname(path), htmlFolderPath);
+		const stylesheetHref = relativePath ? `${relativePath}/style.css` : "style.css";
+
+		for (const styleElement of styleElements) {
+			styleFileContentSet.add(styleElement.innerHTML);
+
+			const linkElement = parsedDocument.createElement("link");
+
+			linkElement.setAttribute("rel", "stylesheet");
+			linkElement.setAttribute("href", stylesheetHref);
+
+			styleElement.replaceWith(linkElement);
+		}
 
 		await writeTextFile(path, parsedDocument.toString());
 
@@ -47,6 +72,10 @@ for await (const { isFile, path } of walk(htmlFolderPath)) {
 		await denoFmtHtmlCommand.output();
 	}
 }
+
+const styleFileContent = [...styleFileContentSet].join("\n");
+
+await writeTextFile(styleFilePath, styleFileContent);
 
 const lcovFilePath = join(coverageFolderPath, "lcov.info");
 
