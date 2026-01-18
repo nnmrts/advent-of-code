@@ -1,7 +1,7 @@
 import If from "../../if.d.ts";
 
-import { Simplify } from "./_common/_exports.ts";
-import { Merge, RequiredKeysOf } from "./apply-default-options/_exports.ts";
+import { Simplify } from "./_common/_exports.d.ts";
+import { Merge, RequiredKeysOf } from "./apply-default-options/_exports.d.ts";
 import IsAny from "./is-any.d.ts";
 import IsNever from "./is-never.d.ts";
 import OptionalKeysOf from "./optional-keys-of.d.ts";

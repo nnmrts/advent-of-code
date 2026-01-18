@@ -6,7 +6,7 @@ import TupleOf from "../tuple-of.d.ts";
 
 import {
 	And, IsEqual, Or
-} from "./_common/_exports.ts";
+} from "./_common/_exports.d.ts";
 import StringLength from "./string-length.d.ts";
 
 /**

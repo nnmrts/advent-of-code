@@ -8,7 +8,7 @@ import StringLength from "../string-length.d.ts";
 import {
 	IsEqualToOrNotExtendingAll,
 	IsStringLiteral
-} from "./split-helper/_exports.ts";
+} from "./split-helper/_exports.d.ts";
 
 type SplitHelper<
 	S extends string,

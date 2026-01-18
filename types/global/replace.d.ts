@@ -1,4 +1,4 @@
-import { ApplyDefaultOptions } from "./_common/_exports.ts";
+import { ApplyDefaultOptions } from "./_common/_exports.d.ts";
 
 type ReplaceOptions = {
 	all?: boolean

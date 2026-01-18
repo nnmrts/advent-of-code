@@ -1,5 +1,5 @@
-import { ApplyDefaultOptions, SplitOptions } from "./_common/_exports.ts";
-import { DefaultSplitOptions, SplitHelper } from "./split/_exports.ts";
+import { ApplyDefaultOptions, SplitOptions } from "./_common/_exports.d.ts";
+import { DefaultSplitOptions, SplitHelper } from "./split/_exports.d.ts";
 
 /**
  * Represents an array of strings split using a given character or character set.

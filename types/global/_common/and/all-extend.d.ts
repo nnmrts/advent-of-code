@@ -1,12 +1,12 @@
 import UnknownArray from "../../../_common/unknown-array.d.ts";
 import ApplyDefaultOptions from "../apply-default-options.d.ts";
 
-import { AllExtendOptions } from "./_common/_exports.ts";
+import { AllExtendOptions } from "./_common/_exports.d.ts";
 import {
 	AllExtendHelper,
 	CollapseRestElement,
 	DefaultAllExtendOptions
-} from "./all-extend/_exports.ts";
+} from "./all-extend/_exports.d.ts";
 
 /**
  * Returns a boolean for whether every element in an array type extends another type.

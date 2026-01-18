@@ -1,4 +1,4 @@
-import { Whitespace } from "./_common/_exports.ts";
+import { Whitespace } from "./_common/_exports.d.ts";
 
 /**
  * Remove spaces from the left side.

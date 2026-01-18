@@ -4,7 +4,7 @@ import {
 	OmitIndexSignature,
 	PickIndexSignature,
 	SimpleMerge
-} from "./merge/_exports.ts";
+} from "./merge/_exports.d.ts";
 
 /**
  * Merge two types into a new type. Keys of the second type overrides keys of the first type.

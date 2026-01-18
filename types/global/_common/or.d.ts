@@ -1,7 +1,7 @@
 import If from "../../if.d.ts";
 
 import IsNever from "./is-never.d.ts";
-import { OrHelper } from "./or/_exports.ts";
+import { OrHelper } from "./or/_exports.d.ts";
 
 /**
  * Returns a boolean for whether either of two given types is true.

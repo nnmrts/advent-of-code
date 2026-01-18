@@ -1,4 +1,4 @@
-import { AllExtend } from "./and/_exports.ts";
+import { AllExtend } from "./and/_exports.d.ts";
 
 /**
  * Returns a boolean for whether two given types are both true.

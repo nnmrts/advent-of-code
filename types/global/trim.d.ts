@@ -1,4 +1,4 @@
-import { TrimLeft, TrimRight } from "./trim/_exports.ts";
+import { TrimLeft, TrimRight } from "./trim/_exports.d.ts";
 
 /**
  * Remove leading and trailing spaces from a string.

@@ -5,7 +5,7 @@ import {
 	CollapseLiterals,
 	IsStringLiteralHelper,
 	UnwrapTagged
-} from "./is-string-literal/_exports.ts";
+} from "./is-string-literal/_exports.d.ts";
 
 /**
  * Returns a boolean for whether the given type is a `string` [literal type](https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#literal-types).

@@ -1,7 +1,7 @@
-import { IsNegative } from "./_common/_exports.ts";
+import { IsNegative } from "./_common/_exports.d.ts";
 import IfNotAnyOrNever from "./if-not-any-or-never.d.ts";
 import If from "./if.d.ts";
-import { TupleOfHelper } from "./tuple-of/_exports.ts";
+import { TupleOfHelper } from "./tuple-of/_exports.d.ts";
 
 /**
  * Create a tuple type of the specified length with elements of the specified type.

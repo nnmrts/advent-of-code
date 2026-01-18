@@ -6,7 +6,7 @@ import {
 	IsExactOptionalPropertyTypesEnabled,
 	IsNever,
 	IsOptionalKeyOf
-} from "./_common/_exports.ts";
+} from "./_common/_exports.d.ts";
 
 /**
  * Returns whether the given array `T` is readonly.

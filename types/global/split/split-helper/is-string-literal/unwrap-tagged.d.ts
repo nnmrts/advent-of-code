@@ -1,6 +1,6 @@
 import Tag from "../../../../_common/tag.d.ts";
 
-import { RemoveAllTags } from "./unwrap-tagged/_exports.ts";
+import { RemoveAllTags } from "./unwrap-tagged/_exports.d.ts";
 
 /**
  * Revert a tagged type back to its original type by removing all tags.

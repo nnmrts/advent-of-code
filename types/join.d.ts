@@ -1,5 +1,5 @@
-import { JoinableItem } from "./_common/_exports.ts";
-import { NullishCoalesce } from "./join/_exports.ts";
+import { JoinableItem } from "./_common/_exports.d.ts";
+import { NullishCoalesce } from "./join/_exports.d.ts";
 
 /**
  * Join an array of strings and/or numbers using the given string as a delimiter.

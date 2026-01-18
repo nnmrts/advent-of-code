@@ -2,7 +2,7 @@ import {
 	JoinableItem,
 	RegExpExecArrayWithGroups,
 	UnknownArray
-} from "./_common/_exports.ts";
+} from "./_common/_exports.d.ts";
 import {
 	ArrayReverse,
 	GreaterThan,
@@ -12,7 +12,7 @@ import {
 	Split,
 	StringLength,
 	Trim
-} from "./global/_exports.ts";
+} from "./global/_exports.d.ts";
 import Join from "./join.d.ts";
 import RegExpWithGroups from "./reg-exp-with-groups.d.ts";
 
