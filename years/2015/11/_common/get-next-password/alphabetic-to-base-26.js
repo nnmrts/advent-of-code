@@ -3,7 +3,7 @@ import base from "../_common/base.js";
 import { convertLetterToDecimalDigit } from "./alphabetic-to-base-26/_exports.js";
 
 /**
- * @import { LowerCaseLetter } from "./_types/_exports.js";
+ * @import { LowerCaseLetter } from "../../../../_types/lower-case-letter.doc.js";
  */
 
 /**

@@ -1,7 +1,7 @@
 import lowerCaseACodePoint from "../_common/lower-case-a-code-point.js";
 
 /**
- * @import { LowerCaseLetter } from "../_types/lower-case-letter.doc.js";
+ * @import { LowerCaseLetter } from "../../../../../_types/lower-case-letter.doc.js";
  */
 
 /**

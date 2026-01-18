@@ -1,26 +1,27 @@
-import {
-	mapEntries, mapValues, omit
-} from "./get-cookie/_exports.js";
+import { mapEntries, mapValues } from "./get-cookie/_exports.js";
 import ingredients from "./ingredients.js";
 import pick from "./pick.js";
 import scoreKeys from "./score-keys.js";
 
 /**
+ * @import TupleOf from "../../../../types/tuple-of.d.ts";
+ */
+
+/**
  * @param {number[]} permutation
- * @param {readonly Exclude<(keyof ingredients[number]), "name">[]} relevantKeys
+ * @param {Readonly<TupleOf<4 | 5, Exclude<keyof ingredients[number], "name">>>} [relevantKeys]
  */
 const getCookie = (permutation, relevantKeys = scoreKeys) => {
 	const multipliedIngredients = permutation.map((teaspoons, index) => {
 		const { [index]: ingredient } = ingredients;
 
-		return {
-			...mapEntries(
-				pick(ingredient, relevantKeys),
-				(key, value) => [key, value * teaspoons]
-			),
-			...omit(ingredient, relevantKeys)
-		};
+		return mapEntries(
+			pick(ingredient, relevantKeys),
+			(key, value) => [key, value * teaspoons]
+		);
 	});
+
+	const initialValueEntries = relevantKeys.map((key) => /** @type {const} */ ([key, 0]));
 
 	return mapValues(
 		multipliedIngredients
@@ -38,7 +39,7 @@ const getCookie = (permutation, relevantKeys = scoreKeys) => {
 						(value, key) => value + currentValue[key]
 					)
 				}),
-				Object.fromEntries(relevantKeys.map((key) => [key, 0]))
+				Object.fromEntries(initialValueEntries)
 			),
 		(value) => Math.max(0, value)
 	);

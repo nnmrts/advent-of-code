@@ -7,6 +7,7 @@ const eslintConfig = [
 	...pumpnEslintConfig,
 	{
 		rules: {
+			"@stylistic/no-extra-parens": "off",
 			"id-length": [
 				"error",
 				{
@@ -22,6 +23,8 @@ const eslintConfig = [
 			"jsdoc/require-property-description": "off",
 			"jsdoc/require-returns": "off",
 			"jsdoc/require-returns-description": "off",
+			"jsdoc/require-throws-description": "off",
+			"jsdoc/type-formatting": "off",
 			"regexp/optimal-quantifier-concatenation": [
 				"error",
 				{

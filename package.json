@@ -3,10 +3,11 @@
 	"license": "0BSD",
 	"description": "",
 	"dependencies": {
+		"@typescript-eslint/types": "^8.53.0",
 		"linkedom": "^0.18.12"
 	},
 	"devDependencies": {
-		"@pumpn/eslint-config": "^16.1.2",
+		"@pumpn/eslint-config": "^16.2.0",
 		"eslint": "^9.39.2"
 	},
 	"type": "module"

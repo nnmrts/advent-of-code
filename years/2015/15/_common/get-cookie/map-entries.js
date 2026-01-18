@@ -13,7 +13,7 @@ const mapEntries = (
 	Object.fromEntries(
 		Object.entries(object)
 			.map(([key, value]) => toEntry(
-			/** @type {KeyTemplate} */ (key),
+				/** @type {KeyTemplate} */ (key),
 				/** @type {ValueTemplate} */ (value)
 			))
 	)

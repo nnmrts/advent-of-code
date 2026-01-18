@@ -17,10 +17,7 @@ const pick = (
 	object,
 	filter
 ) => {
-	/**
-	 * @type {(keyof ObjectTemplate)[]}
-	 */
-	let keys = /** @type {any} */ (filter);
+	let keys = /** @type {(keyof ObjectTemplate)[]} */ (filter);
 
 	let actualFilter = filter;
 

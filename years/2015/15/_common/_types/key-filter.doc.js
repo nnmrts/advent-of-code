@@ -4,6 +4,6 @@
 
 /**
  * @template {object} [ObjectTemplate=object]
- * @template {keyof any} [KeyTemplate=keyof any]
+ * @template {string | number | symbol} [KeyTemplate=string | number | symbol]
  * @typedef {KeyFilterFunction<ObjectTemplate> | readonly KeyTemplate[]} KeyFilter
  */

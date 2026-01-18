@@ -21,9 +21,7 @@ const input = await getInput();
  */
 
 /**
- * @typedef {(
- * Join<InputLineAfterSplit, " ">
- * )} InputLine
+ * @typedef {Join<InputLineAfterSplit, " ">} InputLine
  */
 
 const inputLines = /** @type {readonly InputLine[]} */ (

@@ -6,9 +6,9 @@ const visitedWires = new Map();
 
 /**
  *
- * @param {string|number} wire
+ * @param {string | number} wire
  * @returns {number}
- * @throws
+ * @throws {Error}
  */
 const resolve = (wire) => {
 	if (typeof wire === "number") {

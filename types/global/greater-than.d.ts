@@ -1,77 +1,13 @@
 /* eslint-disable no-magic-numbers */
 /* eslint-disable no-loss-of-precision */
 
-import UnknownArray from "../_common/unknown-array.d.ts";
-import IfNotAnyOrNever from "../if-not-any-or-never.d.ts";
-import If from "../if.d.ts";
+import IsNegative from "../_common/is-negative.d.ts";
+import TupleOf from "../tuple-of.d.ts";
 
 import {
-	And,
-	Or
+	And, IsEqual, Or
 } from "./_common/_exports.ts";
 import StringLength from "./string-length.d.ts";
-
-type IsEqualHelper<A, B> =
-	(<G>() => G extends A & G | G ? 1 : 2) extends
-	(<G>() => G extends B & G | G ? 1 : 2)
-		? true
-		: false;
-
-/**
- * Returns a boolean for whether the two given types are equal.
- *
- * {@link https://github.com/microsoft/TypeScript/issues/27024#issuecomment-421529650}
- * {@link https://stackoverflow.com/questions/68961864/how-does-the-equals-work-in-typescript/68963796#68963796}
- *
- * Use-cases:
- * - If you want to make a conditional branch based on the result of a comparison of two types.
- *
- * @category Type Guard
- * @category Utilities
- */
-type IsEqual<A, B> =
-	[A] extends [B]
-		? [B] extends [A]
-			? IsEqualHelper<A, B>
-			: false
-		: false;
-
-type TupleOfHelper<L extends number, Fill, Accumulator extends UnknownArray> = number extends L
-	? Fill[]
-	: L extends Accumulator["length"]
-		? Accumulator
-		: TupleOfHelper<L, Fill, [...Accumulator, Fill]>;
-
-type Numeric = bigint | number;
-
-type Zero = 0 | 0n;
-
-/**
- * A negative `number`/`bigint` (`-∞ < x < 0`)
- *
- * Use-case: Validating and documenting parameters.
- *
- * @category Numeric
- */
-type Negative<T extends Numeric> = T extends Zero ? never : `${T}` extends `-${string}` ? T : never;
-
-/**
- * Returns a boolean for whether the given number is a negative number.
- *
- * @category Numeric
- */
-type IsNegative<T extends Numeric> = T extends Negative<T> ? true : false;
-
-/**
- * Create a tuple type of the specified length with elements of the specified type.
- *
- * Note: If you need a readonly tuple, simply wrap this type with `Readonly`, for example, to create `readonly [number, number, number]` use `Readonly<TupleOf<3, number>>`.
- *
- * @category Array
- */
-type TupleOf<Length extends number, Fill = unknown> = IfNotAnyOrNever<Length,
-	TupleOfHelper<If<IsNegative<Length>, 0, Length>, Fill, []>,
-	Fill[], []>;
 
 /**
  * Matches the hidden `Infinity` type.

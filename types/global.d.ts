@@ -6,6 +6,9 @@ import {
 import {
 	ArrayReverse,
 	GreaterThan,
+	IsUnion,
+	ObjectEntries,
+	Replace,
 	Split,
 	StringLength,
 	Trim
@@ -70,7 +73,49 @@ declare global {
 		 *
 		 * @param regexp - A variable name or string literal containing the regular expression pattern and flags.
 		 */
-		matchAll(regexp: RegExp): RegExpStringIterator<RegExpExecArray>
+		matchAll(regexp: RegExp): RegExpStringIterator<RegExpExecArray>,
+
+		replace<
+			ThisTemplate extends string,
+			SearchValueTemplate extends string,
+			ReplaceValueTemplate extends string
+		>(
+			this: ThisTemplate,
+			searchValue: SearchValueTemplate,
+			replaceValue: ReplaceValueTemplate
+		): Replace<ThisTemplate, SearchValueTemplate, ReplaceValueTemplate>,
+
+		/**
+		 * Replaces text in a string, using a regular expression or search string.
+		 *
+		 * @param searchValue - A string or regular expression to search for.
+		 * @param replaceValue - A string containing the text to replace. When the {@linkcode searchValue} is a `RegExp`, all matches are replaced if the `g` flag is set (or only those matches at the beginning, if the `y` flag is also present). Otherwise, only the first match of {@linkcode searchValue} is replaced.
+		 */
+		replace(searchValue: RegExp | string, replaceValue: string): string,
+
+		/**
+		 * Replaces text in a string, using a regular expression or search string.
+		 *
+		 * @param searchValue - A string to search for.
+		 * @param replacer - A function that returns the replacement text.
+		 */
+		replace(
+			searchValue: RegExp | string,
+			replacer: (substring: string, ...arguments_: any[]) => string
+		): string,
+
+		startsWith<
+			SearchTemplate extends string
+		>(
+			searchString: SearchTemplate
+		): this is `${SearchTemplate}${string}`,
+
+		/**
+		 * Returns true if the sequence of elements of searchString converted to a String is the
+		 * same as the corresponding elements of this object (converted to a String) starting at
+		 * position. Otherwise returns false.
+		 */
+		startsWith(searchString: string, position?: number): boolean
 	}
 
 	interface Array<T> {
@@ -97,27 +142,11 @@ declare global {
 		toReversed(): T[],
 
 		map<
-			ThisTemplate extends readonly string[],
-			CallbackTemplate extends NumberConstructor
-		>(
-			this: ThisTemplate,
-			callbackfn: CallbackTemplate,
-			thisArgument?: any
-		): ThisTemplate extends readonly string[]
-			? {
-				[key in keyof ThisTemplate]: ThisTemplate[key] extends `${infer InferredNumberTemplate extends number}`
-					? InferredNumberTemplate
-					: number
-			}
-			: number,
-
-		map<
 			U,
 			ThisTemplate extends UnknownArray
 		>(
 			this: ThisTemplate,
-			callbackfn: (value: T, index: number, array: T[]) => U,
-			thisArgument?: any
+			callbackfn: (value: T, index: number, array: T[]) => U
 		): ThisTemplate extends UnknownArray
 			? [
 				...{
@@ -187,34 +216,17 @@ declare global {
 		toReversed(): T[],
 
 		map<
-			ThisTemplate extends readonly string[],
-			CallbackTemplate extends NumberConstructor
-		>(
-			this: ThisTemplate,
-			callbackfn: CallbackTemplate,
-			thisArgument?: any
-		): ThisTemplate extends readonly string[]
-			? {
-				[key in keyof ThisTemplate]: ThisTemplate[key] extends `${infer InferredNumberTemplate extends number}`
-					? InferredNumberTemplate
-					: number
-			}
-			: never,
-
-		map<
-			U,
-			ThisTemplate extends UnknownArray
+			ThisTemplate extends UnknownArray,
+			U
 		>(
 			this: ThisTemplate,
 			callbackfn: (value: T, index: number, array: readonly T[]) => U,
 			thisArgument?: any
-		): ThisTemplate extends UnknownArray
-			? [
-				...{
-					[key in keyof ThisTemplate]: U
-				}
-			]
-			: U[],
+		): [
+			...{
+				[key in keyof ThisTemplate]: U
+			}
+		],
 
 		/**
 		 * Calls a defined callback function on each element of an array, and returns an array that contains the results.
@@ -282,6 +294,51 @@ declare global {
 		 * All other strings are considered decimal.
 		 */
 		parseInt(string: string, radix?: number): number
+	}
+
+	interface ObjectConstructor {
+		// Overload for tuples - extracts key-value pairs and creates a full Record
+		fromEntries<
+			EntriesTemplate extends readonly (readonly [string, unknown])[]
+		>(
+			entries: EntriesTemplate & { readonly length: number }
+		): {
+			[K in EntriesTemplate[number] as K[0]]: K[1]
+		},
+
+		fromEntries<
+			KeyTemplate extends string,
+			ValueTemplate extends unknown
+		>(
+			entries: readonly (readonly [KeyTemplate, ValueTemplate])[]
+		): IsUnion<KeyTemplate> extends true
+			? Partial<Record<KeyTemplate, ValueTemplate>>
+			: Record<KeyTemplate, ValueTemplate>,
+
+		/**
+		 * Returns an object created by key-value entries for properties and methods
+		 *
+		 * @param entries - An iterable object that contains key-value entries for properties and methods.
+		 */
+		fromEntries<T = any>(entries: Iterable<readonly [PropertyKey, T]>): { [k: string]: T },
+
+		/**
+		 * Returns an object created by key-value entries for properties and methods
+		 *
+		 * @param entries - An iterable object that contains key-value entries for properties and methods.
+		 */
+		fromEntries(entries: Iterable<readonly any[]>): any,
+
+		entries<
+			ObjectTemplate extends object
+		>(object: ObjectTemplate): ObjectEntries<ObjectTemplate>,
+
+		/**
+		 * Returns an array of key/values of the enumerable own properties of an object
+		 *
+		 * @param o - Object that contains the properties and methods. This can be an object that you created or an existing Document Object Model (DOM) object.
+		 */
+		entries<T>(o: ArrayLike<T> | { [s: string]: T }): [string, T][]
 	}
 }
 

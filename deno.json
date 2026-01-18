@@ -9,7 +9,7 @@
 			"description": "reloads the input for a specific day"
 		},
 		"lint": {
-			"command": "deno run -A eslint",
+			"command": "deno x eslint",
 			"description": "lints all code - add `--fix` to autofix autofixable problems"
 		},
 		"test": {

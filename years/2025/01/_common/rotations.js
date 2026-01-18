@@ -17,7 +17,7 @@ const rotations = input
 				amount: "0",
 				letter: "L"
 			}
-		} = /** @type {{groups: {amount: `${number}`, letter: "L" | "R"}}} */ (
+		} = /** @type {{groups: {amount: number, letter: "L" | "R"}}} */ (
 			/** @type {unknown} */ (
 				rotation.match(/^(?<letter>L|R)(?<amount>\d+)$/v)
 			)

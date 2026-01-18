@@ -10,7 +10,7 @@ const input = await getInput();
 const trimmedInput = input.trim();
 
 /**
- * @typedef {RegExpWithGroups<"name"|"capacity"|"durability"|"flavor"|"texture"|"calories">} Regex
+ * @typedef {RegExpWithGroups<"name" | "capacity" | "durability" | "flavor" | "texture" | "calories">} Regex
  */
 
 const regex = /** @type {Regex} */ (

@@ -4,7 +4,7 @@ import calculateProduct from "../../_common/calculate-product.js";
 import input from "../_common/input.js";
 
 /**
- * @typedef {"+"|"*"} Operation
+ * @typedef {"+" | "*"} Operation
  */
 
 const rows = /** @type {readonly [...readonly (readonly number[])[], readonly Operation[]]} */ (

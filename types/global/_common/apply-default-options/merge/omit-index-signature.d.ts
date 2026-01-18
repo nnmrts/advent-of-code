@@ -1,3 +1,5 @@
+/* eslint-disable jsdoc/escape-inline-tags -- in code block */
+
 /**
  * Omit any index signatures from the given object type, leaving only explicitly defined properties.
  *
@@ -56,7 +58,7 @@
  * as {} extends Record<KeyType, unknown>
  * ? never // ✅ `{}` is assignable to `Record<KeyType, unknown>`
  * : KeyType // ❌ `{}` is NOT assignable to `Record<KeyType, unknown>`
-	* ]: ObjectType[KeyType];
+ * ]: ObjectType[KeyType];
  * };
  * ```
  *
