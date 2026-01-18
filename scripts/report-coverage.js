@@ -40,65 +40,64 @@ for await (const { isFile, path } of walk(htmlFolderPath)) {
 
 		const { document: parsedDocument } = parseHTML(html);
 
-		const [footerElement] = parsedDocument?.getElementsByClassName("footer") ?? [];
-
-		footerElement.lastChild?.remove();
-
+		// Extract style content
 		const styleElements = parsedDocument.querySelectorAll("style");
-
-		const relativePath = relative(dirname(path), htmlFolderPath);
-		const stylesheetHref = relativePath ? `${relativePath}/style.css` : "style.css";
 
 		for (const styleElement of styleElements) {
 			styleFileContentSet.add(styleElement.innerHTML);
-
-			const linkElement = parsedDocument.createElement("link");
-
-			linkElement.setAttribute("rel", "stylesheet");
-			linkElement.setAttribute("href", stylesheetHref);
-
-			styleElement.replaceWith(linkElement);
 		}
 
-		const scriptElements = parsedDocument.querySelectorAll("script");
-		const scriptSource = relativePath ? `${relativePath}/script.js` : "script.js";
+		// Extract page data
+		const titleElement = parsedDocument.querySelector("h1");
+		const title = titleElement?.innerHTML || "";
 
-		for (const scriptElement of scriptElements) {
-			const changedScriptElement = parsedDocument.createElement("script");
+		const statElements = parsedDocument.querySelectorAll(".fl.pad1y.space-right2");
+		const branchesPct = statElements[0]?.querySelector(".strong")?.textContent || "0%";
+		const branchesFraction = statElements[0]?.querySelector(".fraction")?.textContent || "0/0";
+		const linesPct = statElements[1]?.querySelector(".strong")?.textContent || "0%";
+		const linesFraction = statElements[1]?.querySelector(".fraction")?.textContent || "0/0";
 
-			changedScriptElement.setAttribute("src", scriptSource);
+		const statusLineElement = parsedDocument.querySelector(".status-line");
+		const statusClasses = statusLineElement?.className || "";
+		const status = statusClasses.includes("low") ? "low" : statusClasses.includes("medium") ? "medium" : "high";
 
-			scriptElement.replaceWith(changedScriptElement);
-		}
-
-		const themeToggleButton = parsedDocument.querySelector("#theme-toggle");
-
-		if (themeToggleButton) {
-			const themeToggleElement = parsedDocument.createElement("theme-toggle");
-
-			themeToggleButton.replaceWith(themeToggleElement);
-		}
-
-		const chartElements = parsedDocument.querySelectorAll(".chart");
+		// Extract table content and convert charts to coverage-bar
+		const tableElement = parsedDocument.querySelector("table");
+		const chartElements = tableElement?.querySelectorAll(".chart") || [];
 
 		for (const chartElement of chartElements) {
 			const fillElement = chartElement.querySelector(".cover-fill");
 			const widthStyle = fillElement?.getAttribute("style") || "";
 			const widthMatch = widthStyle.match(/width:\s*(?<value>[\d.]+)%/v);
-			const {
-				groups: {
-					value = "0"
-				} = {}
-			} = widthMatch ?? {};
+			const { groups: { value = "0" } = {} } = widthMatch ?? {};
 
 			const coverageBarElement = parsedDocument.createElement("coverage-bar");
 
 			coverageBarElement.setAttribute("value", value);
-
 			chartElement.replaceWith(coverageBarElement);
 		}
 
-		await writeTextFile(path, parsedDocument.toString());
+		const tableContent = tableElement?.outerHTML || "";
+
+		// Calculate relative path for assets
+		const relativePath = relative(dirname(path), htmlFolderPath);
+		const assetPrefix = relativePath ? `${relativePath}/` : "";
+
+		// Generate minimal HTML
+		const minimalHtml = `<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="${assetPrefix}style.css" rel="stylesheet">
+<script src="${assetPrefix}script.js"></script>
+</head>
+<body>
+<coverage-page title="${title.replaceAll('"', "&quot;")}" branches-pct="${branchesPct}" branches-fraction="${branchesFraction}" lines-pct="${linesPct}" lines-fraction="${linesFraction}" status="${status}">${tableContent}</coverage-page>
+</body>
+</html>`;
+
+		await writeTextFile(path, minimalHtml);
 
 		const denoFmtHtmlCommand = new Command(
 			"deno",
