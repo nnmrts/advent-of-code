@@ -2,7 +2,9 @@
 <html lang="en-US">
 	<head>
 		<meta charset="utf-8">
-		<title>Coverage report for common/kv.js</title>
+		<title>
+			Coverage report for years/2015/17/_common/combine-without-repetitions.js
+		</title>
 		<style>
 			/* Copyright 2015 the Istanbul contributors. All rights reserved. ISC license. */
 			/* Copyright 2018-2023 the Deno authors. All rights reserved. MIT license. */
@@ -453,20 +455,23 @@
 			<div class="pad1 flex-header">
 				<div>
 					<h1>
-						<a href="../index.html">All files</a> / <a
-							href="../common/index.html"
-						>common</a> / kv.js
+						<a href="../../../../index.html">All files</a> / <a
+							href="../../../../years/index.html"
+						>years</a> / <a href="../../../2015/index.html">2015</a> / <a
+							href="../../17/index.html"
+						>17</a> / <a href="../_common/index.html">_common</a> /
+						combine-without-repetitions.js
 					</h1>
 					<div class="clearfix">
 						<div class="fl pad1y space-right2">
 							<span class="strong">100.00%</span>
 							<span class="quiet">Branches</span>
-							<span class="fraction">0/0</span>
+							<span class="fraction">2/2</span>
 						</div>
 						<div class="fl pad1y space-right2">
 							<span class="strong">100.00%</span>
 							<span class="quiet">Lines</span>
-							<span class="fraction">6/6</span>
+							<span class="fraction">21/21</span>
 						</div>
 					</div>
 				</div>
@@ -538,17 +543,62 @@
 <a href="#L2" id="L2">2</a>
 <a href="#L3" id="L3">3</a>
 <a href="#L4" id="L4">4</a>
-<a href="#L5" id="L5">5</a></pre>
+<a href="#L5" id="L5">5</a>
+<a href="#L6" id="L6">6</a>
+<a href="#L7" id="L7">7</a>
+<a href="#L8" id="L8">8</a>
+<a href="#L9" id="L9">9</a>
+<a href="#L10" id="L10">10</a>
+<a href="#L11" id="L11">11</a>
+<a href="#L12" id="L12">12</a>
+<a href="#L13" id="L13">13</a>
+<a href="#L14" id="L14">14</a>
+<a href="#L15" id="L15">15</a>
+<a href="#L16" id="L16">16</a>
+<a href="#L17" id="L17">17</a>
+<a href="#L18" id="L18">18</a>
+<a href="#L19" id="L19">19</a>
+<a href="#L20" id="L20">20</a></pre>
 						</td>
 						<td class="line-coverage quiet">
 							<pre>
-<span class="cline-any cline-yes" title="This line is covered 183 times">x183</span>
 <span class="cline-any cline-yes" title="This line is covered 1 time">x1</span>
-<span class="cline-any cline-yes" title="This line is covered 183 times">x183</span>
 <span class="cline-any cline-yes" title="This line is covered 1 time">x1</span>
-<span class="cline-any cline-yes" title="This line is covered 183 times">x183</span></pre>
+<span class="cline-any cline-yes" title="This line is covered 1 time">x1</span>
+<span class="cline-any cline-yes" title="This line is covered 1 time">x1</span>
+<span class="cline-any cline-yes" title="This line is covered 1 time">x1</span>
+<span class="cline-any cline-yes" title="This line is covered 1 time">x1</span>
+<span class="cline-any cline-yes" title="This line is covered 4 times">x4</span>
+<span class="cline-any cline-yes" title="This line is covered 229275 times">x229275</span>
+<span class="cline-any cline-yes" title="This line is covered 229275 times">x229275</span>
+<span class="cline-any cline-yes" title="This line is covered 229275 times">x229275</span>
+<span class="cline-any cline-yes" title="This line is covered 319426 times">x319426</span>
+<span class="cline-any cline-yes" title="This line is covered 548688 times">x548688</span>
+<span class="cline-any cline-yes" title="This line is covered 548688 times">x548688</span>
+<span class="cline-any cline-yes" title="This line is covered 548688 times">x548688</span>
+<span class="cline-any cline-yes" title="This line is covered 548688 times">x548688</span>
+<span class="cline-any cline-yes" title="This line is covered 548688 times">x548688</span>
+<span class="cline-any cline-yes" title="This line is covered 319426 times">x319426</span>
+<span class="cline-any cline-yes" title="This line is covered 4 times">x4</span>
+<span class="cline-any cline-yes" title="This line is covered 1 time">x1</span>
+<span class="cline-any cline-yes" title="This line is covered 4 times">x4</span></pre>
 						</td>
 						<td class="branch-coverage quiet"><pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -557,11 +607,26 @@
 							<pre
 								class="prettyprint"
 							>
-const { openKv } = Deno;
+/**
+ * @template {unknown} ItemTemplate
+ * @param {readonly ItemTemplate[]} comboOptions
+ * @param {number} comboLength
+ * @returns {(readonly ItemTemplate[])[]}
+ */
+const combineWithoutRepetitions = (comboOptions, comboLength) =&gt; (
+	comboLength === 1
+		? comboOptions.map((comboOption) =&gt; /** @type {const} */ ([comboOption]))
+		: [...comboOptions.entries()]
+			.flatMap(([optionIndex, currentOption]) =&gt; (
+				combineWithoutRepetitions(
+					comboOptions.slice(optionIndex + 1),
+					comboLength - 1
+				)
+					.map((smallerCombo) =&gt; [currentOption, ...smallerCombo])
+			))
+);
 
-const kv = await openKv();
-
-export default kv;
+export default combineWithoutRepetitions;
 </pre>
 						</td>
 					</tr>

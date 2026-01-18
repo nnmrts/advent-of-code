@@ -3,7 +3,7 @@ import machines from "../_common/machines.js";
 
 import {
 	areArraysEqual,
-	getCombinations
+	combineWithRepetitions
 } from "./solution/_exports.js";
 
 /**
@@ -47,10 +47,10 @@ const result = calculateSum(
 				numberOfButtonPresses < 10;
 				numberOfButtonPresses++
 			) {
-				const combinations = getCombinations({
-					array: buttonWiringSchematics,
-					size: numberOfButtonPresses
-				});
+				const combinations = combineWithRepetitions(
+					buttonWiringSchematics,
+					numberOfButtonPresses
+				);
 
 				for (const combination of combinations) {
 					const indicatorLightsAfter = pressButtons({
