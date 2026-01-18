@@ -189,7 +189,22 @@ declare global {
 		 * [11, 2, 22, 1].toSorted((a, b) => a - b) // [1, 2, 11, 22]
 		 * ```
 		 */
-		toSorted(compareFunction?: (a: T, b: T) => number): T[]
+		toSorted(compareFunction?: (a: T, b: T) => number): T[],
+
+		at<
+			ThisTemplate extends [T, ...T[]],
+			IndexTemplate extends -1
+		>(
+			this: ThisTemplate,
+			index: IndexTemplate
+		): T,
+
+		/**
+		 * Returns the item located at the specified index.
+		 *
+		 * @param index - The zero-based index of the desired code unit. A negative index will count back from the last item.
+		 */
+		at(index: number): T | undefined
 	}
 
 	interface ReadonlyArray<T> {
@@ -262,7 +277,22 @@ declare global {
 		 * [11, 2, 22, 1].toSorted((a, b) => a - b) // [1, 2, 11, 22]
 		 * ```
 		 */
-		toSorted(compareFunction?: (a: T, b: T) => number): T[]
+		toSorted(compareFunction?: (a: T, b: T) => number): T[],
+
+		at<
+			ThisTemplate extends readonly [T, ...T[]],
+			IndexTemplate extends -1
+		>(
+			this: ThisTemplate,
+			index: IndexTemplate
+		): T,
+
+		/**
+		 * Returns the item located at the specified index.
+		 *
+		 * @param index - The zero-based index of the desired code unit. A negative index will count back from the last item.
+		 */
+		at(index: number): T | undefined
 
 	}
 
@@ -278,6 +308,13 @@ declare global {
 
 	interface NumberConstructor {
 		new (value?: any): Number,
+		<BooleanTemplate extends boolean>(value?: BooleanTemplate): (
+			BooleanTemplate extends true
+				? 1
+				: BooleanTemplate extends false
+					? 0
+					: 0 | 1
+		),
 		<StringTemplate extends string>(value?: StringTemplate): (
 			StringTemplate extends `${infer InferredNumberTemplate extends number}`
 				? InferredNumberTemplate
