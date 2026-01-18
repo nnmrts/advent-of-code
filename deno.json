@@ -48,7 +48,8 @@
 		"@std/testing": "jsr:@std/testing@^1.0.16"
 	},
 	"unstable": [
-		"kv"
+		"kv",
+		"raw-imports"
 	],
 	"fmt": {
 		"useTabs": true

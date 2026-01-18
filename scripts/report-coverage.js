@@ -5,6 +5,8 @@ import {
 
 import { parseHTML } from "linkedom";
 
+import { scriptFileContent } from "./report-coverage/_exports.js";
+
 const {
 	Command,
 	cwd,
@@ -31,7 +33,6 @@ const styleFilePath = join(htmlFolderPath, "style.css");
 const scriptFilePath = join(htmlFolderPath, "script.js");
 
 const styleFileContentSet = new Set();
-const scriptFileContentSet = new Set();
 
 for await (const { isFile, path } of walk(htmlFolderPath)) {
 	if (isFile && path.endsWith(".html")) {
@@ -63,13 +64,38 @@ for await (const { isFile, path } of walk(htmlFolderPath)) {
 		const scriptSource = relativePath ? `${relativePath}/script.js` : "script.js";
 
 		for (const scriptElement of scriptElements) {
-			scriptFileContentSet.add(scriptElement.innerHTML);
-
 			const changedScriptElement = parsedDocument.createElement("script");
 
 			changedScriptElement.setAttribute("src", scriptSource);
 
 			scriptElement.replaceWith(changedScriptElement);
+		}
+
+		const themeToggleButton = parsedDocument.querySelector("#theme-toggle");
+
+		if (themeToggleButton) {
+			const themeToggleElement = parsedDocument.createElement("theme-toggle");
+
+			themeToggleButton.replaceWith(themeToggleElement);
+		}
+
+		const chartElements = parsedDocument.querySelectorAll(".chart");
+
+		for (const chartElement of chartElements) {
+			const fillElement = chartElement.querySelector(".cover-fill");
+			const widthStyle = fillElement?.getAttribute("style") || "";
+			const widthMatch = widthStyle.match(/width:\s*(?<value>[\d.]+)%/v);
+			const {
+				groups: {
+					value = "0"
+				} = {}
+			} = widthMatch ?? {};
+
+			const coverageBarElement = parsedDocument.createElement("coverage-bar");
+
+			coverageBarElement.setAttribute("value", value);
+
+			chartElement.replaceWith(coverageBarElement);
 		}
 
 		await writeTextFile(path, parsedDocument.toString());
@@ -86,7 +112,6 @@ for await (const { isFile, path } of walk(htmlFolderPath)) {
 }
 
 const styleFileContent = [...styleFileContentSet].join("\n");
-const scriptFileContent = [...scriptFileContentSet].join("\n");
 
 await writeTextFile(styleFilePath, styleFileContent);
 await writeTextFile(scriptFilePath, scriptFileContent);
