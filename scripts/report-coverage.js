@@ -28,8 +28,10 @@ await htmlCommand.output();
 const htmlFolderPath = join(coverageFolderPath, "html");
 
 const styleFilePath = join(htmlFolderPath, "style.css");
+const scriptFilePath = join(htmlFolderPath, "script.js");
 
 const styleFileContentSet = new Set();
+const scriptFileContentSet = new Set();
 
 for await (const { isFile, path } of walk(htmlFolderPath)) {
 	if (isFile && path.endsWith(".html")) {
@@ -57,6 +59,19 @@ for await (const { isFile, path } of walk(htmlFolderPath)) {
 			styleElement.replaceWith(linkElement);
 		}
 
+		const scriptElements = parsedDocument.querySelectorAll("script");
+		const scriptSource = relativePath ? `${relativePath}/script.js` : "script.js";
+
+		for (const scriptElement of scriptElements) {
+			scriptFileContentSet.add(scriptElement.innerHTML);
+
+			const changedScriptElement = parsedDocument.createElement("script");
+
+			changedScriptElement.setAttribute("src", scriptSource);
+
+			scriptElement.replaceWith(changedScriptElement);
+		}
+
 		await writeTextFile(path, parsedDocument.toString());
 
 		const denoFmtHtmlCommand = new Command(
@@ -71,8 +86,10 @@ for await (const { isFile, path } of walk(htmlFolderPath)) {
 }
 
 const styleFileContent = [...styleFileContentSet].join("\n");
+const scriptFileContent = [...scriptFileContentSet].join("\n");
 
 await writeTextFile(styleFilePath, styleFileContent);
+await writeTextFile(scriptFilePath, scriptFileContent);
 
 const lcovFilePath = join(coverageFolderPath, "lcov.info");
 
