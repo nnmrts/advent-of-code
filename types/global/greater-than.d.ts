@@ -1,91 +1,14 @@
-/* eslint-disable no-magic-numbers */
-/* eslint-disable no-loss-of-precision */
-
+/* eslint-disable no-magic-numbers -- Tuple indices R[0]-R[3] access infinity check results for A/B against ±Infinity */
 import IsNegative from "../_common/is-negative.d.ts";
-import TupleOf from "../tuple-of.d.ts";
 
 import {
-	And, IsEqual, Or
+	And,
+	IsEqual,
+	NegativeInfinity,
+	Or,
+	PositiveInfinity
 } from "./_common/_exports.d.ts";
-import StringLength from "./string-length.d.ts";
-
-/**
- * Matches the hidden `Infinity` type.
- *
- * Please upvote [this issue](https://github.com/microsoft/TypeScript/issues/32277) if you want to have this type as a built-in in TypeScript.
- *
- * @category Numeric
- */
-type PositiveInfinity = 1e999;
-
-/**
- * Matches the hidden `-Infinity` type.
- *
- * Please upvote [this issue](https://github.com/microsoft/TypeScript/issues/32277) if you want to have this type as a built-in in TypeScript.
- *
- * @category Numeric
- */
-type NegativeInfinity = -1e999;
-
-type NumericString = "0123456789";
-
-/**
- * Returns a boolean for whether `A` represents a number greater than `B`, where `A` and `B` are both positive numeric characters.
- */
-type PositiveNumericCharacterGt<A extends string, B extends string> = NumericString extends `${infer HeadA}${A}${infer TailA}`
-	? NumericString extends `${infer HeadB}${B}${infer TailB}`
-		? HeadA extends `${HeadB}${infer _}${infer __}`
-			? true
-			: false
-		: never
-	: never;
-
-/**
- * Returns a boolean for whether `A` represents a number greater than `B`, where `A` and `B` are both numeric strings and have the same length.
- */
-type SameLengthPositiveNumericStringGt<A extends string, B extends string> = A extends `${infer FirstA}${infer RestA}`
-	? B extends `${infer FirstB}${infer RestB}`
-		? FirstA extends FirstB
-			? SameLengthPositiveNumericStringGt<RestA, RestB>
-			: PositiveNumericCharacterGt<FirstA, FirstB>
-		: never
-	: false;
-
-/**
- * Returns a boolean for whether `A` is greater than `B`, where `A` and `B` are both positive numeric strings.
- */
-type PositiveNumericStringGt<A extends string, B extends string> = A extends B
-	? false
-	: [
-		TupleOf<StringLength<A>, 0>,
-		TupleOf<StringLength<B>, 0>
-	] extends infer R extends [readonly unknown[], readonly unknown[]]
-		? R[0] extends [...R[1], ...infer Remain extends readonly unknown[]]
-			? 0 extends Remain["length"]
-				? SameLengthPositiveNumericStringGt<A, B>
-				: true
-			: false
-		: never;
-
-/**
- * Converts a numeric string to a number.
- *
- * @category String
- * @category Numeric
- * @category Template literal
- */
-type StringToNumber<S extends string> = S extends `${infer N extends number}`
-	? N
-	: S extends "Infinity"
-		? PositiveInfinity
-		: S extends "-Infinity"
-			? NegativeInfinity
-			: never;
-
-/**
- * Returns the absolute value of a given value.
- */
-type NumberAbsolute<N extends number> = `${N}` extends `-${infer StringPositiveN}` ? StringToNumber<StringPositiveN> : N;
+import { NumberAbsolute, PositiveNumericStringGt } from "./greater-than/_exports.d.ts";
 
 /**
  * Returns a boolean for whether a given number is greater than another number.
