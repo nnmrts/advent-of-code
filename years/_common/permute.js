@@ -1,6 +1,6 @@
 /**
  * @template ItemTemplate
- * @param {ItemTemplate[]} permutationOptions
+ * @param {readonly ItemTemplate[]} permutationOptions
  * @returns {ItemTemplate[][]}
  */
 const permute = ([firstOption, ...rest]) => (
