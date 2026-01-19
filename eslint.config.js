@@ -6,6 +6,9 @@ const maxIdentifierLength = 40;
 const eslintConfig = [
 	...pumpnEslintConfig,
 	{
+		ignores: ["./coverage/**"]
+	},
+	{
 		rules: {
 			"@stylistic/no-extra-parens": "off",
 			"id-length": [

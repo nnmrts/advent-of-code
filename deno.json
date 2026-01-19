@@ -54,6 +54,9 @@
 	"fmt": {
 		"useTabs": true
 	},
+	"exclude": [
+		"./coverage/**/*.js"
+	],
 	"nodeModulesDir": "none",
 	"compilerOptions": {
 		"types": [

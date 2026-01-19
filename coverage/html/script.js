@@ -1,8 +1,12 @@
-/* eslint-disable max-classes-per-file */
+// @ts-nocheck
+/* eslint-disable max-classes-per-file -- needs to be just one file for now */
+
+const themeKey = "deno-coverage-theme";
+
 class ThemeToggle extends HTMLElement {
 
 	connectedCallback() {
-		const storedTheme = localStorage.getItem("deno-coverage-theme");
+		const storedTheme = localStorage.getItem(themeKey);
 		const systemPrefersDark = globalThis.matchMedia("(prefers-color-scheme: dark)").matches;
 		const initialTheme = storedTheme || (systemPrefersDark ? "dark" : "light");
 
@@ -31,16 +35,15 @@ class ThemeToggle extends HTMLElement {
 
 		this.querySelector("button").addEventListener("click", () => {
 			const isDark = document.documentElement.classList.contains("dark");
-			const newTheme = isDark ? "light" : "dark";
 
-			this.setTheme(newTheme);
+			this.setTheme(isDark ? "light" : "dark");
 		});
 	}
 
 	setTheme(theme) {
 		document.documentElement.classList.remove("dark", "light");
 		document.documentElement.classList.add(theme);
-		localStorage.setItem("deno-coverage-theme", theme);
+		localStorage.setItem(themeKey, theme);
 		this.updateIcons(theme);
 	}
 
@@ -67,7 +70,6 @@ class CoverageBar extends HTMLElement {
 class CoveragePage extends HTMLElement {
 
 	connectedCallback() {
-		// Defer rendering to allow children to be parsed first
 		setTimeout(() => this.render(), 0);
 	}
 
@@ -118,7 +120,7 @@ customElements.define("theme-toggle", ThemeToggle);
 customElements.define("coverage-bar", CoverageBar);
 customElements.define("coverage-page", CoveragePage);
 
-const theme = localStorage.getItem("deno-coverage-theme") ||
+const theme = localStorage.getItem(themeKey) ||
 	(globalThis.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
 
 document.documentElement.classList.add(theme);
