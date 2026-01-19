@@ -40,14 +40,12 @@ for await (const { isFile, path } of walk(htmlFolderPath)) {
 
 		const { document: parsedDocument } = parseHTML(html);
 
-		// Extract style content
 		const styleElements = parsedDocument.querySelectorAll("style");
 
 		for (const styleElement of styleElements) {
 			styleFileContentSet.add(styleElement.innerHTML);
 		}
 
-		// Extract page data
 		const titleElement = parsedDocument.querySelector("h1");
 		const title = titleElement?.innerHTML || "";
 
@@ -59,9 +57,8 @@ for await (const { isFile, path } of walk(htmlFolderPath)) {
 
 		const statusLineElement = parsedDocument.querySelector(".status-line");
 		const statusClasses = statusLineElement?.className || "";
-		const status = statusClasses.includes("low") ? "low" : statusClasses.includes("medium") ? "medium" : "high";
+		const status = statusClasses.includes("low") ? "low" : (statusClasses.includes("medium") ? "medium" : "high");
 
-		// Extract table content and convert charts to coverage-bar
 		const tableElement = parsedDocument.querySelector("table");
 		const chartElements = tableElement?.querySelectorAll(".chart") || [];
 
@@ -79,23 +76,23 @@ for await (const { isFile, path } of walk(htmlFolderPath)) {
 
 		const tableContent = tableElement?.outerHTML || "";
 
-		// Calculate relative path for assets
 		const relativePath = relative(dirname(path), htmlFolderPath);
 		const assetPrefix = relativePath ? `${relativePath}/` : "";
 
-		// Generate minimal HTML
-		const minimalHtml = `<!DOCTYPE html>
-<html lang="en-US">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link href="${assetPrefix}style.css" rel="stylesheet">
-<script src="${assetPrefix}script.js"></script>
-</head>
-<body>
-<coverage-page title="${title.replaceAll('"', "&quot;")}" branches-pct="${branchesPct}" branches-fraction="${branchesFraction}" lines-pct="${linesPct}" lines-fraction="${linesFraction}" status="${status}">${tableContent}</coverage-page>
-</body>
-</html>`;
+		const minimalHtml = `
+			<!DOCTYPE html>
+			<html lang="en-US">
+			<head>
+			<meta charset="utf-8">
+			<meta name="viewport" content="width=device-width, initial-scale=1">
+			<link href="${assetPrefix}style.css" rel="stylesheet">
+			<script src="${assetPrefix}script.js"></script>
+			</head>
+			<body>
+			<coverage-page title="${title.replaceAll("\"", "&quot;")}" branches-pct="${branchesPct}" branches-fraction="${branchesFraction}" lines-pct="${linesPct}" lines-fraction="${linesFraction}" status="${status}">${tableContent}</coverage-page>
+			</body>
+			</html>
+		`;
 
 		await writeTextFile(path, minimalHtml);
 
