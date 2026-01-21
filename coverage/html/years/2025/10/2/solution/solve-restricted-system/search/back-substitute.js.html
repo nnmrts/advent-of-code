@@ -9,10 +9,10 @@
 	<body>
 		<coverage-page
 			title="<a href=&quot;../../../../../../../index.html&quot;>All files</a> / <a href=&quot;../../../../../../../years/index.html&quot;>years</a> / <a href=&quot;../../../../../../2025/index.html&quot;>2025</a> / <a href=&quot;../../../../../10/index.html&quot;>10</a> / <a href=&quot;../../../../2/index.html&quot;>2</a> / <a href=&quot;../../../solution/index.html&quot;>solution</a> / <a href=&quot;../../solve-restricted-system/index.html&quot;>solve-restricted-system</a> / <a href=&quot;../search/index.html&quot;>search</a> / back-substitute.js"
-			branches-pct="83.33%"
-			branches-fraction="5/6"
-			lines-pct="95.89%"
-			lines-fraction="70/73"
+			branches-pct="100.00%"
+			branches-fraction="5/5"
+			lines-pct="100.00%"
+			lines-fraction="69/69"
 			status="high"
 		><table class="coverage">
 				<tr>
@@ -85,11 +85,7 @@
 <a href="#L65" id="L65">65</a>
 <a href="#L66" id="L66">66</a>
 <a href="#L67" id="L67">67</a>
-<a href="#L68" id="L68">68</a>
-<a href="#L69" id="L69">69</a>
-<a href="#L70" id="L70">70</a>
-<a href="#L71" id="L71">71</a>
-<a href="#L72" id="L72">72</a></pre>
+<a href="#L68" id="L68">68</a></pre>
 					</td>
 					<td class="line-coverage quiet">
 						<pre>
@@ -125,10 +121,6 @@
 <span class="cline-any cline-yes" title="This line is covered 1 time">x1</span>
 <span class="cline-any cline-yes" title="This line is covered 746488 times">x746488</span>
 <span class="cline-any cline-yes" title="This line is covered 1831464 times">x1831464</span>
-<span class="cline-any cline-yes" title="This line is covered 1 time">x1</span>
-<span class="cline-any cline-no">&#160;</span>
-<span class="cline-any cline-no">&#160;</span>
-<span class="cline-any cline-no">&#160;</span>
 <span class="cline-any cline-yes" title="This line is covered 1 time">x1</span>
 <span class="cline-any cline-yes" title="This line is covered 1831464 times">x1831464</span>
 <span class="cline-any cline-yes" title="This line is covered 1831464 times">x1831464</span>
@@ -166,8 +158,7 @@
 <span class="cline-any cline-yes" title="This line is covered 1 time">x1</span>
 <span class="cline-any cline-yes" title="This line is covered 2 times">x2</span></pre>
 					</td>
-					<td class="branch-coverage quiet">
-						<pre>
+					<td class="branch-coverage quiet"><pre>
 
 
 
@@ -200,7 +191,6 @@
 
 
 
-<span class="missing-if-branch" title="branch condition is missed in this line">I</span>
 
 
 
@@ -235,11 +225,7 @@
 
 
 
-
-
-
-</pre>
-					</td>
+</pre></td>
 					<td class="text">
 						<pre
 							class="prettyprint"
@@ -254,7 +240,7 @@ import {
  *
  * @param {object} options
  * @param {number[]} options.bounds
- * @param {Map&lt;number, number&gt;} options.columnToPivotRow
+ * @param {ReadonlyMap&lt;number, number&gt;} options.columnToPivotRow
  * @param {number} options.currentCost
  * @param {number[][]} options.matrixCopy
  * @param {number} options.minimumPresses
@@ -276,10 +262,6 @@ const backSubstitute = ({
 
 	for (const pivotColumnIndex of pivotColumnIndices.toReversed()) {
 		const pivotRowIndex = columnToPivotRow.get(pivotColumnIndex);
-
-		if (pivotRowIndex === undefined) {
-			continue;
-		}
 
 		const derivedValue = computeDerivedValue(
 			matrixCopy,
