@@ -1,9 +1,7 @@
-import { processWiring } from "./build-matrix-and-bounds/_exports.js";
-
 /**
  * Builds matrix and bounds from button wiring schematics
  *
- * @param {(number[] | undefined)[]} buttonWiringSchematics
+ * @param {number[][]} buttonWiringSchematics
  * @param {number[]} joltageRequirements
  */
 const buildMatrixAndBounds = (buttonWiringSchematics, joltageRequirements) => {
@@ -15,26 +13,27 @@ const buildMatrixAndBounds = (buttonWiringSchematics, joltageRequirements) => {
 		() => Array.from({ length: numberOfButtons }, () => 0)
 	);
 
-	const strictBounds = Array.from({ length: numberOfButtons }, () => Infinity);
+	const strictBounds = Array.from({ length: numberOfButtons }, () => 0);
 
 	for (const [schematicIndex, wiring] of buttonWiringSchematics.entries()) {
-		processWiring(
-			wiring,
-			schematicIndex,
-			matrix,
-			strictBounds,
-			joltageRequirements,
-			numberOfCounters
-		);
+		for (const item of wiring) {
+			if (item < numberOfCounters) {
+				matrix[item][schematicIndex] = 1;
+				if (
+					strictBounds[schematicIndex] === 0 ||
+					joltageRequirements[item] < strictBounds[schematicIndex]
+				) {
+					strictBounds[schematicIndex] = joltageRequirements[item];
+				}
+			}
+		}
 	}
-
-	const finalBounds = strictBounds.map((value) => (value === Infinity ? 0 : value));
 
 	return {
 		matrix,
 		numberOfButtons,
 		numberOfCounters,
-		strictBounds: finalBounds
+		strictBounds
 	};
 };
 

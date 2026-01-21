@@ -1,7 +1,7 @@
 /**
+ * @import { BuiltIns } from "../../../../../_types/built-ins.doc.js";
+ * @import { HasMultipleCallSignatures } from "../../../../../_types/has-multiple-call-signatures.doc.js";
  * @import {
- * 	BuiltIns,
- * 	HasMultipleCallSignatures,
  * 	WritableArrayDeep,
  * 	WritableMapDeep,
  * 	WritableObjectDeep,

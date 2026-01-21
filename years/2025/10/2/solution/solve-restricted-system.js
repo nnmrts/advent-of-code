@@ -1,9 +1,12 @@
 import {
 	gaussianElimination,
 	identifyFreeVariables,
-	isSystemConsistent,
 	search
 } from "./solve-restricted-system/_exports.js";
+
+/**
+ * @import { ReadonlyDeep } from "./solve-restricted-system/_exports.js";
+ */
 
 /**
  * @param {object} options
@@ -25,19 +28,14 @@ const solveRestrictedSystem = ({
 
 	const {
 		columnToPivotRow,
-		pivotColumnIndices,
-		pivotRow
+		pivotColumnIndices
 	} = gaussianElimination(copy, rhs, numberOfColumns, numberOfRows);
 
 	const freeVariables = identifyFreeVariables(pivotColumnIndices, numberOfColumns);
 
-	if (!isSystemConsistent(rhs, pivotRow, numberOfRows)) {
-		return 0;
-	}
-
 	const { minimumPresses } = search({
 		bounds,
-		columnToPivotRow,
+		columnToPivotRow: /** @type {ReadonlyDeep<typeof columnToPivotRow>} */ (columnToPivotRow),
 		freeVariables,
 		matrixCopy: copy,
 		numberOfColumns,
@@ -45,7 +43,7 @@ const solveRestrictedSystem = ({
 		rhs
 	});
 
-	return minimumPresses === Infinity ? 0 : minimumPresses;
+	return minimumPresses;
 };
 
 export default solveRestrictedSystem;

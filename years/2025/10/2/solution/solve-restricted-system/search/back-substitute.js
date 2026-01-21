@@ -8,7 +8,7 @@ import {
  *
  * @param {object} options
  * @param {number[]} options.bounds
- * @param {Map<number, number>} options.columnToPivotRow
+ * @param {ReadonlyMap<number, number>} options.columnToPivotRow
  * @param {number} options.currentCost
  * @param {number[][]} options.matrixCopy
  * @param {number} options.minimumPresses
@@ -30,10 +30,6 @@ const backSubstitute = ({
 
 	for (const pivotColumnIndex of pivotColumnIndices.toReversed()) {
 		const pivotRowIndex = columnToPivotRow.get(pivotColumnIndex);
-
-		if (pivotRowIndex === undefined) {
-			continue;
-		}
 
 		const derivedValue = computeDerivedValue(
 			matrixCopy,

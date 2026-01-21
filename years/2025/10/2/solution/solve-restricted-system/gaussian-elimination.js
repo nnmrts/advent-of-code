@@ -13,9 +13,16 @@ import {
  * @param {number} numberOfRows
  */
 const gaussianElimination = (copy, rhs, numberOfColumns, numberOfRows) => {
-	/** @type {number[]} */
+	/**
+	 * @type {number[]}
+	 */
 	const pivotColumnIndices = [];
+
+	/**
+	 * @type {Map<number, number>}
+	 */
 	const columnToPivotRow = new Map();
+
 	let pivotRow = 0;
 
 	for (
@@ -42,8 +49,7 @@ const gaussianElimination = (copy, rhs, numberOfColumns, numberOfRows) => {
 
 	return {
 		columnToPivotRow,
-		pivotColumnIndices,
-		pivotRow
+		pivotColumnIndices
 	};
 };
 

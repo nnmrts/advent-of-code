@@ -4,7 +4,7 @@ import { backSubstitute } from "./search/_exports.js";
  * @param {object} options
  * @param {number} [options.minimumPresses]
  * @param {number[]} options.bounds
- * @param {Map<number, number>} options.columnToPivotRow
+ * @param {ReadonlyMap<number, number>} options.columnToPivotRow
  * @param {number} [options.currentCost]
  * @param {number} [options.freeVariableListIndex]
  * @param {number[]} options.freeVariables
