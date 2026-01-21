@@ -27,6 +27,7 @@ const eslintConfig = [
 			"jsdoc/require-returns": "off",
 			"jsdoc/require-returns-description": "off",
 			"jsdoc/require-throws-description": "off",
+			"jsdoc/require-yields": "off",
 			"jsdoc/type-formatting": "off",
 			"regexp/optimal-quantifier-concatenation": [
 				"error",
