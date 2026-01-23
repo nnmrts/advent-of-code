@@ -5,5 +5,5 @@
 /**
  * @template T
  * @template U
- * @typedef {[T] extends [anySymbol] ? U : T} SwitchAny
+ * @typedef {[T] extends [typeof anySymbol] ? U : T} SwitchAny
  */

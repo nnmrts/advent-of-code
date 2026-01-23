@@ -1,5 +1,8 @@
 {
 	"compilerOptions": {
+		"types": [
+			"./types/global.d.ts"
+		],
 		"allowJs": true,
 		"allowUnreachableCode": false,
 		"allowUnusedLabels": false,
@@ -19,7 +22,11 @@
 		"noUnusedLocals": false,
 		"noUnusedParameters": false,
 		"strict": true,
-		"noEmit": true
+		"noEmit": true,
+		"lib": [
+			"ESNext",
+			"DOM"
+		]
 	},
 	"include": [
 		"./**/*"

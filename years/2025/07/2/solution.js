@@ -4,7 +4,7 @@ import manifold from "../_common/manifold.js";
  *
  * @param {object} options
  * @param {number} options.columnIndex
- * @param {manifold[number][number][][]} options.currentManifold
+ * @param {(typeof manifold)[number][number][][]} options.currentManifold
  * @param {number} options.rowIndex
  */
 const handleEmpty = ({
@@ -28,7 +28,7 @@ const handleEmpty = ({
  *
  * @param {object} options
  * @param {number} options.columnIndex
- * @param {manifold[number][number][][]} options.currentManifold
+ * @param {(typeof manifold)[number][number][][]} options.currentManifold
  * @param {number} options.rowIndex
  */
 const handleSplitter = ({
@@ -94,7 +94,7 @@ const getOrInsertComputed = (map, key, callback) => {
 
 /**
  * @typedef {object} TraverseOptions
- * @property {manifold[number][number][][]} currentManifold
+ * @property {(typeof manifold)[number][number][][]} currentManifold
  * @property {number} [numberOfTimelines]
  * @property {number} [rowIndex]
  */

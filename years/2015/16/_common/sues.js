@@ -35,20 +35,16 @@ const matches = [...trimmedInput.matchAll(regex)];
  */
 
 /**
- * @typedef {Omit<Exclude<matches[number], null>["groups"], "sueNumber">} Rest
+ * @typedef {Omit<Exclude<(typeof matches)[number], null>["groups"], "sueNumber">} Rest
  */
 
 /**
  * @typedef {(entry: ObjectEntry<Rest>) => entry is Extract<ObjectEntry<Rest>, [`key${string}`, unknown]>} IsKeyEntryFunction
  */
 
-/**
- * @template {string} KeyTemplate
- * @template {string | undefined} ValueTemplate
- */
 const isKeyEntry = /** @type {IsKeyEntryFunction} */ (
 	/** @type {unknown} */ (
-		/** @param {[KeyTemplate, ValueTemplate]} entry */
+		/** @param {[string, unknown]} entry */
 		([key]) => key.startsWith("key")
 	)
 );

@@ -7,7 +7,7 @@ import devices from "../_common/devices.js";
 
 /**
  *
- * @param {IterableElement<devices>[1]} outputs
+ * @param {IterableElement<typeof devices>[1]} outputs
  * @returns {number}
  */
 const countPathsToOut = (outputs) => calculateSum(

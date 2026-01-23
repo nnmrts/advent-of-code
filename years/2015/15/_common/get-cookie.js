@@ -9,7 +9,7 @@ import scoreKeys from "./score-keys.js";
 
 /**
  * @param {number[]} permutation
- * @param {Readonly<TupleOf<4 | 5, Exclude<keyof ingredients[number], "name">>>} [relevantKeys]
+ * @param {Readonly<TupleOf<4 | 5, Exclude<keyof (typeof ingredients)[number], "name">>>} [relevantKeys]
  */
 const getCookie = (permutation, relevantKeys = scoreKeys) => {
 	const multipliedIngredients = permutation.map((teaspoons, index) => {

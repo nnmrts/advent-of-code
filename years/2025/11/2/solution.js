@@ -9,8 +9,8 @@ const cache = new Map();
 
 /**
  *
- * @param {IterableElement<devices>[1]} outputs
- * @param {IterableElement<devices>[1]} [requiredDevices]
+ * @param {IterableElement<typeof devices>[1]} outputs
+ * @param {IterableElement<typeof devices>[1]} [requiredDevices]
  * @returns {number}
  */
 const countPathsToOut = (

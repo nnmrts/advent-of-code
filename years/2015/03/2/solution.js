@@ -10,7 +10,7 @@ const [santaInstructions, roboSantaInstructions] = [
 
 /**
  *
- * @param {instructions[number][]} currentInstructions
+ * @param {(typeof instructions)[number][]} currentInstructions
  */
 const deliverPresents = (currentInstructions) => {
 	const currentCoordinates = [0, 0];

@@ -21,6 +21,12 @@ const matches = [...trimmedInput.matchAll(regex)];
 
 const collator = new Intl.Collator("en-US", { numeric: true });
 
+/**
+ * @template NameTemplate
+ * @template RestTemplate
+ * @typedef {{name: Exclude<NameTemplate, undefined>} & Record<keyof (RestTemplate), number>} Ingredient
+ */
+
 const ingredients = matches
 	.filter((match) => match !== null)
 	.map(({
@@ -28,7 +34,7 @@ const ingredients = matches
 			name,
 			...rest
 		}
-	}) => /** @type {{name: Exclude<typeof name, undefined>} & Record<keyof rest, number>} */ ({
+	}) => /** @type {Ingredient<typeof name, typeof rest>} */ ({
 		...Object.fromEntries(Object.entries(rest).map(([key, value]) => [key, Number(value)])),
 		name
 	}))

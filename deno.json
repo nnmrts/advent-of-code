@@ -49,7 +49,8 @@
 	},
 	"unstable": [
 		"kv",
-		"raw-imports"
+		"raw-imports",
+		"tsgo"
 	],
 	"fmt": {
 		"useTabs": true
@@ -60,7 +61,7 @@
 	"nodeModulesDir": "none",
 	"compilerOptions": {
 		"types": [
-			"types/global.d.ts"
+			"./types/global.d.ts"
 		],
 		"allowUnreachableCode": false,
 		"allowUnusedLabels": false,
