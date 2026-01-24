@@ -347,6 +347,12 @@ declare global {
 		parseInt(string: string, radix?: number): number
 	}
 
+	interface MapConstructor {
+		new<E extends readonly [unknown, unknown]>(
+			entries: readonly E[]
+		): Map<E[0], E[1]>
+	}
+
 	interface ObjectConstructor {
 		// Overload for tuples - extracts key-value pairs and creates a full Record
 		fromEntries<

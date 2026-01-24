@@ -6,6 +6,7 @@
  * groupBy<K, T>(
  * items: Iterable<T>,
  * keySelector: (item: T, index: number) => K,
- * ): ReadonlyMap<K, T[]>
+ * ): ReadonlyMap<K, T[]>,
+ * new<E extends readonly [unknown, unknown]>(entries: readonly E[]): ReadonlyMap<E[0], E[1]>,
  * }} ReadonlyMapConstructor
  */
