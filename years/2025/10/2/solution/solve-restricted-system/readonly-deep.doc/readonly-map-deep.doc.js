@@ -7,5 +7,5 @@
  *
  * @template KeyType
  * @template ValueType
- * @typedef {Readonly<ReadonlyMap<ReadonlyDeep<KeyType>, ReadonlyDeep<ValueType>>> & {}} ReadonlyMapDeep
+ * @typedef {Readonly<ReadonlyMap<ReadonlyDeep<KeyType>, ReadonlyDeep<ValueType>>>} ReadonlyMapDeep
  */

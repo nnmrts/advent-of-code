@@ -6,5 +6,5 @@
  * Same as `ReadonlyDeep`, but accepts only `ReadonlySet`s as inputs. Internal helper for `ReadonlyDeep`.
  *
  * @template ItemType
- * @typedef {Readonly<ReadonlySet<ReadonlyDeep<ItemType>>> & {}} ReadonlySetDeep
+ * @typedef {Readonly<ReadonlySet<ReadonlyDeep<ItemType>>>} ReadonlySetDeep
  */

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en-US">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link href="../../../../style.css" rel="stylesheet">
+		<script src="../../../../script.js"></script>
+	</head>
+	<body>
+		<coverage-page
+			title="<a href=&quot;../../../../index.html&quot;>All files</a> / <a href=&quot;../../../../years/index.html&quot;>years</a> / <a href=&quot;../../../2015/index.html&quot;>2015</a> / <a href=&quot;../../21/index.html&quot;>21</a> / <a href=&quot;../1/index.html&quot;>1</a> / solution.js"
+			branches-pct="100.00%"
+			branches-fraction="4/4"
+			lines-pct="100.00%"
+			lines-fraction="31/31"
+			status="high"
+		><table class="coverage">
+				<tr>
+					<td class="line-count quiet">
+						<pre>
+<a href="#L1" id="L1">1</a>
+<a href="#L2" id="L2">2</a>
+<a href="#L3" id="L3">3</a>
+<a href="#L4" id="L4">4</a>
+<a href="#L5" id="L5">5</a>
+<a href="#L6" id="L6">6</a>
+<a href="#L7" id="L7">7</a>
+<a href="#L8" id="L8">8</a>
+<a href="#L9" id="L9">9</a>
+<a href="#L10" id="L10">10</a>
+<a href="#L11" id="L11">11</a>
+<a href="#L12" id="L12">12</a>
+<a href="#L13" id="L13">13</a>
+<a href="#L14" id="L14">14</a>
+<a href="#L15" id="L15">15</a>
+<a href="#L16" id="L16">16</a>
+<a href="#L17" id="L17">17</a>
+<a href="#L18" id="L18">18</a>
+<a href="#L19" id="L19">19</a>
+<a href="#L20" id="L20">20</a>
+<a href="#L21" id="L21">21</a>
+<a href="#L22" id="L22">22</a>
+<a href="#L23" id="L23">23</a>
+<a href="#L24" id="L24">24</a>
+<a href="#L25" id="L25">25</a>
+<a href="#L26" id="L26">26</a>
+<a href="#L27" id="L27">27</a>
+<a href="#L28" id="L28">28</a>
+<a href="#L29" id="L29">29</a>
+<a href="#L30" id="L30">30</a></pre>
+					</td>
+					<td class="line-coverage quiet">
+						<pre>
+<span class="cline-any cline-yes" title="This line is covered 2 times">x2</span>
+<span class="cline-any cline-yes" title="This line is covered 2 times">x2</span>
+<span class="cline-any cline-yes" title="This line is covered 2 times">x2</span>
+<span class="cline-any cline-yes" title="This line is covered 1 time">x1</span>
+<span class="cline-any cline-yes" title="This line is covered 2 times">x2</span>
+<span class="cline-any cline-yes" title="This line is covered 2 times">x2</span>
+<span class="cline-any cline-yes" title="This line is covered 2 times">x2</span>
+<span class="cline-any cline-yes" title="This line is covered 176 times">x176</span>
+<span class="cline-any cline-yes" title="This line is covered 1 time">x1</span>
+<span class="cline-any cline-yes" title="This line is covered 176 times">x176</span>
+<span class="cline-any cline-yes" title="This line is covered 1 time">x1</span>
+<span class="cline-any cline-yes" title="This line is covered 176 times">x176</span>
+<span class="cline-any cline-yes" title="This line is covered 1 time">x1</span>
+<span class="cline-any cline-yes" title="This line is covered 176 times">x176</span>
+<span class="cline-any cline-yes" title="This line is covered 1 time">x1</span>
+<span class="cline-any cline-yes" title="This line is covered 176 times">x176</span>
+<span class="cline-any cline-yes" title="This line is covered 5905 times">x5905</span>
+<span class="cline-any cline-yes" title="This line is covered 8770 times">x8770</span>
+<span class="cline-any cline-yes" title="This line is covered 8770 times">x8770</span>
+<span class="cline-any cline-yes" title="This line is covered 8769 times">x8769</span>
+<span class="cline-any cline-yes" title="This line is covered 8769 times">x8769</span>
+<span class="cline-any cline-yes" title="This line is covered 8769 times">x8769</span>
+<span class="cline-any cline-yes" title="This line is covered 1 time">x1</span>
+<span class="cline-any cline-yes" title="This line is covered 5905 times">x5905</span>
+<span class="cline-any cline-yes" title="This line is covered 5905 times">x5905</span>
+<span class="cline-any cline-yes" title="This line is covered 1 time">x1</span>
+<span class="cline-any cline-yes" title="This line is covered 176 times">x176</span>
+<span class="cline-any cline-yes" title="This line is covered 2 times">x2</span>
+<span class="cline-any cline-yes" title="This line is covered 1 time">x1</span>
+<span class="cline-any cline-yes" title="This line is covered 2 times">x2</span></pre>
+					</td>
+					<td class="branch-coverage quiet"><pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</pre></td>
+					<td class="text">
+						<pre
+							class="prettyprint"
+						>
+import Party from "../../_common/party.js";
+import bossStats from "../_common/boss-stats.js";
+import loadouts from "../_common/loadouts.js";
+
+const bestLoadout = loadouts
+	.toSorted(({ cost: costA }, { cost: costB }) =&gt; costA - costB)
+	.find((loadout) =&gt; {
+		const boss = new Party(bossStats);
+
+		const player = new Party({ hitPoints: 100 });
+
+		player.equip(loadout);
+
+		let turn = 1;
+
+		while (boss.hitPoints &gt; 0 &amp;&amp; player.hitPoints &gt; 0) {
+			if (turn % 2 === 1) {
+				player.attack(boss);
+			}
+			else {
+				boss.attack(player);
+			}
+
+			turn += 1;
+		}
+
+		return player.hitPoints &gt; 0;
+	});
+
+console.info(bestLoadout?.cost);
+</pre>
+					</td>
+				</tr>
+			</table></coverage-page>
+	</body>
+</html>

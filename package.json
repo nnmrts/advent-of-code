@@ -7,7 +7,7 @@
 		"linkedom": "^0.18.12"
 	},
 	"devDependencies": {
-		"@pumpn/eslint-config": "^16.2.0",
+		"@pumpn/eslint-config": "^16.2.1",
 		"eslint": "^9.39.2"
 	},
 	"type": "module"

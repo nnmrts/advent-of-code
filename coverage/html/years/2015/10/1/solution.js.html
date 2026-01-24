@@ -9,10 +9,10 @@
 	<body>
 		<coverage-page
 			title="<a href=&quot;../../../../index.html&quot;>All files</a> / <a href=&quot;../../../../years/index.html&quot;>years</a> / <a href=&quot;../../../2015/index.html&quot;>2015</a> / <a href=&quot;../../10/index.html&quot;>10</a> / <a href=&quot;../1/index.html&quot;>1</a> / solution.js"
-			branches-pct="100.00%"
-			branches-fraction="0/0"
-			lines-pct="100.00%"
-			lines-fraction="21/21"
+			branches-pct="0.00%"
+			branches-fraction="0/1"
+			lines-pct="94.44%"
+			lines-fraction="17/18"
 			status="high"
 		><table class="coverage">
 				<tr>
@@ -34,10 +34,7 @@
 <a href="#L14" id="L14">14</a>
 <a href="#L15" id="L15">15</a>
 <a href="#L16" id="L16">16</a>
-<a href="#L17" id="L17">17</a>
-<a href="#L18" id="L18">18</a>
-<a href="#L19" id="L19">19</a>
-<a href="#L20" id="L20">20</a></pre>
+<a href="#L17" id="L17">17</a></pre>
 					</td>
 					<td class="line-coverage quiet">
 						<pre>
@@ -48,10 +45,7 @@
 <span class="cline-any cline-yes" title="This line is covered 2 times">x2</span>
 <span class="cline-any cline-yes" title="This line is covered 2 times">x2</span>
 <span class="cline-any cline-yes" title="This line is covered 2 times">x2</span>
-<span class="cline-any cline-yes" title="This line is covered 42 times">x42</span>
-<span class="cline-any cline-yes" title="This line is covered 42 times">x42</span>
-<span class="cline-any cline-yes" title="This line is covered 42 times">x42</span>
-<span class="cline-any cline-yes" title="This line is covered 42 times">x42</span>
+<span class="cline-any cline-no">&#160;</span>
 <span class="cline-any cline-yes" title="This line is covered 1 time">x1</span>
 <span class="cline-any cline-yes" title="This line is covered 42 times">x42</span>
 <span class="cline-any cline-yes" title="This line is covered 42 times">x42</span>
@@ -62,7 +56,15 @@
 <span class="cline-any cline-yes" title="This line is covered 1 time">x1</span>
 <span class="cline-any cline-yes" title="This line is covered 2 times">x2</span></pre>
 					</td>
-					<td class="branch-coverage quiet"><pre>
+					<td class="branch-coverage quiet">
+						<pre>
+
+
+
+
+
+
+<span class="missing-if-branch" title="branch condition is missed in this line">I</span>
 
 
 
@@ -71,17 +73,8 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-</pre></td>
+</pre>
+					</td>
 					<td class="text">
 						<pre
 							class="prettyprint"
@@ -90,13 +83,10 @@ import sequence from "../_common/sequence.js";
 
 const times = 40;
 
-const result = Array.from({ length: times })
+const result = Array.from({ length: times }, () =&gt; "")
 	.reduce(
 		(previousValue) =&gt; {
-			const runs = [
-				...previousValue
-					.match(/(?&lt;number&gt;.)\k&lt;number&gt;*/gv)
-			];
+			const runs = [...(previousValue.match(/(?&lt;number&gt;.)\k&lt;number&gt;*/gv) ?? [])];
 
 			return runs
 				.map((run) =&gt; `${run.length}${run[0]}`)

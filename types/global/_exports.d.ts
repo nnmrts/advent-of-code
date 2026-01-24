@@ -2,6 +2,7 @@ export { default as ArrayReverse } from "./array-reverse.d.ts";
 export { default as GreaterThan } from "./greater-than.d.ts";
 export { default as IsUnion } from "./is-union.d.ts";
 export { default as ObjectEntries } from "./object-entries.d.ts";
+export { default as RegExpMatchArrayWithGroups } from "./reg-exp-match-array-with-groups.d.ts";
 export { default as Replace } from "./replace.d.ts";
 export { default as Split } from "./split.d.ts";
 export { default as StringLength } from "./string-length.d.ts";

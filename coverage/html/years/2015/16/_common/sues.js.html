@@ -12,7 +12,7 @@
 			branches-pct="100.00%"
 			branches-fraction="0/0"
 			lines-pct="100.00%"
-			lines-fraction="78/78"
+			lines-fraction="74/74"
 			status="high"
 		><table class="coverage">
 				<tr>
@@ -90,11 +90,7 @@
 <a href="#L70" id="L70">70</a>
 <a href="#L71" id="L71">71</a>
 <a href="#L72" id="L72">72</a>
-<a href="#L73" id="L73">73</a>
-<a href="#L74" id="L74">74</a>
-<a href="#L75" id="L75">75</a>
-<a href="#L76" id="L76">76</a>
-<a href="#L77" id="L77">77</a></pre>
+<a href="#L73" id="L73">73</a></pre>
 					</td>
 					<td class="line-coverage quiet">
 						<pre>
@@ -118,10 +114,6 @@
 <span class="cline-any cline-yes" title="This line is covered 6 times">x6</span>
 <span class="cline-any cline-yes" title="This line is covered 1 time">x1</span>
 <span class="cline-any cline-yes" title="This line is covered 6 times">x6</span>
-<span class="cline-any cline-yes" title="This line is covered 1 time">x1</span>
-<span class="cline-any cline-yes" title="This line is covered 1 time">x1</span>
-<span class="cline-any cline-yes" title="This line is covered 1 time">x1</span>
-<span class="cline-any cline-yes" title="This line is covered 1 time">x1</span>
 <span class="cline-any cline-yes" title="This line is covered 1 time">x1</span>
 <span class="cline-any cline-yes" title="This line is covered 1 time">x1</span>
 <span class="cline-any cline-yes" title="This line is covered 1 time">x1</span>
@@ -248,10 +240,6 @@
 
 
 
-
-
-
-
 </pre></td>
 					<td class="text">
 						<pre
@@ -294,20 +282,16 @@ const matches = [...trimmedInput.matchAll(regex)];
  */
 
 /**
- * @typedef {Omit&lt;Exclude&lt;matches[number], null&gt;["groups"], "sueNumber"&gt;} Rest
+ * @typedef {Omit&lt;Exclude&lt;(typeof matches)[number], null&gt;["groups"], "sueNumber"&gt;} Rest
  */
 
 /**
  * @typedef {(entry: ObjectEntry&lt;Rest&gt;) =&gt; entry is Extract&lt;ObjectEntry&lt;Rest&gt;, [`key${string}`, unknown]&gt;} IsKeyEntryFunction
  */
 
-/**
- * @template {string} KeyTemplate
- * @template {string | undefined} ValueTemplate
- */
 const isKeyEntry = /** @type {IsKeyEntryFunction} */ (
 	/** @type {unknown} */ (
-		/** @param {[KeyTemplate, ValueTemplate]} entry */
+		/** @param {[string, unknown]} entry */
 		([key]) =&gt; key.startsWith("key")
 	)
 );

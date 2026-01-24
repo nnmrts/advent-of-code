@@ -8,6 +8,7 @@ import {
 	GreaterThan,
 	IsUnion,
 	ObjectEntries,
+	RegExpMatchArrayWithGroups,
 	Replace,
 	Split,
 	StringLength,
@@ -60,6 +61,19 @@ declare global {
 		 * If a valid UTF-16 surrogate pair does not begin at pos, the result is the code unit at pos.
 		 */
 		codePointAt(pos: number): number | undefined,
+
+		match<
+			T extends string
+		>(
+			regexp: RegExpWithGroups<T>
+		): RegExpMatchArrayWithGroups<T>,
+
+		/**
+		 * Matches a string with a regular expression, and returns an array containing the results of that search.
+		 *
+		 * @param regexp - A variable name or string literal containing the regular expression pattern and flags.
+		 */
+		match(regexp: RegExp | string): null | RegExpMatchArray,
 
 		matchAll<
 			T extends string

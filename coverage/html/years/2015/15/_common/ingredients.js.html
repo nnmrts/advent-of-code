@@ -12,7 +12,7 @@
 			branches-pct="100.00%"
 			branches-fraction="0/0"
 			lines-pct="100.00%"
-			lines-fraction="38/38"
+			lines-fraction="44/44"
 			status="high"
 		><table class="coverage">
 				<tr>
@@ -54,7 +54,13 @@
 <a href="#L34" id="L34">34</a>
 <a href="#L35" id="L35">35</a>
 <a href="#L36" id="L36">36</a>
-<a href="#L37" id="L37">37</a></pre>
+<a href="#L37" id="L37">37</a>
+<a href="#L38" id="L38">38</a>
+<a href="#L39" id="L39">39</a>
+<a href="#L40" id="L40">40</a>
+<a href="#L41" id="L41">41</a>
+<a href="#L42" id="L42">42</a>
+<a href="#L43" id="L43">43</a></pre>
 					</td>
 					<td class="line-coverage quiet">
 						<pre>
@@ -81,6 +87,12 @@
 <span class="cline-any cline-yes" title="This line is covered 1 time">x1</span>
 <span class="cline-any cline-yes" title="This line is covered 6 times">x6</span>
 <span class="cline-any cline-yes" title="This line is covered 1 time">x1</span>
+<span class="cline-any cline-yes" title="This line is covered 1 time">x1</span>
+<span class="cline-any cline-yes" title="This line is covered 1 time">x1</span>
+<span class="cline-any cline-yes" title="This line is covered 1 time">x1</span>
+<span class="cline-any cline-yes" title="This line is covered 1 time">x1</span>
+<span class="cline-any cline-yes" title="This line is covered 1 time">x1</span>
+<span class="cline-any cline-yes" title="This line is covered 1 time">x1</span>
 <span class="cline-any cline-yes" title="This line is covered 6 times">x6</span>
 <span class="cline-any cline-yes" title="This line is covered 6 times">x6</span>
 <span class="cline-any cline-yes" title="This line is covered 6 times">x6</span>
@@ -97,6 +109,12 @@
 <span class="cline-any cline-yes" title="This line is covered 6 times">x6</span></pre>
 					</td>
 					<td class="branch-coverage quiet"><pre>
+
+
+
+
+
+
 
 
 
@@ -160,6 +178,12 @@ const matches = [...trimmedInput.matchAll(regex)];
 
 const collator = new Intl.Collator("en-US", { numeric: true });
 
+/**
+ * @template NameTemplate
+ * @template RestTemplate
+ * @typedef {{name: Exclude&lt;NameTemplate, undefined&gt;} &amp; Record&lt;keyof (RestTemplate), number&gt;} Ingredient
+ */
+
 const ingredients = matches
 	.filter((match) =&gt; match !== null)
 	.map(({
@@ -167,7 +191,7 @@ const ingredients = matches
 			name,
 			...rest
 		}
-	}) =&gt; /** @type {{name: Exclude&lt;typeof name, undefined&gt;} &amp; Record&lt;keyof rest, number&gt;} */ ({
+	}) =&gt; /** @type {Ingredient&lt;typeof name, typeof rest&gt;} */ ({
 		...Object.fromEntries(Object.entries(rest).map(([key, value]) =&gt; [key, Number(value)])),
 		name
 	}))
