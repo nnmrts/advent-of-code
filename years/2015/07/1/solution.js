@@ -1,4 +1,4 @@
-/* eslint-disable no-magic-numbers -- no care */
+/* eslint-disable no-magic-numbers -- needed in definition */
 /* eslint-disable no-bitwise -- literally the puzzle */
 import instructions from "../_common/instructions.js";
 
