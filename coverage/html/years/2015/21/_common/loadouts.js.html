@@ -12,7 +12,7 @@
 			branches-pct="100.00%"
 			branches-fraction="0/0"
 			lines-pct="100.00%"
-			lines-fraction="138/138"
+			lines-fraction="139/139"
 			status="high"
 		><table class="coverage">
 				<tr>
@@ -154,11 +154,13 @@
 <a href="#L134" id="L134">134</a>
 <a href="#L135" id="L135">135</a>
 <a href="#L136" id="L136">136</a>
-<a href="#L137" id="L137">137</a></pre>
+<a href="#L137" id="L137">137</a>
+<a href="#L138" id="L138">138</a></pre>
 					</td>
 					<td class="line-coverage quiet">
 						<pre>
 <span class="cline-any cline-yes" title="This line is covered 4 times">x4</span>
+<span class="cline-any cline-yes" title="This line is covered 1 time">x1</span>
 <span class="cline-any cline-yes" title="This line is covered 4 times">x4</span>
 <span class="cline-any cline-yes" title="This line is covered 1 time">x1</span>
 <span class="cline-any cline-yes" title="This line is covered 4 times">x4</span>
@@ -432,13 +434,15 @@
 
 
 
+
 </pre></td>
 					<td class="text">
 						<pre
 							class="prettyprint"
 						>
-import mapValues from "../../15/_common/get-cookie/map-values.js";
-import omit from "../../15/_common/get-cookie/omit.js";
+import mapValues from "../../_common/map-values.js";
+
+import { omit } from "./loadouts/_exports.js";
 
 const shopWeapons = [
 	{

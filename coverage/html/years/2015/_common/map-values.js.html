@@ -3,16 +3,16 @@
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<link href="../../../../../style.css" rel="stylesheet">
-		<script src="../../../../../script.js"></script>
+		<link href="../../../style.css" rel="stylesheet">
+		<script src="../../../script.js"></script>
 	</head>
 	<body>
 		<coverage-page
-			title="<a href=&quot;../../../../../index.html&quot;>All files</a> / <a href=&quot;../../../../../years/index.html&quot;>years</a> / <a href=&quot;../../../../2015/index.html&quot;>2015</a> / <a href=&quot;../../../15/index.html&quot;>15</a> / <a href=&quot;../../_common/index.html&quot;>_common</a> / <a href=&quot;../get-cookie/index.html&quot;>get-cookie</a> / map-entries.js"
+			title="<a href=&quot;../../../index.html&quot;>All files</a> / <a href=&quot;../../../years/index.html&quot;>years</a> / <a href=&quot;../../2015/index.html&quot;>2015</a> / <a href=&quot;../_common/index.html&quot;>_common</a> / map-values.js"
 			branches-pct="100.00%"
 			branches-fraction="0/0"
 			lines-pct="100.00%"
-			lines-fraction="23/23"
+			lines-fraction="22/22"
 			status="high"
 		><table class="coverage">
 				<tr>
@@ -38,11 +38,11 @@
 <a href="#L18" id="L18">18</a>
 <a href="#L19" id="L19">19</a>
 <a href="#L20" id="L20">20</a>
-<a href="#L21" id="L21">21</a>
-<a href="#L22" id="L22">22</a></pre>
+<a href="#L21" id="L21">21</a></pre>
 					</td>
 					<td class="line-coverage quiet">
 						<pre>
+<span class="cline-any cline-yes" title="This line is covered 12 times">x12</span>
 <span class="cline-any cline-yes" title="This line is covered 1 time">x1</span>
 <span class="cline-any cline-yes" title="This line is covered 1 time">x1</span>
 <span class="cline-any cline-yes" title="This line is covered 1 time">x1</span>
@@ -52,16 +52,14 @@
 <span class="cline-any cline-yes" title="This line is covered 1 time">x1</span>
 <span class="cline-any cline-yes" title="This line is covered 1 time">x1</span>
 <span class="cline-any cline-yes" title="This line is covered 12 times">x12</span>
-<span class="cline-any cline-yes" title="This line is covered 3189234 times">x3189234</span>
-<span class="cline-any cline-yes" title="This line is covered 3189234 times">x3189234</span>
-<span class="cline-any cline-yes" title="This line is covered 3189234 times">x3189234</span>
-<span class="cline-any cline-yes" title="This line is covered 3189234 times">x3189234</span>
-<span class="cline-any cline-yes" title="This line is covered 3189234 times">x3189234</span>
-<span class="cline-any cline-yes" title="This line is covered 3189234 times">x3189234</span>
-<span class="cline-any cline-yes" title="This line is covered 17531875 times">x17531875</span>
-<span class="cline-any cline-yes" title="This line is covered 17531875 times">x17531875</span>
-<span class="cline-any cline-yes" title="This line is covered 3189234 times">x3189234</span>
-<span class="cline-any cline-yes" title="This line is covered 3189234 times">x3189234</span>
+<span class="cline-any cline-yes" title="This line is covered 1774426 times">x1774426</span>
+<span class="cline-any cline-yes" title="This line is covered 1774426 times">x1774426</span>
+<span class="cline-any cline-yes" title="This line is covered 1774426 times">x1774426</span>
+<span class="cline-any cline-yes" title="This line is covered 9750431 times">x9750431</span>
+<span class="cline-any cline-yes" title="This line is covered 9750431 times">x9750431</span>
+<span class="cline-any cline-yes" title="This line is covered 9750431 times">x9750431</span>
+<span class="cline-any cline-yes" title="This line is covered 9750431 times">x9750431</span>
+<span class="cline-any cline-yes" title="This line is covered 9750431 times">x9750431</span>
 <span class="cline-any cline-yes" title="This line is covered 12 times">x12</span>
 <span class="cline-any cline-yes" title="This line is covered 1 time">x1</span>
 <span class="cline-any cline-yes" title="This line is covered 12 times">x12</span></pre>
@@ -86,34 +84,32 @@
 
 
 
-
 </pre></td>
 					<td class="text">
 						<pre
 							class="prettyprint"
 						>
+import mapEntries from "./map-entries.js";
+
 /**
  * @template {number | string | symbol} KeyTemplate
  * @template ValueTemplate
- * @template {number | string | symbol} ChangedKeyTemplate
  * @template ChangedValueTemplate
  * @param {Record&lt;KeyTemplate, ValueTemplate&gt;} object
- * @param {(key: KeyTemplate, value: ValueTemplate) =&gt; readonly [ChangedKeyTemplate, ChangedValueTemplate]} toEntry
+ * @param {(value: ValueTemplate, key: KeyTemplate) =&gt; ChangedValueTemplate} toValue
  */
-const mapEntries = (
+const mapValues = (
 	object,
-	toEntry
-) =&gt; /** @type {Record&lt;ChangedKeyTemplate, ChangedValueTemplate&gt;} */ (
-	Object.fromEntries(
-		Object.entries(object)
-			.map(([key, value]) =&gt; toEntry(
-				/** @type {KeyTemplate} */ (key),
-				/** @type {ValueTemplate} */ (value)
-			))
+	toValue
+) =&gt; mapEntries(object, (key, value) =&gt; [
+	key,
+	toValue(
+		/** @type {ValueTemplate} */ (value),
+		/** @type {KeyTemplate} */ (key)
 	)
-);
+]);
 
-export default mapEntries;
+export default mapValues;
 </pre>
 					</td>
 				</tr>

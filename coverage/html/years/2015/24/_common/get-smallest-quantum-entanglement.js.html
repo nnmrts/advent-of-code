@@ -8,11 +8,11 @@
 	</head>
 	<body>
 		<coverage-page
-			title="<a href=&quot;../../../../index.html&quot;>All files</a> / <a href=&quot;../../../../years/index.html&quot;>years</a> / <a href=&quot;../../../2015/index.html&quot;>2015</a> / <a href=&quot;../../21/index.html&quot;>21</a> / <a href=&quot;../_common/index.html&quot;>_common</a> / boss-stats.js"
+			title="<a href=&quot;../../../../index.html&quot;>All files</a> / <a href=&quot;../../../../years/index.html&quot;>years</a> / <a href=&quot;../../../2015/index.html&quot;>2015</a> / <a href=&quot;../../24/index.html&quot;>24</a> / <a href=&quot;../_common/index.html&quot;>_common</a> / get-smallest-quantum-entanglement.js"
 			branches-pct="100.00%"
-			branches-fraction="0/0"
+			branches-fraction="3/3"
 			lines-pct="100.00%"
-			lines-fraction="29/29"
+			lines-fraction="30/30"
 			status="high"
 		><table class="coverage">
 				<tr>
@@ -45,40 +45,43 @@
 <a href="#L25" id="L25">25</a>
 <a href="#L26" id="L26">26</a>
 <a href="#L27" id="L27">27</a>
-<a href="#L28" id="L28">28</a></pre>
+<a href="#L28" id="L28">28</a>
+<a href="#L29" id="L29">29</a></pre>
 					</td>
 					<td class="line-coverage quiet">
 						<pre>
-<span class="cline-any cline-yes" title="This line is covered 6 times">x6</span>
-<span class="cline-any cline-yes" title="This line is covered 6 times">x6</span>
+<span class="cline-any cline-yes" title="This line is covered 4 times">x4</span>
+<span class="cline-any cline-yes" title="This line is covered 4 times">x4</span>
+<span class="cline-any cline-yes" title="This line is covered 4 times">x4</span>
 <span class="cline-any cline-yes" title="This line is covered 1 time">x1</span>
 <span class="cline-any cline-yes" title="This line is covered 1 time">x1</span>
 <span class="cline-any cline-yes" title="This line is covered 1 time">x1</span>
 <span class="cline-any cline-yes" title="This line is covered 1 time">x1</span>
 <span class="cline-any cline-yes" title="This line is covered 1 time">x1</span>
-<span class="cline-any cline-yes" title="This line is covered 6 times">x6</span>
 <span class="cline-any cline-yes" title="This line is covered 1 time">x1</span>
-<span class="cline-any cline-yes" title="This line is covered 6 times">x6</span>
-<span class="cline-any cline-yes" title="This line is covered 1 time">x1</span>
-<span class="cline-any cline-yes" title="This line is covered 1 time">x1</span>
-<span class="cline-any cline-yes" title="This line is covered 1 time">x1</span>
-<span class="cline-any cline-yes" title="This line is covered 1 time">x1</span>
-<span class="cline-any cline-yes" title="This line is covered 1 time">x1</span>
-<span class="cline-any cline-yes" title="This line is covered 6 times">x6</span>
-<span class="cline-any cline-yes" title="This line is covered 6 times">x6</span>
-<span class="cline-any cline-yes" title="This line is covered 6 times">x6</span>
-<span class="cline-any cline-yes" title="This line is covered 1 time">x1</span>
+<span class="cline-any cline-yes" title="This line is covered 4 times">x4</span>
 <span class="cline-any cline-yes" title="This line is covered 6 times">x6</span>
 <span class="cline-any cline-yes" title="This line is covered 1 time">x1</span>
 <span class="cline-any cline-yes" title="This line is covered 6 times">x6</span>
 <span class="cline-any cline-yes" title="This line is covered 6 times">x6</span>
 <span class="cline-any cline-yes" title="This line is covered 6 times">x6</span>
-<span class="cline-any cline-yes" title="This line is covered 1 time">x1</span>
 <span class="cline-any cline-yes" title="This line is covered 6 times">x6</span>
+<span class="cline-any cline-yes" title="This line is covered 6 times">x6</span>
+<span class="cline-any cline-yes" title="This line is covered 17 times">x17</span>
+<span class="cline-any cline-yes" title="This line is covered 17 times">x17</span>
 <span class="cline-any cline-yes" title="This line is covered 1 time">x1</span>
-<span class="cline-any cline-yes" title="This line is covered 6 times">x6</span></pre>
+<span class="cline-any cline-yes" title="This line is covered 17 times">x17</span>
+<span class="cline-any cline-yes" title="This line is covered 19 times">x19</span>
+<span class="cline-any cline-yes" title="This line is covered 19 times">x19</span>
+<span class="cline-any cline-yes" title="This line is covered 17 times">x17</span>
+<span class="cline-any cline-yes" title="This line is covered 1 time">x1</span>
+<span class="cline-any cline-yes" title="This line is covered 15 times">x15</span>
+<span class="cline-any cline-yes" title="This line is covered 4 times">x4</span>
+<span class="cline-any cline-yes" title="This line is covered 1 time">x1</span>
+<span class="cline-any cline-yes" title="This line is covered 4 times">x4</span></pre>
 					</td>
 					<td class="branch-coverage quiet"><pre>
+
 
 
 
@@ -110,34 +113,35 @@
 						<pre
 							class="prettyprint"
 						>
-import getInput from "../../../_common/get-input.js";
-import mapValues from "../../_common/map-values.js";
+import calculateProduct from "../../../_common/calculate-product.js";
+import calculateSum from "../../../_common/calculate-sum.js";
+import combineWithoutRepetitions from "../../_common/combine-without-repetitions.js";
 
 /**
- * @import RegExpWithGroups from "../../../../types/reg-exp-with-groups.d.ts";
+ *
+ * @param {readonly number[]} weights
+ * @param {number} numberOfGroups
  */
+const getSmallestQuantumEntanglement = (weights, numberOfGroups) =&gt; {
+	const weightPerGroup = calculateSum(weights) / numberOfGroups;
 
-const input = await getInput();
+	for (
+		let groupSize = 1;
+		groupSize &lt;= weights.length - (numberOfGroups - 1);
+		groupSize++
+	) {
+		const group = combineWithoutRepetitions(weights, groupSize)
+			.find((innerGroup) =&gt; calculateSum(innerGroup) === weightPerGroup);
 
-const trimmedInput = input.trim();
+		if (group !== undefined) {
+			return calculateProduct(group);
+		}
+	}
 
-/**
- * @typedef {RegExpWithGroups&lt;"hitPoints"|"damage"|"armor"&gt;} Regex
- */
+	return Infinity;
+};
 
-const regex = /** @type {Regex} */ (
-	/^Hit Points: (?&lt;hitPoints&gt;\d+)\nDamage: (?&lt;damage&gt;\d+)\nArmor: (?&lt;armor&gt;\d+)$/v
-);
-
-const match = trimmedInput.match(regex);
-
-if (match === null) {
-	throw new Error(`no match for ${regex} found`);
-}
-
-const bossStats = mapValues(match.groups, Number);
-
-export default bossStats;
+export default getSmallestQuantumEntanglement;
 </pre>
 					</td>
 				</tr>

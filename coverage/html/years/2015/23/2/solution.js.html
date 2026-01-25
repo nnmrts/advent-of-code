@@ -8,7 +8,7 @@
 	</head>
 	<body>
 		<coverage-page
-			title="<a href=&quot;../../../../index.html&quot;>All files</a> / <a href=&quot;../../../../years/index.html&quot;>years</a> / <a href=&quot;../../../2015/index.html&quot;>2015</a> / <a href=&quot;../../17/index.html&quot;>17</a> / <a href=&quot;../2/index.html&quot;>2</a> / solution.js"
+			title="<a href=&quot;../../../../index.html&quot;>All files</a> / <a href=&quot;../../../../years/index.html&quot;>years</a> / <a href=&quot;../../../2015/index.html&quot;>2015</a> / <a href=&quot;../../23/index.html&quot;>23</a> / <a href=&quot;../2/index.html&quot;>2</a> / solution.js"
 			branches-pct="100.00%"
 			branches-fraction="0/0"
 			lines-pct="100.00%"
@@ -37,17 +37,17 @@
 						<pre>
 <span class="cline-any cline-yes" title="This line is covered 2 times">x2</span>
 <span class="cline-any cline-yes" title="This line is covered 2 times">x2</span>
-<span class="cline-any cline-yes" title="This line is covered 2 times">x2</span>
-<span class="cline-any cline-yes" title="This line is covered 2 times">x2</span>
 <span class="cline-any cline-yes" title="This line is covered 1 time">x1</span>
 <span class="cline-any cline-yes" title="This line is covered 2 times">x2</span>
 <span class="cline-any cline-yes" title="This line is covered 1 time">x1</span>
 <span class="cline-any cline-yes" title="This line is covered 2 times">x2</span>
-<span class="cline-any cline-yes" title="This line is covered 2 times">x2</span>
-<span class="cline-any cline-yes" title="This line is covered 2 times">x2</span>
-<span class="cline-any cline-yes" title="This line is covered 2 times">x2</span>
-<span class="cline-any cline-yes" title="This line is covered 2 times">x2</span>
 <span class="cline-any cline-yes" title="This line is covered 1 time">x1</span>
+<span class="cline-any cline-yes" title="This line is covered 2 times">x2</span>
+<span class="cline-any cline-yes" title="This line is covered 2 times">x2</span>
+<span class="cline-any cline-yes" title="This line is covered 2 times">x2</span>
+<span class="cline-any cline-yes" title="This line is covered 2 times">x2</span>
+<span class="cline-any cline-yes" title="This line is covered 2 times">x2</span>
+<span class="cline-any cline-yes" title="This line is covered 2 times">x2</span>
 <span class="cline-any cline-yes" title="This line is covered 2 times">x2</span></pre>
 					</td>
 					<td class="branch-coverage quiet"><pre>
@@ -68,20 +68,20 @@
 						<pre
 							class="prettyprint"
 						>
-import calculateSum from "../../../_common/calculate-sum.js";
-import combineWithoutRepetitions from "../../_common/combine-without-repetitions.js";
-import containers from "../_common/containers.js";
-import totalVolume from "../_common/total-volume.js";
+import program from "../_common/program.js";
+import runProgram from "../_common/run-program.js";
 
-import { getShortestSumLength } from "./solution/_exports.js";
+const modifiedRegisters = new Map(program.registers);
 
-const validCombinations = combineWithoutRepetitions(
-	containers,
-	getShortestSumLength(containers, totalVolume)
-)
-	.filter((combination) =&gt; calculateSum(combination) === totalVolume);
+modifiedRegisters.set("a", 1);
 
-console.info(validCombinations.length);
+console.info(
+	runProgram({
+		...program,
+		registers: modifiedRegisters
+	})
+		.get("b")
+);
 </pre>
 					</td>
 				</tr>

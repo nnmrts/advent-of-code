@@ -12,7 +12,7 @@
 			branches-pct="100.00%"
 			branches-fraction="7/7"
 			lines-pct="100.00%"
-			lines-fraction="32/32"
+			lines-fraction="33/33"
 			status="high"
 		><table class="coverage">
 				<tr>
@@ -48,10 +48,12 @@
 <a href="#L28" id="L28">28</a>
 <a href="#L29" id="L29">29</a>
 <a href="#L30" id="L30">30</a>
-<a href="#L31" id="L31">31</a></pre>
+<a href="#L31" id="L31">31</a>
+<a href="#L32" id="L32">32</a></pre>
 					</td>
 					<td class="line-coverage quiet">
 						<pre>
+<span class="cline-any cline-yes" title="This line is covered 2 times">x2</span>
 <span class="cline-any cline-yes" title="This line is covered 2 times">x2</span>
 <span class="cline-any cline-yes" title="This line is covered 2 times">x2</span>
 <span class="cline-any cline-yes" title="This line is covered 1 time">x1</span>
@@ -114,12 +116,14 @@
 
 
 
+
 </pre></td>
 					<td class="text">
 						<pre
 							class="prettyprint"
 						>
 import calculateSum from "../../../_common/calculate-sum.js";
+import isArray from "../../_common/is-array.js";
 import object from "../_common/object.js";
 
 /**
@@ -132,7 +136,7 @@ import object from "../_common/object.js";
  * @returns {readonly number[]}
  */
 const getNumbersFromObject = (value) =&gt; {
-	if (Array.isArray(value)) {
+	if (isArray(value)) {
 		return value.flatMap(getNumbersFromObject);
 	}
 
