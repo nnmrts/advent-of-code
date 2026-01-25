@@ -1,5 +1,5 @@
 import calculateSum from "../../../_common/calculate-sum.js";
-import combineWithoutRepetitions from "../_common/combine-without-repetitions.js";
+import combineWithoutRepetitions from "../../_common/combine-without-repetitions.js";
 import containers from "../_common/containers.js";
 import totalVolume from "../_common/total-volume.js";
 

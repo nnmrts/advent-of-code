@@ -1,4 +1,4 @@
-import calculateProduct from "../../_common/calculate-product.js";
+import calculateProduct from "../../../_common/calculate-product.js";
 import distances from "../_common/distances.js";
 
 const junctionBoxesLimit = 1_000;

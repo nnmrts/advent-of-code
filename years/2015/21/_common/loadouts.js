@@ -1,5 +1,6 @@
-import mapValues from "../../15/_common/get-cookie/map-values.js";
-import omit from "../../15/_common/get-cookie/omit.js";
+import mapValues from "../../_common/map-values.js";
+
+import { omit } from "./loadouts/_exports.js";
 
 const shopWeapons = [
 	{

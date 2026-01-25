@@ -1,4 +1,5 @@
 import calculateSum from "../../../_common/calculate-sum.js";
+import isArray from "../../_common/is-array.js";
 import object from "../_common/object.js";
 
 /**
@@ -11,7 +12,7 @@ import object from "../_common/object.js";
  * @returns {readonly number[]}
  */
 const getNumbersFromObject = (value) => {
-	if (Array.isArray(value)) {
+	if (isArray(value)) {
 		return value.flatMap(getNumbersFromObject);
 	}
 

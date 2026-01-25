@@ -1,6 +1,8 @@
-import { mapEntries, mapValues } from "./get-cookie/_exports.js";
+import mapEntries from "../../_common/map-entries.js";
+import mapValues from "../../_common/map-values.js";
+import pick from "../../_common/pick.js";
+
 import ingredients from "./ingredients.js";
-import pick from "./pick.js";
 import scoreKeys from "./score-keys.js";
 
 /**

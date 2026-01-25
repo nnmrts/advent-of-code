@@ -1,4 +1,4 @@
-import calculateProduct from "../../../2025/_common/calculate-product.js";
+import calculateProduct from "../../../_common/calculate-product.js";
 import calculateSum from "../../../_common/calculate-sum.js";
 import presents from "../_common/presents.js";
 

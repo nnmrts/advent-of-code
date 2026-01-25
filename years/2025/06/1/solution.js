@@ -1,5 +1,5 @@
+import calculateProduct from "../../../_common/calculate-product.js";
 import calculateSum from "../../../_common/calculate-sum.js";
-import calculateProduct from "../../_common/calculate-product.js";
 import input from "../_common/input.js";
 
 /**

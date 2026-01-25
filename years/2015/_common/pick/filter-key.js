@@ -1,4 +1,4 @@
-import isArray from "../_common/is-array.js";
+import isArray from "../is-array.js";
 
 /**
  * @import { KeyFilter } from "../_types/key-filter.doc.js";

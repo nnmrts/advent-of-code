@@ -1,4 +1,4 @@
-import { isArray } from "./_common/_exports.js";
+import isArray from "./is-array.js";
 import { filterKey } from "./pick/_exports.js";
 
 /**

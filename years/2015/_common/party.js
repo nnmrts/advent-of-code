@@ -1,9 +1,9 @@
+import pick from "./pick.js";
+
 /**
  * @template {object} T
  * @typedef {{[K in keyof T as undefined extends T[K] ? T[K] extends undefined ? never : K : K]: Exclude<T[K], undefined>}} Shaken
  */
-
-import pick from "../15/_common/pick.js";
 
 /**
  * @typedef {(object: object, filter?: (value: unknown) => boolean) => object} ShakeFunction

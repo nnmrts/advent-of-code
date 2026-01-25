@@ -1,6 +1,6 @@
+import calculateProduct from "../../../_common/calculate-product.js";
 import calculateSum from "../../../_common/calculate-sum.js";
 import transposeMatrix from "../../../_common/transpose-matrix.js";
-import calculateProduct from "../../_common/calculate-product.js";
 import input from "../_common/input.js";
 
 /**
