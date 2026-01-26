@@ -1,9 +1,15 @@
+import { assertEquals } from "@std/assert";
 import { join } from "@std/path";
 import { assertSnapshot } from "@std/testing/snapshot";
+
+import baseUrl from "../common/base-url.js";
+
+import { getAnswer } from "./(snapshot-tests)/_exports.js";
 
 const {
 	Command,
 	cwd,
+	env,
 	readDir,
 	test
 } = Deno;
@@ -26,7 +32,9 @@ for (
 		name: yearsFolderEntryName
 	} of sortFolderEntries(yearsFolderEntries)
 ) {
-	if (yearsFolderEntryIsDirectory && !Number.isNaN(Number(yearsFolderEntryName))) {
+	const year = Number(yearsFolderEntryName);
+
+	if (yearsFolderEntryIsDirectory && !Number.isNaN(year)) {
 		const yearFolderPath = join(yearsFolderPath, yearsFolderEntryName);
 
 		const yearFolderEntries = await Array.fromAsync(readDir(yearFolderPath));
@@ -37,7 +45,9 @@ for (
 				name: yearFolderEntryName
 			} of sortFolderEntries(yearFolderEntries)
 		) {
-			if (yearFolderEntryIsDirectory && !Number.isNaN(Number(yearFolderEntryName))) {
+			const day = Number(yearFolderEntryName);
+
+			if (yearFolderEntryIsDirectory && !Number.isNaN(day)) {
 				const dayFolderPath = join(yearFolderPath, yearFolderEntryName);
 
 				const dayFolderEntries = await Array.fromAsync(readDir(dayFolderPath));
@@ -48,14 +58,28 @@ for (
 						name: dayFolderEntryName
 					} of sortFolderEntries(dayFolderEntries)
 				) {
-					if (dayFolderEntryIsDirectory && !Number.isNaN(Number(dayFolderEntryName))) {
-						const levelFolderPath = join(dayFolderPath, dayFolderEntryName);
+					const part = Number(dayFolderEntryName);
+
+					if (dayFolderEntryIsDirectory && !Number.isNaN(part)) {
+						const partFolderPath = join(dayFolderPath, dayFolderEntryName);
 
 						const solutionFileName = "solution.js";
 
-						const solutionFilePath = join(levelFolderPath, solutionFileName);
+						const solutionFilePath = join(partFolderPath, solutionFileName);
 
 						const name = [yearsFolderEntryName, yearFolderEntryName, dayFolderEntryName].join("/");
+
+						/**
+						 * @type {string}
+						 */
+						let answer;
+
+						try {
+							answer = await getAnswer(year, day, part);
+						}
+						catch {
+							// do nothing
+						}
 
 						test(
 							name,
@@ -79,6 +103,10 @@ for (
 								const { stdout: rawOutput } = await runSolutionCommand.output();
 
 								const output = decoder.decode(rawOutput).trim();
+
+								if (answer !== undefined) {
+									assertEquals(output, answer);
+								}
 
 								await assertSnapshot(context, output, { dir: "snapshots" });
 							}
