@@ -6,9 +6,9 @@ const {
 	env
 } = Deno;
 
-const [year, day] = path.split("/");
+const [year, day] = path.split("/").map(Number);
 
-const key = [year, day].map(Number);
+const key = [year, day];
 
 const url = `${baseUrl}/${year}/day/${day}/input`;
 
