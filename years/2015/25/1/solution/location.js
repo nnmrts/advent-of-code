@@ -1,0 +1,29 @@
+/* eslint-disable regexp/no-super-linear-backtracking -- santa isn't a hacker */
+import getInput from "../../../../_common/get-input.js";
+import mapValues from "../../../_common/map-values.js";
+
+/**
+ * @import RegExpWithGroups from "../../../../../types/reg-exp-with-groups.d.ts";
+ */
+
+const input = await getInput();
+
+const trimmedInput = input.trim();
+
+/**
+ * @typedef {RegExpWithGroups<"row"|"column">} Regex
+ */
+
+const regex = /** @type {Regex} */ (
+	/^.*?row (?<row>\d+),.*?(?<column>\d+).$/v
+);
+
+const match = trimmedInput.match(regex);
+
+if (match === null) {
+	throw new Error(`no match for ${regex} found`);
+}
+
+const location = mapValues(match.groups, Number);
+
+export default location;
